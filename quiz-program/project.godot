@@ -48,4 +48,5 @@ ui_accept={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 textures/default_filters/anisotropic_filtering_level=0
