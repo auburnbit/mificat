@@ -19,7 +19,6 @@ position = Vector2(9, 0)
 scale = Vector2(0.925, 0.925)
 
 [node name="Primary" type="Node2D" parent="Quiz"]
-visible = false
 
 [node name="Background" type="Sprite2D" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.607843)
@@ -202,7 +201,6 @@ texture = ExtResource("4_5muda")
 [node name="DebugHelper" type="Node2D" parent="Quiz"]
 
 [node name="DebugHelperInfo" type="RichTextLabel" parent="Quiz/DebugHelper"]
-visible = false
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 6.0
@@ -221,6 +219,7 @@ bbcode_enabled = true
 text = "Place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder"
 
 [node name="QuestionInfo" type="RichTextLabel" parent="Quiz/DebugHelper"]
+visible = false
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 6.0
