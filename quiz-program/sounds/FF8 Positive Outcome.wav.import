@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxe0h1cjd1vrq"
+path="res://.godot/imported/FF8 Positive Outcome.wav-c892e9c16f3dbaadd1f6eab868b06ceb.sample"
+
+[deps]
+
+source_file="res://sounds/FF8 Positive Outcome.wav"
+dest_files=["res://.godot/imported/FF8 Positive Outcome.wav-c892e9c16f3dbaadd1f6eab868b06ceb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

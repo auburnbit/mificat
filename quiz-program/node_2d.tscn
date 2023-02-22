@@ -1,0 +1,270 @@
+[gd_scene load_steps=11 format=3 uid="uid://b56c0ox1mugxm"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_v7i1q"]
+[ext_resource type="FontFile" uid="uid://bw5p4vk1ovdti" path="res://fonts/final-fantasy-dawn-of-souls.ttf" id="2_1c6nl"]
+[ext_resource type="Texture2D" uid="uid://dxhp7a24mlp2c" path="res://images/Untitled-2.png" id="2_fdr2e"]
+[ext_resource type="Texture2D" uid="uid://0u0r8ab6i27o" path="res://images/cursor.png" id="4_5muda"]
+[ext_resource type="AudioStream" uid="uid://dgmutdrxipxaq" path="res://sounds/ff7_cursor.mp3" id="5_jehnk"]
+[ext_resource type="FontFile" uid="uid://bkppawxcjsukp" path="res://fonts/lucon.ttf" id="5_wjqfe"]
+[ext_resource type="AudioStream" uid="uid://pdmj71og3cb" path="res://music/Kefka_Laugh_Sound_Effect.mp3" id="6_7hh6k"]
+[ext_resource type="AudioStream" uid="uid://c0sffwudbxwnv" path="res://music/212 Magician's Tower.mp3" id="6_asdac"]
+[ext_resource type="AudioStream" uid="uid://cwym8kao7wjdr" path="res://sounds/FF8 Cursor Wrong.wav" id="7_4sfmr"]
+[ext_resource type="AudioStream" uid="uid://dxe0h1cjd1vrq" path="res://sounds/FF8 Positive Outcome.wav" id="8_j2w1b"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_v7i1q")
+
+[node name="Quiz" type="Node2D" parent="."]
+position = Vector2(9, 0)
+scale = Vector2(0.925, 0.925)
+
+[node name="Primary" type="Node2D" parent="Quiz"]
+visible = false
+
+[node name="Background" type="Sprite2D" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.607843)
+texture_filter = 1
+position = Vector2(0, -2.16216)
+scale = Vector2(1, 1.51351)
+texture = ExtResource("2_fdr2e")
+centered = false
+
+[node name="QuestionNumber" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 83.0
+offset_bottom = 16.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "Question ## of ##
+"
+
+[node name="QuizTimer" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 138.0
+offset_top = 5.0
+offset_right = 231.0
+offset_bottom = 16.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "[right]Full Quiz Timer: ###[/right]
+"
+
+[node name="Prompt" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 6.0
+offset_top = 16.0
+offset_right = 231.0
+offset_bottom = 111.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "Place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder"
+
+[node name="Answer1" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 20.5405
+offset_top = 43.2432
+offset_right = 123.541
+offset_bottom = 72.2433
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "* Place holder place holder place holder place holder place holder place holder"
+
+[node name="Answer2" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 131.892
+offset_top = 43.2432
+offset_right = 234.892
+offset_bottom = 72.2432
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "* Place holder place holder place holder place holder place holder place holder"
+
+[node name="Answer3" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 20.5405
+offset_top = 71.3513
+offset_right = 123.541
+offset_bottom = 100.351
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "* Place holder place holder place holder place holder place holder place holder"
+
+[node name="Answer4" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 131.892
+offset_top = 71.3514
+offset_right = 234.892
+offset_bottom = 100.351
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "* Place holder place holder place holder place holder place holder place holder"
+
+[node name="Needed" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 72.4324
+offset_top = 5.40541
+offset_right = 163.432
+offset_bottom = 16.4054
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "[center]Score Needed: 100%"
+
+[node name="CostOfFailure" type="RichTextLabel" parent="Quiz/Primary"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 4.0
+offset_top = 101.0
+offset_right = 236.0
+offset_bottom = 112.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_1c6nl")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "Cost of failure: NO EXP OR GIL FROM THIS BATTLE
+"
+
+[node name="Cursor" type="Sprite2D" parent="Quiz/Primary"]
+texture_filter = 1
+position = Vector2(123.243, 76.7567)
+texture = ExtResource("4_5muda")
+
+[node name="DebugHelper" type="Node2D" parent="Quiz"]
+
+[node name="DebugHelperInfo" type="RichTextLabel" parent="Quiz/DebugHelper"]
+visible = false
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 6.0
+offset_top = 121.838
+offset_right = 231.0
+offset_bottom = 169.838
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("5_wjqfe")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "Place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder"
+
+[node name="QuestionInfo" type="RichTextLabel" parent="Quiz/DebugHelper"]
+modulate = Color(1, 1, 1, 0.905882)
+texture_filter = 2
+offset_left = 6.0
+offset_top = 121.838
+offset_right = 231.0
+offset_bottom = 169.838
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/line_separation = 2
+theme_override_constants/table_h_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("5_wjqfe")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "Place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder"
+
+[node name="ToggleFlag29" type="CheckButton" parent="Quiz/DebugHelper"]
+texture_filter = 1
+offset_left = -10.7026
+offset_top = 127.5
+offset_right = 33.2974
+offset_bottom = 151.5
+scale = Vector2(0.5, 0.5)
+focus_mode = 0
+
+[node name="CursorSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jehnk")
+volume_db = 10.0
+
+[node name="CursorWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4sfmr")
+volume_db = 10.0
+
+[node name="PositiveOutcome" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_j2w1b")
+volume_db = 22.358
+
+[node name="KefkaLaugh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7hh6k")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_asdac")
+volume_db = 10.0
+pitch_scale = 0.75
+
+[connection signal="toggled" from="Quiz/DebugHelper/ToggleFlag29" to="." method="_on_toggle_flag_29_toggled"]

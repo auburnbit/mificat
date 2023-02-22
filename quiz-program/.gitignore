@@ -1,0 +1,5 @@
+# Godot 4+ specific ignores
+.godot/
+Quiz Program.exe
+Quiz Program.console.exe
+Quiz Program.pck
