@@ -1,0 +1,1346 @@
+[
+  {
+	"txt": "Object",
+	"definition": "Base class for all other classes in the engine.",
+	"children": [
+	  {
+		"txt": "AudioServer",
+		"definition": "Server interface for low-level audio access.",
+		"children": []
+	  },
+	  {
+		"txt": "CameraServer",
+		"definition": "Server keeping track of different cameras accessible in Godot.",
+		"children": []
+	  },
+	  {
+		"txt": "ClassDB",
+		"definition": "Class information repository.",
+		"children": []
+	  },
+	  {
+		"txt": "DisplayServer",
+		"definition": "Singleton for window management functions.",
+		"children": []
+	  },
+	  {
+		"txt": "EditorFileSystemDirectory",
+		"definition": "A directory for the resource filesystem.",
+		"children": []
+	  },
+	  {
+		"txt": "EditorPaths",
+		"definition": "Editor-only singleton that returns paths to various OS-specific data folders and files.",
+		"children": []
+	  },
+	  {
+		"txt": "EditorSelection",
+		"definition": "Manages the SceneTree selection in the editor.",
+		"children": []
+	  },
+	  {
+		"txt": "EditorUndoRedoManager",
+		"definition": "Manages undo history of scenes opened in the editor.",
+		"children": []
+	  },
+	  {
+		"txt": "EditorVCSInterface",
+		"definition": "Version Control System (VCS) interface, which reads and writes to the local VCS in use.",
+		"children": []
+	  },
+	  {
+		"txt": "Engine",
+		"definition": "Access to engine properties.",
+		"children": []
+	  },
+	  {
+		"txt": "EngineDebugger",
+		"definition": "Exposes the internal debugger.",
+		"children": []
+	  },
+	  {
+		"txt": "GDExtensionManager",
+		"definition": "Manages getting, loading, reloading, and unloading extensions.",
+		"children": []
+	  },
+	  {
+		"txt": "Geometry2D",
+		"definition": "Helper node for calculate generic geometry operations in 2D space.",
+		"children": []
+	  },
+	  {
+		"txt": "Geometry3D",
+		"definition": "Helper node to calculate generic geometry operations in 3D space.",
+		"children": []
+	  },
+	  {
+		"txt": "GodotSharp",
+		"definition": "Bridge between Godot and the Mono runtime (Mono-enabled builds only).",
+		"children": []
+	  },
+	  {
+		"txt": "Input",
+		"definition": "A singleton that deals with inputs.",
+		"children": []
+	  },
+	  {
+		"txt": "InputMap",
+		"definition": "Singleton that manages InputEventAction.",
+		"children": []
+	  },
+	  {
+		"txt": "IP",
+		"definition": "Internet protocol (IP) support functions such as DNS resolution.",
+		"children": []
+	  },
+	  {
+		"txt": "JavaClassWrapper",
+		"definition": "Wrapper for JavaClass.",
+		"children": []
+	  },
+	  {
+		"txt": "JavaScriptBridge",
+		"definition": "Singleton that connects the engine with the browser's JavaScript context in Web export.",
+		"children": []
+	  },
+	  {
+		"txt": "JNISingleton",
+		"definition": "Singleton that connects the engine with Android plugins to interface with native Android code.",
+		"children": []
+	  },
+	  {
+		"txt": "JSONRPC",
+		"definition": "A helper to handle dictionaries which look like JSONRPC documents.",
+		"children": []
+	  },
+	  {
+		"txt": "MainLoop",
+		"definition": "Abstract base class for the game's main loop.",
+		"children": [
+		  {
+			"txt": "SceneTree",
+			"definition": "Manages the game loop via a hierarchy of nodes.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "Marshalls",
+		"definition": "Data transformation (marshaling) and encoding helpers.",
+		"children": []
+	  },
+	  {
+		"txt": "MovieWriter",
+		"definition": "Abstract class for non-real-time video recording encoders.",
+		"children": []
+	  },
+	  {
+		"txt": "NavigationMeshGenerator",
+		"definition": "Helper class for creating and clearing navigation meshes.",
+		"children": []
+	  },
+	  {
+		"txt": "NavigationServer2D",
+		"definition": "Server interface for low-level 2D navigation access.",
+		"children": []
+	  },
+	  {
+		"txt": "NavigationServer3D",
+		"definition": "Server interface for low-level 3D navigation access.",
+		"children": []
+	  },
+	  {
+		"txt": "Node",
+		"definition": "Base class for all scene objects.",
+		"children": [
+		  {
+			"txt": "AnimationPlayer",
+			"definition": "Player of Animation resources.",
+			"children": []
+		  },
+		  {
+			"txt": "AnimationTree",
+			"definition": "A node to be used for advanced animation transitions in an AnimationPlayer.",
+			"children": []
+		  },
+		  {
+			"txt": "AudioStreamPlayer",
+			"definition": "Plays back audio non-positionally.",
+			"children": []
+		  },
+		  {
+			"txt": "CanvasItem",
+			"definition": "Base class of anything 2D.",
+			"children": [
+			  {
+				"txt": "Control",
+				"definition": "All user interface nodes inherit from this class. Its anchors and offsets adapt its position and size relative to its parent.",
+				"children": [
+				  {
+					"txt": "BaseButton",
+					"definition": "Base class for different kinds of buttons.",
+					"children": [
+					  {
+						"txt": "Button",
+						"definition": "Standard themed Button.",
+						"children": [
+						  {
+							"txt": "CheckBox",
+							"definition": "Binary choice user interface widget.",
+							"children": []
+						  },
+						  {
+							"txt": "CheckButton",
+							"definition": "Checkable button.",
+							"children": []
+						  },
+						  {
+							"txt": "ColorPickerButton",
+							"definition": "Button that pops out a ColorPicker.",
+							"children": []
+						  },
+						  {
+							"txt": "MenuButton",
+							"definition": "Special button that brings up a PopupMenu when clicked.",
+							"children": []
+						  },
+						  {
+							"txt": "OptionButton",
+							"definition": "Button control that provides selectable options when pressed.",
+							"children": []
+						  }
+						]
+					  },
+					  {
+						"txt": "LinkButton",
+						"definition": "Simple button used to represent a link to some resource.",
+						"children": []
+					  },
+					  {
+						"txt": "TextureButton",
+						"definition": "Texture-based button. Supports Pressed, Hover, Disabled and Focused states.",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "ColorRect",
+					"definition": "Displays a rectangle filled with a solid color. If you need to display the border alone, consider using ReferenceRect instead.",
+					"children": []
+				  },
+				  {
+					"txt": "Container",
+					"definition": "Base node for containers.",
+					"children": [
+					  {
+						"txt": "AspectRatioContainer",
+						"definition": "Container that preserves its child controls' aspect ratio.",
+						"children": []
+					  },
+					  {
+						"txt": "BoxContainer",
+						"definition": "Base class for box containers.",
+						"children": [
+						  {
+							"txt": "HBoxContainer",
+							"definition": "Horizontal box container.",
+							"children": [
+							  {
+								"txt": "EditorResourcePicker",
+								"definition": "Godot editor's control for selecting Resource type properties.",
+								"children": [
+								  {
+									"txt": "EditorScriptPicker",
+									"definition": "Godot editor's control for selecting the script property of a Node.",
+									"children": []
+								  }
+								]
+							  }
+							]
+						  },
+						  {
+							"txt": "VBoxContainer",
+							"definition": "Vertical box container.",
+							"children": [
+							  {
+								"txt": "ColorPicker",
+								"definition": "Color picker control.",
+								"children": []
+							  },
+							  {
+								"txt": "FileSystemDock",
+								"definition": " File System Dock.",
+								"children": []
+							  },
+							  {
+								"txt": "ScriptEditorBase",
+								"definition": "Base editor for editing scripts in the ScriptEditor.",
+								"children": []
+							  }
+							]
+						  }
+						]
+					  },
+					  {
+						"txt": "CenterContainer",
+						"definition": "Keeps children controls centered.",
+						"children": []
+					  },
+					  {
+						"txt": "EditorProperty",
+						"definition": "Custom control to edit properties for adding into the inspector.",
+						"children": []
+					  },
+					  {
+						"txt": "FlowContainer",
+						"definition": "Base class for flow containers.",
+						"children": [
+						  {
+							"txt": "HFlowContainer",
+							"definition": "Horizontal flow container.",
+							"children": []
+						  },
+						  {
+							"txt": "VFlowContainer",
+							"definition": "Vertical flow container.",
+							"children": []
+						  }
+						]
+					  },
+					  {
+						"txt": "GraphNode",
+						"definition": "A Container control that represents a single data unit in a GraphEdit graph. You can customize the number, type, and color of left- and right-side connection ports.",
+						"children": []
+					  },
+					  {
+						"txt": "GridContainer",
+						"definition": "Grid container used to arrange Control-derived children in a grid like layout.",
+						"children": []
+					  },
+					  {
+						"txt": "MarginContainer",
+						"definition": "Adds a top, left, bottom, and right margin to all Control nodes that are direct children of the container.",
+						"children": []
+					  },
+					  {
+						"txt": "PanelContainer",
+						"definition": " This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.",
+						"children": []
+					  },
+					  {
+						"txt": "ScrollContainer",
+						"definition": "A helper node for displaying scrollable elements such as lists.",
+						"children": []
+					  },
+					  {
+						"txt": "SplitContainer",
+						"definition": "Container for splitting and adjusting.",
+						"children": [
+						  {
+							"txt": "HSplitContainer",
+							"definition": "Horizontal split container. Goes from left to right.",
+							"children": []
+						  },
+						  {
+							"txt": "VSplitContainer",
+							"definition": "Vertical split container. Goes from top to bottom.",
+							"children": []
+						  }
+						]
+					  },
+					  {
+						"txt": "SubViewportContainer",
+						"definition": "A Container node that holds a SubViewport. It uses the SubViewport's size as minimum size, unless stretch is enabled.",
+						"children": []
+					  },
+					  {
+						"txt": "TabContainer",
+						"definition": "Arranges Control children into a tabbed view, creating a tab for each one. Only the active tab's corresponding Control has its visible property set to true.",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "GraphEdit",
+					"definition": "A control responsible for displaying and manipulating graph-like data using GraphNodes. It provides access to creation, removal, connection, and disconnection of nodes.",
+					"children": []
+				  },
+				  {
+					"txt": "ItemList",
+					"definition": "Control that provides a list of selectable items (and/or icons) in a single column, or optionally in multiple columns.",
+					"children": []
+				  },
+				  {
+					"txt": "Label",
+					"definition": "Displays plain text in a line or wrapped inside a rectangle. For formatted text, use RichTextLabel.",
+					"children": []
+				  },
+				  {
+					"txt": "LineEdit",
+					"definition": "Control that provides single-line string editing.",
+					"children": []
+				  },
+				  {
+					"txt": "MenuBar",
+					"definition": "A horizontal menu bar, which displays PopupMenus or system global menu. New items can be created by adding PopupMenu nodes to this node.",
+					"children": []
+				  },
+				  {
+					"txt": "NinePatchRect",
+					"definition": "Scalable texture-based frame that tiles the texture's centers and sides, but keeps the corners' original size. Perfect for panels and dialog boxes.",
+					"children": []
+				  },
+				  {
+					"txt": "Panel",
+					"definition": "Provides an opaque background for Control children.",
+					"children": []
+				  },
+				  {
+					"txt": "Range",
+					"definition": "A base class for Control nodes that change a floating-point value between a min_value and max_value, using a configured step and page size. ",
+					"children": []
+				  },
+				  {
+					"txt": "ReferenceRect",
+					"definition": "A rectangle box that displays only a border_color border color around its rectangle. It has no fill Color.",
+					"children": []
+				  },
+				  {
+					"txt": "RichTextLabel",
+					"definition": "Can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.",
+					"children": []
+				  },
+				  {
+					"txt": "Seperator",
+					"definition": "Base class for separators. It is a Control used for separating other controls. It's purely a visual decoration.",
+					"children": [
+					  {
+						"txt": "HSeperator",
+						"definition": "Even though it looks horizontal, it is used to separate objects vertically.",
+						"children": []
+					  },
+					  {
+						"txt": "VSeparator",
+						"definition": "Even though it looks vertical, it is used to separate objects horizontally.",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "TabBar",
+					"definition": "Simple tabs control, similar to TabContainer but is only in charge of drawing tabs, not interacting with children.",
+					"children": []
+				  },
+				  {
+					"txt": "TextEdit",
+					"definition": "Meant for editing large, multiline text. It also has facilities for editing code, such as syntax highlighting support and multiple levels of undo/redo.",
+					"children": []
+				  },
+				  {
+					"txt": "TextureRect",
+					"definition": "Used  to draw icons and sprites in a user interface. The texture's placement can be controlled with the stretch_mode property. It can scale, tile, or stay centered.",
+					"children": []
+				  },
+				  {
+					"txt": "Tree",
+					"definition": "Shows branching items that can be selected, expanded and collapsed. It can have multiple columns with custom controls like text editing, buttons and popups.",
+					"children": []
+				  },
+				  {
+					"txt": "VideoStreamPlayer",
+					"definition": "Control node for playing streams using VideoStream resources. Supported formats are Ogg Theora (.ogv, VideoStreamTheora) and formats exposed via a GDExtension plugin.",
+					"children": []
+				  }
+				]
+			  },
+			  {
+				"txt": "Node2D",
+				"definition": "A 2D game object, with a transform (position, rotation, and scale). Use Node2D as a parent node to move, scale and rotate children. Also gives control of the node's render order.",
+				"children": [
+				  {
+					"txt": "AnimatedSprite2D",
+					"definition": "Sprite node that contains multiple textures as frames to play for animation.",
+					"children": []
+				  },
+				  {
+					"txt": "AudioListener2D",
+					"definition": "Once added to the scene tree and enabled using make_current, this node will override the location sounds are heard from. Only one can be current.",
+					"children": []
+				  },
+				  {
+					"txt": "AudioStreamPlayer2D",
+					"definition": "Plays positional sound in 2D space that is attenuated with distance to the listener. Call make_current to enable.",
+					"children": []
+				  },
+				  {
+					"txt": "BackBufferCopy",
+					"definition": "Copies a region of the screen (or the whole screen) to a buffer so it can be accessed in your shader scripts using the screen texture.",
+					"children": []
+				  },
+				  {
+					"txt": "Bone2D",
+					"definition": "Joint used with Skeleton2D to control and animate other nodes.",
+					"children": []
+				  },
+				  {
+					"txt": "Camera2D",
+					"definition": "Forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of CanvasItem-based nodes.",
+					"children": []
+				  },
+				  {
+					"txt": "CanvasGroup",
+					"definition": "Merges several child CanvasItems into a single draw operation.",
+					"children": []
+				  },
+				  {
+					"txt": "CanvasModulate",
+					"definition": "Tints the canvas elements using its assigned color.",
+					"children": []
+				  },
+				  {
+					"txt": "CollisionObject2D",
+					"definition": "The base class for 2D physics objects. It holds 2D collision Shape2Ds, assigned to a shape owner. It can have any number of shape owners, only accessible through code.",
+					"children": [
+					  {
+						"txt": "Area2D",
+						"definition": "2D area that detects CollisionObject2D nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.",
+						"children": []
+					  },
+					  {
+						"txt": "PhysicsBody2D",
+						"definition": "an abstract base class for implementing a physics body. All *Body2D types inherit from it.",
+						"children": [
+						  {
+							"txt": "CharacterBody2D",
+							"definition": "Specialized 2D physics body node for characters moved by script.",
+							"children": []
+						  },
+						  {
+							"txt": "RigidBody2D",
+							"definition": "Physics Body which is moved by 2D physics simulation. Useful for objects that have gravity and can be pushed by other objects.",
+							"children": []
+						  },
+						  {
+							"txt": "StaticBody2D",
+							"definition": "Physics body for 2D physics which is static or moves only by script. Useful for floor and walls.",
+							"children": [
+							  {
+								"txt": "AnimatableBody2D",
+								"definition": "Animatable body for 2D physics. An animatable body can't be moved by external forces or contacts, but can be moved by script or animation to affect other bodies in its path.",
+								"children": []
+							  }
+							]
+						  }
+						]
+					  }
+					]
+				  },
+				  {
+					"txt": "CollisionPolygon2D",
+					"definition": "Provides a concave or convex 2D collision polygon to a CollisionObject2D parent. Polygons can be drawn in the editor or specified by a list of vertices. See also ConvexPolygonShape2D.",
+					"children": []
+				  },
+				  {
+					"txt": "CollisionShape2D",
+					"definition": "Editor facility for creating and editing collision shapes in 2D space. Set the shape property to configure the shape. Use CollisionObject2D.shape_owner_get_shape to get the actual shape.",
+					"children": []
+				  },
+				  {
+					"txt": "CPUParticles2D",
+					"definition": "CPU-based 2D particle node used to create a variety of particle systems and effects. More compatibility than GPU-based but without hardware acceleration.",
+					"children": []
+				  },
+				  {
+					"txt": "GPUParticles2D",
+					"definition": "GPU-based 2D particle node used to create a variety of particle systems and effects. It features an emitter that generates some number of particles at a given rate.",
+					"children": []
+				  },
+				  {
+					"txt": "Joint2D",
+					"definition": "Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.",
+					"children": [
+					  {
+						"txt": "DampedSpringJoint2D",
+						"definition": "Constraint for 2D physics which always wants to go back to a given length.",
+						"children": []
+					  },
+					  {
+						"txt": "GrooveJoint2D",
+						"definition": "Constraint for 2D physics which is useful for making a body 'slide' through a segment placed in another.",
+						"children": []
+					  },
+					  {
+						"txt": "PinJoint2D",
+						"definition": "Type of joint for 2D rigid bodies. It attaches two bodies (dynamic or static) together.",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "Light2D",
+					"definition": "Casts light in a 2D environment. A light is defined as a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related).",
+					"children": [
+					  {
+						"txt": "DirectionalLight2D",
+						"definition": "Models an infinite number of parallel rays covering the entire scene. It is used for distant lights with strong intensity (for example: to model sunlight or moonlight).",
+						"children": []
+					  },
+					  {
+						"txt": "PointLight2D",
+						"definition": "Casts light in a 2D environment. This light's shape is defined by a (usually grayscale) texture.",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "LightOccluder2D",
+					"definition": "Occludes light cast by a Light2D, casting shadows. It must be provided with an OccluderPolygon2D in order for the shadow to be computed.",
+					"children": []
+				  },
+				  {
+					"txt": "Line2D",
+					"definition": "A line through several points in 2D space.",
+					"children": []
+				  },
+				  {
+					"txt": "Marker2D",
+					"definition": "Generic 2D position hint for a plain Node2D that displays a cross in the 2D editor at all times. You can set cross' visual size by using the gizmo in the 2D editor while the node is selected.",
+					"children": []
+				  },
+				  {
+					"txt": "MeshInstance2D",
+					"definition": "Node used for displaying a Mesh in 2D. This can be automatically created from an existing Sprite2D via a tool in the editor toolbar.",
+					"children": []
+				  },
+				  {
+					"txt": "MultiMeshInstance2D",
+					"definition": "A specialized node to instance a MultiMesh resource in 2D. Usage is the same as its 3D counterpart.",
+					"children": []
+				  },
+				  {
+					"txt": "NavigationLink2D",
+					"definition": "Creates a link between two positions that NavigationServer2D can route agents through. Links can be used to navigate off the navigation mesh, like teleporters or jumping across gaps.",
+					"children": []
+				  },
+				  {
+					"txt": "NavigationRegion2D",
+					"definition": "A region of the navigation map. It tells the NavigationServer2D what can be navigated and what cannot, based on its NavigationPolygon resource.",
+					"children": []
+				  },
+				  {
+					"txt": "ParallaxLayer",
+					"definition": "Each of these layers can be set to move at different speeds relative to the camera movement or the ParallaxBackground.scroll_offset value. Must be the child of a ParallaxBackground node.",
+					"children": []
+				  },
+				  {
+					"txt": "Path2D",
+					"definition": "Can have PathFollow2D child nodes moving along the Curve2D. The path is considered as relative to the moved nodes. As such, the curve should usually start with a zero vector ((0, 0)).",
+					"children": []
+				  },
+				  {
+					"txt": "PathFollow2D",
+					"definition": "This node takes its parent Path2D and returns the coordinates of a point within it, given a distance from the first vertex. It is useful for easily making other nodes follow a path.",
+					"children": []
+				  },
+				  {
+					"txt": "Polygon2D",
+					"definition": "Defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed shape. Can be filled with color/texture.",
+					"children": []
+				  },
+				  {
+					"txt": "RayCast2D",
+					"definition": "Represents a line from its origin to its destination position, target_position. It is used to query the 2D space in order to find the closest object along the path of the ray.",
+					"children": []
+				  },
+				  {
+					"txt": "RemoteTransform2D",
+					"definition": "Pushes its own Transform2D to another Node2D derived node (called the remote node) in the scene. It can use either global or local coordinates.",
+					"children": []
+				  },
+				  {
+					"txt": "ShapeCast2D",
+					"definition": "Node for physics collision sweep and immediate overlap queries. Similar to the RayCast2D node.",
+					"children": []
+				  },
+				  {
+					"txt": "Skeleton2D",
+					"definition": "Parents a hierarchy of Bone2D objects. It is a requirement of Bone2D. It holds a reference to the rest pose of its children and acts as a single point of access to its bones.",
+					"children": []
+				  },
+				  {
+					"txt": "Sprite2D",
+					"definition": "A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.",
+					"children": []
+				  },
+				  {
+					"txt": "TileMap",
+					"definition": "Node for 2D tile-based maps. It uses a TileSet which contains a list of tiles which are used to create grid-based maps. It may have several layers, layouting tiles on top of each other.",
+					"children": []
+				  },
+				  {
+					"txt": "TouchScreenButton",
+					"definition": "Allows you to create on-screen buttons for touch devices. It's intended for gameplay use, such as a unit you have to touch to move. ",
+					"children": []
+				  },
+				  {
+					"txt": "VisibleOnScreenNotifier2D",
+					"definition": "Detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.",
+					"children": [
+					  {
+						"txt": "VisibleOnScreenEnabler2D",
+						"definition": "Detects when it is visible on screen (just like its parent) and automatically enables or disables the target node. The target node is reenabled with this is on screen.",
+						"children": []
+					  }
+					]
+				  }
+				]
+			  }
+			]
+		  },
+		  {
+			"txt": "CanvasLayer",
+			"definition": "Canvas drawing layer. CanvasItem nodes that are direct or indirect children of a CanvasLayer will be drawn in that layer. The layer is a numeric index that defines the draw order.",
+			"children": [
+			  {
+				"txt": "ParallaxBackground",
+				"definition": "Uses one or more ParallaxLayer child nodes to create a parallax effect. Each can move at a different speed using ParallaxLayer.motion_offset. ",
+				"children": []
+			  }
+			]
+		  },
+		  {
+			"txt": "EditorFileSystem",
+			"definition": "This object holds information of all resources in the filesystem, their types, etc. Note: This class shouldn't be instantiated directly, rather use EditorInterface.get_resource_filesystem.",
+			"children": []
+		  },
+		  {
+			"txt": "EditorInterface",
+			"definition": " Gives you control over Godot editor's window. Note: This class shouldn't be instantiated directly. Instead, access the singleton using EditorPlugin.get_editor_interface.",
+			"children": []
+		  },
+		  {
+			"txt": "EditorPlugin",
+			"definition": "Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins.",
+			"children": []
+		  },
+		  {
+			"txt": "EditorResourcePreview",
+			"definition": "This object is used to generate previews for resources of files. Note: This class shouldn't be instantiated directly. Rather, use EditorInterface.get_resource_previewer.",
+			"children": []
+		  },
+		  {
+			"txt": "HTTPRequest",
+			"definition": "A node with the ability to send HTTP requests. Uses HTTPClient internally. Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.",
+			"children": []
+		  },
+		  {
+			"txt": "InstancePlaceholder",
+			"definition": "Turning on the option Load As Placeholder for an instantiated scene in the editor causes it to be replaced by this when running the game. This will not replace the node in the editor. ",
+			"children": []
+		  },
+		  {
+			"txt": "MissingNode",
+			"definition": "This is an internal editor class intended for keeping data of nodes of unknown type (most likely this type was supplied by an extension that is no longer loaded).",
+			"children": []
+		  },
+		  {
+			"txt": "MultiplayerSpawner",
+			"definition": "Automatically replicates spawnable nodes from the authority to other multiplayer peers. Spawnable scenes can be configured in the editor or through code (see add_spawnable_scene).",
+			"children": []
+		  },
+		  {
+			"txt": "MultiplayerSynchronizer",
+			"definition": "Synchronizes properties from the multiplayer authority to the remote peers. By default, it synchronizes configured properties to all peers.",
+			"children": []
+		  },
+		  {
+			"txt": "NavigationAgent2D",
+			"definition": "2D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. ",
+			"children": []
+		  },
+		  {
+			"txt": "NavigationAgent3D",
+			"definition": "3D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance.",
+			"children": []
+		  },
+		  {
+			"txt": "NavigationObstacle2D",
+			"definition": "2D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. It is physics safe.",
+			"children": []
+		  },
+		  {
+			"txt": "NavigationObstacle3D",
+			"definition": "3D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. It is physics safe.",
+			"children": []
+		  },
+		  {
+			"txt": "Node3D",
+			"definition": "Most basic 3D game object, parent of all 3D-related nodes.",
+			"children": [
+			  {
+				"txt": "AudioListener3D",
+				"definition": "Added to the scene tree and enabled using make_current, this node overrides the location of sounds. This can be used to listen from a location different from the Camera3D.",
+				"children": []
+			  },
+			  {
+				"txt": "AudioStreamPlayer3D",
+				"definition": "Added to the scene tree and enabled using make_current, this node overrides the location of sounds. This can be used to listen from a location different from the Camera3D.",
+				"children": []
+			  },
+			  {
+				"txt": "BoneAttachment3D",
+				"definition": "This node will allow you to select a bone for this node to attach to. It can copy the transform of the select bone, or can override the transform of the selected bone.",
+				"children": []
+			  },
+			  {
+				"txt": "Camera3D",
+				"definition": "A special node that displays what is visible from its current location. Cameras register themselves in the nearest Viewport node (when ascending the tree).",
+				"children": []
+			  },
+			  {
+				"txt": "CollisionObject3D",
+				"definition": "The base class for physics objects. It can hold any number of collision Shape3Ds. Each shape must be assigned to a shape owner. It can have any number of shape owners.",
+				"children": [
+				  {
+					"txt": "Area3D",
+					"definition": "Region that detects CollisionObject3D nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.",
+					"children": []
+				  },
+				  {
+					"txt": "PhysicsBody3D",
+					"definition": "An abstract base class for implementing a physics body. All *Body3D types inherit from it.",
+					"children": [
+					  {
+						"txt": "CharacterBody3D",
+						"definition": "Specialized 3D physics body node for characters moved by script.",
+						"children": []
+					  },
+					  {
+						"txt": "PhysicalBone3D",
+						"definition": "3D physical bone. Be sure to keep its scale uniform and change the size(s) of the collision shape instead.",
+						"children": []
+					  },
+					  {
+						"txt": "RigidBody3D",
+						"definition": "Physics Body which is moved by 3D physics simulation. Useful for objects that have gravity and can be pushed by other objects.",
+						"children": []
+					  },
+					  {
+						"txt": "StaticBody3D",
+						"definition": "Physics body for 3D physics which is static or moves only by script. Useful for floor and walls.",
+						"children": [
+						  {
+							"txt": "AnimatableBody3D",
+							"definition": "Physics body for 3D physics which moves only by script or animation. Useful for moving platforms and doors.",
+							"children": []
+						  }
+						]
+					  }
+					]
+				  }
+				]
+			  },
+			  {
+				"txt": "CollisionPolygon3D",
+				"definition": "Editor-only node for defining a collision polygon in 3D space. Allows editing a concave or convex collision polygon's vertices on a selected plane. Can also set a perpendicular depth.",
+				"children": []
+			  },
+			  {
+				"txt": "CollisionShape3D",
+				"definition": "Editor facility for creating and editing collision shapes in 3D space. Set the shape property to configure the shape. Use CollisionObject3D.shape_owner_get_shape to get the actual shape.",
+				"children": []
+			  },
+			  {
+				"txt": "GridMap",
+				"definition": "Node for 3D tile-based maps. It lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.",
+				"children": []
+			  },
+			  {
+				"txt": "ImporterMeshInstance3D",
+				"definition": "MeshInstance3D Importer. Gets and sets meshes, skeleton paths, and skins.",
+				"children": []
+			  },
+			  {
+				"txt": "Joint3D",
+				"definition": "Base class for all 3D joints. Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide.",
+				"children": [
+				  {
+					"txt": "ConeTwistJoint3D",
+					"definition": "A joint between two 3D PhysicsBodies that can rotate the bodies across an axis defined by the local x-axes of the Joint3D. The twist axis is initiated as the X axis of the Joint3D.",
+					"children": []
+				  },
+				  {
+					"txt": "Generic6DOFJoint3D",
+					"definition": "The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation.",
+					"children": []
+				  },
+				  {
+					"txt": "HingeJoint3D",
+					"definition": "A hinge between two 3D PhysicsBodies. It normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though.",
+					"children": []
+				  },
+				  {
+					"txt": "PinJoint3D",
+					"definition": "A joint for 3D rigid that pins 2 bodies (dynamic or static) together. See also Generic6DOFJoint3D.",
+					"children": []
+				  },
+				  {
+					"txt": "SliderJoint3D",
+					"definition": "Slider between two PhysicsBodies in 3D. Slides across the X axis of the pivot object. See also Generic6DOFJoint3D.",
+					"children": []
+				  }
+				]
+			  },
+			  {
+				"txt": "LightmapProbe",
+				"definition": "Represents the position of a single manually placed probe for dynamic object lighting with LightmapGI.",
+				"children": []
+			  },
+			  {
+				"txt": "Marker3D",
+				"definition": "Generic 3D position hint for editing. It's just like a plain Node3D, but it displays as a cross in the 3D editor at all times.",
+				"children": []
+			  },
+			  {
+				"txt": "NavigationLink3D",
+				"definition": "Creates a link between two positions that NavigationServer3D can route agents through. Links can be used to navigate off the navigation mesh, like teleporters or jumping across gaps.",
+				"children": []
+			  },
+			  {
+				"txt": "NavigationRegion3D",
+				"definition": "A region of the navigation map. It tells the NavigationServer3D what can be navigated and what cannot, based on its NavigationMesh resource.",
+				"children": []
+			  },
+			  {
+				"txt": "OccluderInstance3D",
+				"definition": "Provides occlusion culling for 3D nodes, which improves performance in closed areas. Can improve rendering performance by hiding geometry that is occluded by other objects.",
+				"children": []
+			  },
+			  {
+				"txt": "OpenXRHand",
+				"definition": "This node enables OpenXR's hand tracking functionality. The node should be a child node of an XROrigin3D node, tracking will update its position to where the player's actual hand is positioned. ",
+				"children": []
+			  },
+			  {
+				"txt": "Path3D",
+				"definition": "Can have PathFollow3D child nodes moving along the Curve3D. See PathFollow3D for more information on the usage.",
+				"children": []
+			  },
+			  {
+				"txt": "PathFollow3D",
+				"definition": "This node takes its parent Path3D, and returns the coordinates of a point within it, given a distance from the first vertex. It is useful for easily making other nodes follow a path. ",
+				"children": []
+			  },
+			  {
+				"txt": "RayCast3D",
+				"definition": "Represents a line from its origin to its destination position, target_position. It is used to query the 3D space in order to find the closest object along the path of the ray.",
+				"children": []
+			  },
+			  {
+				"txt": "RemoteTransform3D",
+				"definition": "Pushes its own Transform3D to another Node3D derived Node (called the remote node) in the scene. It can be set to update another Node's position, rotation and/or scale.",
+				"children": []
+			  },
+			  {
+				"txt": "ShapeCast3D",
+				"definition": "Node for physics collision sweep and immediate overlap queries. Similar to the RayCast3D node.",
+				"children": []
+			  },
+			  {
+				"txt": "Skeleton3D",
+				"definition": "Provides a hierarchical interface for managing 3D bones, including pose, rest and animation (see Animation). It can also use ragdoll physics.",
+				"children": []
+			  },
+			  {
+				"txt": "SpringArm3D",
+				"definition": "A helper node, mostly used in 3rd person cameras. It casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.",
+				"children": []
+			  },
+			  {
+				"txt": "VehicleWheel3D",
+				"definition": "Needs to be used as a child node of VehicleBody3D and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.",
+				"children": []
+			  },
+			  {
+				"txt": "VisualInstance3D",
+				"definition": "Parent of all visual 3D nodes. It is used to connect a resource to a visual representation. You should not access its properties directly. Node representation of RenderingServer.",
+				"children": [
+				  {
+					"txt": "Decal",
+					"definition": "Node that projects a texture onto a MeshInstance3D. Use Decals to add detail to a scene without affecting the underlying Mesh. They are often used to add weathering, dirt, and prop variety.",
+					"children": []
+				  },
+				  {
+					"txt": "FogVolume",
+					"definition": "Used to add localized fog into the global volumetric fog effect. These can also remove volumetric fog from specific areas if using a FogMaterial with a negative FogMaterial.density.",
+					"children": []
+				  },
+				  {
+					"txt": "GeometryInstance3D",
+					"definition": "Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.",
+					"children": []
+				  },
+				  {
+					"txt": "GPUParticlesAttractor3D",
+					"definition": "Abstract class for 3D particle attractors affecting GPUParticles3D nodes. They can be used to attract particles towards them or push particles away from them.",
+					"children": []
+				  },
+				  {
+					"txt": "GPUParticlesCollision3D",
+					"definition": "Abstract class for 3D particle collision shapes affecting GPUParticles3D nodes. Particle collision shapes can be used to make particles stop or bounce against them.",
+					"children": [
+					  {
+						"txt": "GPUParticlesCollisionBox3D",
+						"definition": "Box-shaped 3D particle collision shape affecting GPUParticles3D nodes.",
+						"children": []
+					  },
+					  {
+						"txt": "GPUParticlesCollisionHeightField3D",
+						"definition": "Real-time heightmap-shaped 3D particle attractor affecting GPUParticles3D nodes. Less flexible than GPUParticlesCollisionSDF3D, but doesn't require baking.",
+						"children": []
+					  },
+					  {
+						"txt": "GPUParticlesCollisionSDF3D",
+						"definition": "Baked signed distance field 3D particle attractor affecting GPUParticles3D nodes. More flexible than GPUParticlesCollisionHeightField3D, but it requires a baking step.",
+						"children": []
+					  },
+					  {
+						"txt": "GPUParticlesCollisionSphere3D",
+						"definition": "Sphere-shaped 3D particle collision shape affecting GPUParticles3D nodes.",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "Light3D",
+					"definition": "The abstract base class for light nodes. As it can't be instantiated, it shouldn't be used directly. Other types of light nodes inherit from it.",
+					"children": [
+					  {
+						"txt": "DirectionalLight3D",
+						"definition": "A type of Light3D node that models an infinite number of parallel rays covering the entire scene. It is used for distant lights with strong intensity to model sunlight or moonlight.",
+						"children": []
+					  },
+					  {
+						"txt": "OmniLight3D",
+						"definition": "A type of Light3D that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.",
+						"children": []
+					  },
+					  {
+						"txt": "SpotLight3D",
+						"definition": "A spotlight, such as a reflector spotlight or a lantern. A type of Light3D node that emits lights in a specific direction, in the shape of a cone. ",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "LightmapGI",
+					"definition": "Used to compute and store baked lightmaps. Lightmaps are used to provide high-quality indirect lighting with very little light leaking.",
+					"children": []
+				  },
+				  {
+					"txt": "ReflectionProbe",
+					"definition": "Captures its surroundings as a cubemap, and stores versions of it with increasing levels of blur to simulate different material roughnesses.",
+					"children": []
+				  },
+				  {
+					"txt": "RootMotionView",
+					"definition": "Refers to an animation technique where a mesh's skeleton is used to give impulse to a character. For example, this allows animating in a way where steps actually match the floor below.",
+					"children": []
+				  },
+				  {
+					"txt": "VisibleOnScreenNotifier3D",
+					"definition": "Detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a Camera3D's view.",
+					"children": [
+					  {
+						"txt": "VisibleOnScreenEnabler3D",
+						"definition": "Will disable RigidBody3D and AnimationPlayer nodes when they are not visible. It will only affect other nodes within the same scene.",
+						"children": []
+					  }
+					]
+				  },
+				  {
+					"txt": "VoxelGI",
+					"definition": "Real-time global illumination (GI) probe. Used to provide high-quality real-time indirect light and reflections to scenes.",
+					"children": []
+				  }
+				]
+			  },
+			  {
+				"txt": "XRNode3D",
+				"definition": "This node can be bound to a specific pose of a XRPositionalTracker and will automatically have its Node3D.transform updated by the XRServer.",
+				"children": [
+				  {
+					"txt": "XRAnchor3D",
+					"definition": "A spatial node that maps a real world location identified by the AR platform to a position within the game world. ",
+					"children": []
+				  },
+				  {
+					"txt": "XRController3D",
+					"definition": "A helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.",
+					"children": []
+				  }
+				]
+			  },
+			  {
+				"txt": "XROrigin3D",
+				"definition": "A special node within the AR/VR system that maps the physical location of the center of our tracking space to the virtual location within our game world.",
+				"children": []
+			  }
+			]
+		  },
+		  {
+			"txt": "ResourcePreloader",
+			"definition": "Used to preload sub-resources inside a scene, so when the scene is loaded, all the resources are ready to use and can be retrieved from the preloader.",
+			"children": []
+		  },
+		  {
+			"txt": "ShaderGlobalsOverride",
+			"definition": "Overrides shader globals.",
+			"children": []
+		  },
+		  {
+			"txt": "SkeletonIK3D",
+			"definition": " Used to place the end bone of a Skeleton3D bone chain at a certain point in 3D by rotating all bones in the chain accordingly.",
+			"children": []
+		  },
+		  {
+			"txt": "Timer",
+			"definition": "Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or 'one-shot' mode. Note: To create a one-shot timer without instantiating a node, use SceneTree.create_timer.",
+			"children": []
+		  },
+		  {
+			"txt": "Viewport",
+			"definition": "Base class for viewports. It creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera3D nodes will render on it.",
+			"children": [
+			  {
+				"txt": "SubViewport",
+				"definition": "Creates a sub-view into the screen. It is a Viewport that isn't a Window, i.e. it doesn't draw anything by itself.",
+				"children": []
+			  },
+			  {
+				"txt": "Window",
+				"definition": "Base class for all windows. It creates a window. The window can either be a native system window or embedded inside another Window (see Viewport.gui_embed_subwindows).",
+				"children": [
+				  {
+					"txt": "AcceptDialog",
+					"definition": "Base dialog for user notification. This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.",
+					"children": []
+				  },
+				  {
+					"txt": "Popup",
+					"definition": "Popup is a base window container for popup-like subwindows. It's a modal by default (see Window.popup_window) and has helpers for custom popup behavior.",
+					"children": [
+					  {
+						"txt": "PopupMenu",
+						"definition": "A modal window used to display a list of options. They are popular in toolbars or context menus. Its size can be limited by using Window.max_size.",
+						"children": []
+					  },
+					  {
+						"txt": "PopupPanel",
+						"definition": "Class for displaying popups with a panel background. In some cases it might be simpler to use than Popup, since it provides a configurable background.",
+						"children": []
+					  }
+					]
+				  }
+				]
+			  }
+			]
+		  },
+		  {
+			"txt": "WorldEnvironment",
+			"definition": "Default environment properties for the entire scene (post-processing effects, lighting and background settings). It is used to configure the default Environment for the scene.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "OS",
+		"definition": "Wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, delays, environment variables, execution of binaries, command line, etc.",
+		"children": []
+	  },
+	  {
+		"txt": "Performance",
+		"definition": "Exposes a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same values displayed in the Monitor tab in the Debugger panel.",
+		"children": []
+	  },
+	  {
+		"txt": "PhysicsDirectBodyState2D",
+		"definition": "Provides direct access to a physics body in the PhysicsServer2D, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies.",
+		"children": [
+		  {
+			"txt": "PhysicsDirectBodyState2DExtension",
+			"definition": "Extension to PhysicsDirectBodyState2D.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "PhysicsDirectBodyState3D",
+		"definition": "Provides direct access to a physics body in the PhysicsServer3D, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies.",
+		"children": [
+		  {
+			"txt": "PhysicsDirectBodyState3DExtension",
+			"definition": "Extension to PhysicsDirectBodyState2D.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "PhysicsDirectSpaceState2D",
+		"definition": "Direct access object to a space in the PhysicsServer2D. It's used mainly to do queries against objects and areas residing in a given space.",
+		"children": [
+		  {
+			"txt": "PhysicsDirectSpaceState2DExtension",
+			"definition": "Extension to PhysicsDirectSpaceState2DExtension.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "PhysicsDirectSpaceState3D",
+		"definition": "Direct access object to a space in the PhysicsServer3D. It's used mainly to do queries against objects and areas residing in a given space.",
+		"children": [
+		  {
+			"txt": "PhysicsDirectSpaceState3DExtension",
+			"definition": "Extension to PhysicsDirectSpaceState3D.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "PhysicsServer2D",
+		"definition": "Server interface for low-level 2D physics access. It is responsible for all 2D physics. It can directly create and manipulate all physics objects.",
+		"children": [
+		  {
+			"txt": "PhysicsServer2DExtension",
+			"definition": "Extension to PhysicsServer2D.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "PhysicsServer2DManager",
+		"definition": "The API for registering PhysicsServer2D implementations, and for setting the default implementation. This class is only used on startup at the server initialization level.",
+		"children": []
+	  },
+	  {
+		"txt": "PhysicsServer3D",
+		"definition": "Server interface for low-level 3D physics access. It is responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.",
+		"children": [
+		  {
+			"txt": "PhysicsServer3DExtension",
+			"definition": "Extension to PhysicsServer3D.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "PhysicsServer3DManager",
+		"definition": "The API for registering PhysicsServer3D implementations, and for setting the default implementation. This class is only used on startup at the server initialization level.",
+		"children": []
+	  },
+	  {
+		"txt": "PhysicsServer3DRenderingServerHandler",
+		"definition": "Rendering server handler for 3D physics.",
+		"children": []
+	  },
+	  {
+		"txt": "ProjectSettings",
+		"definition": "Contains global variables accessible from everywhere. Use get_setting, set_setting or has_setting to access them. Very useful for reading custom game configuration options.",
+		"children": []
+	  },
+	  {
+		"txt": "RefCounted",
+		"definition": "Base class for reference-counted objects.",
+		"children": [
+		  {
+			"txt": "RefCounted children",
+			"definition": "TOO DAMN MANY OF THEM. Use a RefCondom.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "RenderingDevice",
+		"definition": "Abstraction for working with modern low-level graphics APIs.",
+		"children": []
+	  },
+	  {
+		"txt": "RenderingServer",
+		"definition": "Server for anything visible.",
+		"children": []
+	  },
+	  {
+		"txt": "ResourceLoader",
+		"definition": "Singleton used to load resource files.",
+		"children": []
+	  },
+	  {
+		"txt": "ResourceSaver",
+		"definition": "Singleton for saving Godot-specific resource types.",
+		"children": []
+	  },
+	  {
+		"txt": "ResourceUID",
+		"definition": "Singleton for managing a cache of resource UIDs within a project.",
+		"children": []
+	  },
+	  {
+		"txt": "ScriptLanguage",
+		"definition": "The scripting language.",
+		"children": [
+		  {
+			"txt": "ScriptLanguageExtension",
+			"definition": "Extension to ScriptLanguage.",
+			"children": []
+		  }
+		]
+	  },
+	  {
+		"txt": "TextServerManager",
+		"definition": "Manager for the font and complex text layout servers.",
+		"children": []
+	  },
+	  {
+		"txt": "ThemeDB",
+		"definition": "An engine singleton providing access to static Theme information, such as default and project theme, and fallback values.",
+		"children": []
+	  },
+	  {
+		"txt": "TileData",
+		"definition": "Settings for a single tile in a TileSet.",
+		"children": []
+	  },
+	  {
+		"txt": "Time",
+		"definition": "Time singleton for working with time.",
+		"children": []
+	  },
+	  {
+		"txt": "TranslationServer",
+		"definition": "Server that manages all translations.",
+		"children": []
+	  },
+	  {
+		"txt": "TreeItem",
+		"definition": "Control for a single item inside a Tree.",
+		"children": []
+	  },
+	  {
+		"txt": "UndoRedo",
+		"definition": "Helper to manage undo/redo operations in the editor or custom tools.",
+		"children": []
+	  },
+	  {
+		"txt": "WorkerThreadPool",
+		"definition": "Handles tasks and group tasks in worker threads.",
+		"children": []
+	  },
+	  {
+		"txt": "XRServer",
+		"definition": "Server for AR and VR features.",
+		"children": []
+	  }
+	]
+  }
+]

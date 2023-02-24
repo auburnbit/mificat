@@ -1,0 +1,260 @@
+Object::Base class for all other classes in the engine.
+%AudioServer::Server interface for low-level audio access.
+%CameraServer::Server keeping track of different cameras accessible in Godot.
+%ClassDB::Class information repository.
+%DisplayServer::Singleton for window management functions.
+%EditorFileSystemDirectory::A directory for the resource filesystem.
+%EditorPaths::Editor-only singleton that returns paths to various OS-specific data folders and files.
+%EditorSelection::Manages the SceneTree selection in the editor.
+%EditorUndoRedoManager::Manages undo history of scenes opened in the editor.
+%EditorVCSInterface::Version Control System (VCS) interface, which reads and writes to the local VCS in use.
+%Engine::Access to engine properties.
+%EngineDebugger::Exposes the internal debugger.
+%GDExtensionManager::Manages getting, loading, reloading, and unloading extensions.
+%Geometry2D::Helper node for calculate generic geometry operations in 2D space.
+%Geometry3D::Helper node to calculate generic geometry operations in 3D space.
+%GodotSharp::Bridge between Godot and the Mono runtime (Mono-enabled builds only).
+%Input::A singleton that deals with inputs.
+%InputMap::Singleton that manages InputEventAction.
+%IP::Internet protocol (IP) support functions such as DNS resolution.
+%JavaClassWrapper::Wrapper for JavaClass.
+%JavaScriptBridge::Singleton that connects the engine with the browser's JavaScript context in Web export.
+%JNISingleton::Singleton that connects the engine with Android plugins to interface with native Android code.
+%JSONRPC::A helper to handle dictionaries which look like JSONRPC documents.
+%MainLoop::Abstract base class for the game's main loop.
+%%SceneTree::Manages the game loop via a hierarchy of nodes.
+%Marshalls::Data transformation (marshaling) and encoding helpers.
+%MovieWriter::Abstract class for non-real-time video recording encoders.
+%NavigationMeshGenerator::Helper class for creating and clearing navigation meshes.
+%NavigationServer2D::Server interface for low-level 2D navigation access.
+%NavigationServer3D::Server interface for low-level 3D navigation access.
+%Node::Base class for all scene objects.
+%%AnimationPlayer::Player of Animation resources.
+%%AnimationTree::A node to be used for advanced animation transitions in an AnimationPlayer.
+%%AudioStreamPlayer::Plays back audio non-positionally.
+%%CanvasItem::Base class of anything 2D.
+%%%Control::All user interface nodes inherit from this class. Its anchors and offsets adapt its position and size relative to its parent.
+%%%%BaseButton::Base class for different kinds of buttons.
+%%%%%Button::Standard themed Button.
+%%%%%%CheckBox::Binary choice user interface widget.
+%%%%%%CheckButton::Checkable button.
+%%%%%%ColorPickerButton::Button that pops out a ColorPicker.
+%%%%%%MenuButton::Special button that brings up a PopupMenu when clicked.
+%%%%%%OptionButton::Button control that provides selectable options when pressed.
+%%%%%LinkButton::Simple button used to represent a link to some resource.
+%%%%%TextureButton::Texture-based button. Supports Pressed, Hover, Disabled and Focused states.
+%%%%ColorRect::Displays a rectangle filled with a solid color. If you need to display the border alone, consider using ReferenceRect instead.
+%%%%Container::Base node for containers.
+%%%%%AspectRatioContainer::Container that preserves its child controls' aspect ratio.
+%%%%%BoxContainer::Base class for box containers.
+%%%%%%HBoxContainer::Horizontal box container.
+%%%%%%%EditorResourcePicker::Godot editor's control for selecting Resource type properties.
+%%%%%%%%EditorScriptPicker::Godot editor's control for selecting the script property of a Node.
+%%%%%%VBoxContainer::Vertical box container.
+%%%%%%%ColorPicker::Color picker control.
+%%%%%%%FileSystemDock:: File System Dock.
+%%%%%%%ScriptEditorBase::Base editor for editing scripts in the ScriptEditor.
+%%%%%CenterContainer::Keeps children controls centered.
+%%%%%EditorProperty::Custom control to edit properties for adding into the inspector.
+%%%%%FlowContainer::Base class for flow containers.
+%%%%%%HFlowContainer::Horizontal flow container.
+%%%%%%VFlowContainer::Vertical flow container.
+%%%%%GraphNode::A Container control that represents a single data unit in a GraphEdit graph. You can customize the number, type, and color of left- and right-side connection ports.
+%%%%%GridContainer::Grid container used to arrange Control-derived children in a grid like layout.
+%%%%%MarginContainer::Adds a top, left, bottom, and right margin to all Control nodes that are direct children of the container.
+%%%%%PanelContainer:: This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
+%%%%%ScrollContainer::A helper node for displaying scrollable elements such as lists.
+%%%%%SplitContainer::Container for splitting and adjusting.
+%%%%%%HSplitContainer::Horizontal split container. Goes from left to right.
+%%%%%%VSplitContainer::Vertical split container. Goes from top to bottom.
+%%%%%SubViewportContainer::A Container node that holds a SubViewport. It uses the SubViewport's size as minimum size, unless stretch is enabled.
+%%%%%TabContainer::Arranges Control children into a tabbed view, creating a tab for each one. Only the active tab's corresponding Control has its visible property set to true.
+%%%%GraphEdit::A control responsible for displaying and manipulating graph-like data using GraphNodes. It provides access to creation, removal, connection, and disconnection of nodes.
+%%%%ItemList::Control that provides a list of selectable items (and/or icons) in a single column, or optionally in multiple columns.
+%%%%Label::Displays plain text in a line or wrapped inside a rectangle. For formatted text, use RichTextLabel.
+%%%%LineEdit::Control that provides single-line string editing.
+%%%%MenuBar::A horizontal menu bar, which displays PopupMenus or system global menu. New items can be created by adding PopupMenu nodes to this node.
+%%%%NinePatchRect::Scalable texture-based frame that tiles the texture's centers and sides, but keeps the corners' original size. Perfect for panels and dialog boxes.
+%%%%Panel::Provides an opaque background for Control children.
+%%%%Range::A base class for Control nodes that change a floating-point value between a min_value and max_value, using a configured step and page size. 
+%%%%ReferenceRect::A rectangle box that displays only a border_color border color around its rectangle. It has no fill Color.
+%%%%RichTextLabel::Can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.
+%%%%Seperator::Base class for separators. It is a Control used for separating other controls. It's purely a visual decoration.
+%%%%%HSeperator::Even though it looks horizontal, it is used to separate objects vertically.
+%%%%%VSeparator::Even though it looks vertical, it is used to separate objects horizontally.
+%%%%TabBar::Simple tabs control, similar to TabContainer but is only in charge of drawing tabs, not interacting with children.
+%%%%TextEdit::Meant for editing large, multiline text. It also has facilities for editing code, such as syntax highlighting support and multiple levels of undo/redo.
+%%%%TextureRect::Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the stretch_mode property. It can scale, tile, or stay centered.
+%%%%Tree::Shows branching items that can be selected, expanded and collapsed. It can have multiple columns with custom controls like text editing, buttons and popups.
+%%%%VideoStreamPlayer::Control node for playing streams using VideoStream resources. Supported formats are Ogg Theora (.ogv, VideoStreamTheora) and formats exposed via a GDExtension plugin.
+%%%Node2D::A 2D game object, with a transform (position, rotation, and scale). Use Node2D as a parent node to move, scale and rotate children. Also gives control of the node's render order.
+%%%%AnimatedSprite2D::Sprite node that contains multiple textures as frames to play for animation.
+%%%%AudioListener2D::Once added to the scene tree and enabled using make_current, this node will override the location sounds are heard from. Only one can be current.
+%%%%AudioStreamPlayer2D::Plays positional sound in 2D space that is attenuated with distance to the listener. Call make_current to enable.
+%%%%BackBufferCopy::Copies a region of the screen (or the whole screen) to a buffer so it can be accessed in your shader scripts using the screen texture.
+%%%%Bone2D::Joint used with Skeleton2D to control and animate other nodes.
+%%%%Camera2D::Forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of CanvasItem-based nodes.
+%%%%CanvasGroup::Merges several child CanvasItems into a single draw operation.
+%%%%CanvasModulate::Tints the canvas elements using its assigned color.
+%%%%CollisionObject2D::The base class for 2D physics objects. It holds 2D collision Shape2Ds, assigned to a shape owner. It can have any number of shape owners, only accessible through code.
+%%%%%Area2D::2D area that detects CollisionObject2D nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
+%%%%%PhysicsBody2D::an abstract base class for implementing a physics body. All *Body2D types inherit from it.
+%%%%%%CharacterBody2D::Specialized 2D physics body node for characters moved by script.
+%%%%%%RigidBody2D::Physics Body which is moved by 2D physics simulation. Useful for objects that have gravity and can be pushed by other objects.
+%%%%%%StaticBody2D::Physics body for 2D physics which is static or moves only by script. Useful for floor and walls.
+%%%%%%%AnimatableBody2D::Animatable body for 2D physics. An animatable body can't be moved by external forces or contacts, but can be moved by script or animation to affect other bodies in its path.
+%%%%CollisionPolygon2D::Provides a concave or convex 2D collision polygon to a CollisionObject2D parent. Polygons can be drawn in the editor or specified by a list of vertices. See also ConvexPolygonShape2D.
+%%%%CollisionShape2D::Editor facility for creating and editing collision shapes in 2D space. Set the shape property to configure the shape. Use CollisionObject2D.shape_owner_get_shape to get the actual shape.
+%%%%CPUParticles2D::CPU-based 2D particle node used to create a variety of particle systems and effects. More compatibility than GPU-based but without hardware acceleration.
+%%%%GPUParticles2D::GPU-based 2D particle node used to create a variety of particle systems and effects. It features an emitter that generates some number of particles at a given rate.
+%%%%Joint2D::Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
+%%%%%DampedSpringJoint2D::Constraint for 2D physics which always wants to go back to a given length.
+%%%%%GrooveJoint2D::Constraint for 2D physics which is useful for making a body "slide" through a segment placed in another.
+%%%%%PinJoint2D::Type of joint for 2D rigid bodies. It attaches two bodies (dynamic or static) together.
+%%%%Light2D::Casts light in a 2D environment. A light is defined as a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related).
+%%%%%DirectionalLight2D::Models an infinite number of parallel rays covering the entire scene. It is used for distant lights with strong intensity (for example: to model sunlight or moonlight).
+%%%%%PointLight2D::Casts light in a 2D environment. This light's shape is defined by a (usually grayscale) texture.
+%%%%LightOccluder2D::Occludes light cast by a Light2D, casting shadows. It must be provided with an OccluderPolygon2D in order for the shadow to be computed.
+%%%%Line2D::A line through several points in 2D space.
+%%%%Marker2D::Generic 2D position hint for a plain Node2D that displays a cross in the 2D editor at all times. You can set cross' visual size by using the gizmo in the 2D editor while the node is selected.
+%%%%MeshInstance2D::Node used for displaying a Mesh in 2D. This can be automatically created from an existing Sprite2D via a tool in the editor toolbar.
+%%%%MultiMeshInstance2D::A specialized node to instance a MultiMesh resource in 2D. Usage is the same as its 3D counterpart.
+%%%%NavigationLink2D::Creates a link between two positions that NavigationServer2D can route agents through. Links can be used to navigate off the navigation mesh, like teleporters or jumping across gaps.
+%%%%NavigationRegion2D::A region of the navigation map. It tells the NavigationServer2D what can be navigated and what cannot, based on its NavigationPolygon resource.
+%%%%ParallaxLayer::Each of these layers can be set to move at different speeds relative to the camera movement or the ParallaxBackground.scroll_offset value. Must be the child of a ParallaxBackground node.
+%%%%Path2D::Can have PathFollow2D child nodes moving along the Curve2D. The path is considered as relative to the moved nodes. As such, the curve should usually start with a zero vector ((0, 0)).
+%%%%PathFollow2D::This node takes its parent Path2D and returns the coordinates of a point within it, given a distance from the first vertex. It is useful for easily making other nodes follow a path.
+%%%%Polygon2D::Defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed shape. Can be filled with color/texture.
+%%%%RayCast2D::Represents a line from its origin to its destination position, target_position. It is used to query the 2D space in order to find the closest object along the path of the ray.
+%%%%RemoteTransform2D::Pushes its own Transform2D to another Node2D derived node (called the remote node) in the scene. It can use either global or local coordinates.
+%%%%ShapeCast2D::Node for physics collision sweep and immediate overlap queries. Similar to the RayCast2D node.
+%%%%Skeleton2D::Parents a hierarchy of Bone2D objects. It is a requirement of Bone2D. It holds a reference to the rest pose of its children and acts as a single point of access to its bones.
+%%%%Sprite2D::A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
+%%%%TileMap::Node for 2D tile-based maps. It uses a TileSet which contains a list of tiles which are used to create grid-based maps. It may have several layers, layouting tiles on top of each other.
+%%%%TouchScreenButton::Allows you to create on-screen buttons for touch devices. It's intended for gameplay use, such as a unit you have to touch to move. 
+%%%%VisibleOnScreenNotifier2D::Detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.
+%%%%%VisibleOnScreenEnabler2D::Detects when it is visible on screen (just like its parent) and automatically enables or disables the target node. The target node is reenabled with this is on screen.
+%%CanvasLayer::Canvas drawing layer. CanvasItem nodes that are direct or indirect children of a CanvasLayer will be drawn in that layer. The layer is a numeric index that defines the draw order.
+%%%ParallaxBackground::Uses one or more ParallaxLayer child nodes to create a parallax effect. Each can move at a different speed using ParallaxLayer.motion_offset. 
+%%EditorFileSystem::This object holds information of all resources in the filesystem, their types, etc. Note: This class shouldn't be instantiated directly, rather use EditorInterface.get_resource_filesystem.
+%%EditorInterface:: Gives you control over Godot editor's window. Note: This class shouldn't be instantiated directly. Instead, access the singleton using EditorPlugin.get_editor_interface.
+%%EditorPlugin::Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins.
+%%EditorResourcePreview::This object is used to generate previews for resources of files. Note: This class shouldn't be instantiated directly. Rather, use EditorInterface.get_resource_previewer.
+%%HTTPRequest::A node with the ability to send HTTP requests. Uses HTTPClient internally. Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
+%%InstancePlaceholder::Turning on the option Load As Placeholder for an instantiated scene in the editor causes it to be replaced by this when running the game. This will not replace the node in the editor. 
+%%MissingNode::This is an internal editor class intended for keeping data of nodes of unknown type (most likely this type was supplied by an extension that is no longer loaded).
+%%MultiplayerSpawner::Automatically replicates spawnable nodes from the authority to other multiplayer peers. Spawnable scenes can be configured in the editor or through code (see add_spawnable_scene).
+%%MultiplayerSynchronizer::Synchronizes properties from the multiplayer authority to the remote peers. By default, it synchronizes configured properties to all peers.
+%%NavigationAgent2D::2D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. 
+%%NavigationAgent3D::3D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance.
+%%NavigationObstacle2D::2D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. It is physics safe.
+%%NavigationObstacle3D::3D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. It is physics safe.
+%%Node3D::Most basic 3D game object, parent of all 3D-related nodes.
+%%%AudioListener3D::Added to the scene tree and enabled using make_current, this node overrides the location of sounds. This can be used to listen from a location different from the Camera3D.
+%%%AudioStreamPlayer3D::Added to the scene tree and enabled using make_current, this node overrides the location of sounds. This can be used to listen from a location different from the Camera3D.
+%%%BoneAttachment3D::This node will allow you to select a bone for this node to attach to. It can copy the transform of the select bone, or can override the transform of the selected bone.
+%%%Camera3D::A special node that displays what is visible from its current location. Cameras register themselves in the nearest Viewport node (when ascending the tree).
+%%%CollisionObject3D::The base class for physics objects. It can hold any number of collision Shape3Ds. Each shape must be assigned to a shape owner. It can have any number of shape owners.
+%%%%Area3D::Region that detects CollisionObject3D nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
+%%%%PhysicsBody3D::An abstract base class for implementing a physics body. All *Body3D types inherit from it.
+%%%%%CharacterBody3D::Specialized 3D physics body node for characters moved by script.
+%%%%%PhysicalBone3D::3D physical bone. Be sure to keep its scale uniform and change the size(s) of the collision shape instead.
+%%%%%RigidBody3D::Physics Body which is moved by 3D physics simulation. Useful for objects that have gravity and can be pushed by other objects.
+%%%%%StaticBody3D::Physics body for 3D physics which is static or moves only by script. Useful for floor and walls.
+%%%%%%AnimatableBody3D::Physics body for 3D physics which moves only by script or animation. Useful for moving platforms and doors.
+%%%CollisionPolygon3D::Editor-only node for defining a collision polygon in 3D space. Allows editing a concave or convex collision polygon's vertices on a selected plane. Can also set a perpendicular depth.
+%%%CollisionShape3D::Editor facility for creating and editing collision shapes in 3D space. Set the shape property to configure the shape. Use CollisionObject3D.shape_owner_get_shape to get the actual shape.
+%%%GridMap::Node for 3D tile-based maps. It lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.
+%%%ImporterMeshInstance3D::MeshInstance3D Importer. Gets and sets meshes, skeleton paths, and skins.
+%%%Joint3D::Base class for all 3D joints. Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide.
+%%%%ConeTwistJoint3D::A joint between two 3D PhysicsBodies that can rotate the bodies across an axis defined by the local x-axes of the Joint3D. The twist axis is initiated as the X axis of the Joint3D.
+%%%%Generic6DOFJoint3D::The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation.
+%%%%HingeJoint3D::A hinge between two 3D PhysicsBodies. It normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though.
+%%%%PinJoint3D::A joint for 3D rigid that pins 2 bodies (dynamic or static) together. See also Generic6DOFJoint3D.
+%%%%SliderJoint3D::Slider between two PhysicsBodies in 3D. Slides across the X axis of the pivot object. See also Generic6DOFJoint3D.
+%%%LightmapProbe::Represents the position of a single manually placed probe for dynamic object lighting with LightmapGI.
+%%%Marker3D::Generic 3D position hint for editing. It's just like a plain Node3D, but it displays as a cross in the 3D editor at all times.
+%%%NavigationLink3D::Creates a link between two positions that NavigationServer3D can route agents through. Links can be used to navigate off the navigation mesh, like teleporters or jumping across gaps.
+%%%NavigationRegion3D::A region of the navigation map. It tells the NavigationServer3D what can be navigated and what cannot, based on its NavigationMesh resource.
+%%%OccluderInstance3D::Provides occlusion culling for 3D nodes, which improves performance in closed areas. Can improve rendering performance by hiding geometry that is occluded by other objects.
+%%%OpenXRHand::This node enables OpenXR's hand tracking functionality. The node should be a child node of an XROrigin3D node, tracking will update its position to where the player's actual hand is positioned. 
+%%%Path3D::Can have PathFollow3D child nodes moving along the Curve3D. See PathFollow3D for more information on the usage.
+%%%PathFollow3D::This node takes its parent Path3D, and returns the coordinates of a point within it, given a distance from the first vertex. It is useful for easily making other nodes follow a path. 
+%%%RayCast3D::Represents a line from its origin to its destination position, target_position. It is used to query the 3D space in order to find the closest object along the path of the ray.
+%%%RemoteTransform3D::Pushes its own Transform3D to another Node3D derived Node (called the remote node) in the scene. It can be set to update another Node's position, rotation and/or scale.
+%%%ShapeCast3D::Node for physics collision sweep and immediate overlap queries. Similar to the RayCast3D node.
+%%%Skeleton3D::Provides a hierarchical interface for managing 3D bones, including pose, rest and animation (see Animation). It can also use ragdoll physics.
+%%%SpringArm3D::A helper node, mostly used in 3rd person cameras. It casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.
+%%%VehicleWheel3D::Needs to be used as a child node of VehicleBody3D and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
+%%%VisualInstance3D::Parent of all visual 3D nodes. It is used to connect a resource to a visual representation. You should not access its properties directly. Node representation of RenderingServer.
+%%%%Decal::Node that projects a texture onto a MeshInstance3D. Use Decals to add detail to a scene without affecting the underlying Mesh. They are often used to add weathering, dirt, and prop variety.
+%%%%FogVolume::Used to add localized fog into the global volumetric fog effect. These can also remove volumetric fog from specific areas if using a FogMaterial with a negative FogMaterial.density.
+%%%%GeometryInstance3D::Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
+%%%%GPUParticlesAttractor3D::Abstract class for 3D particle attractors affecting GPUParticles3D nodes. They can be used to attract particles towards them or push particles away from them.
+%%%%GPUParticlesCollision3D::Abstract class for 3D particle collision shapes affecting GPUParticles3D nodes. Particle collision shapes can be used to make particles stop or bounce against them.
+%%%%%GPUParticlesCollisionBox3D::Box-shaped 3D particle collision shape affecting GPUParticles3D nodes.
+%%%%%GPUParticlesCollisionHeightField3D::Real-time heightmap-shaped 3D particle attractor affecting GPUParticles3D nodes. Less flexible than GPUParticlesCollisionSDF3D, but doesn't require baking.
+%%%%%GPUParticlesCollisionSDF3D::Baked signed distance field 3D particle attractor affecting GPUParticles3D nodes. More flexible than GPUParticlesCollisionHeightField3D, but it requires a baking step.
+%%%%%GPUParticlesCollisionSphere3D::Sphere-shaped 3D particle collision shape affecting GPUParticles3D nodes.
+%%%%Light3D::The abstract base class for light nodes. As it can't be instantiated, it shouldn't be used directly. Other types of light nodes inherit from it.
+%%%%%DirectionalLight3D::A type of Light3D node that models an infinite number of parallel rays covering the entire scene. It is used for distant lights with strong intensity to model sunlight or moonlight.
+%%%%%OmniLight3D::A type of Light3D that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
+%%%%%SpotLight3D::A spotlight, such as a reflector spotlight or a lantern. A type of Light3D node that emits lights in a specific direction, in the shape of a cone. 
+%%%%LightmapGI::Used to compute and store baked lightmaps. Lightmaps are used to provide high-quality indirect lighting with very little light leaking.
+%%%%ReflectionProbe::Captures its surroundings as a cubemap, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
+%%%%RootMotionView::Refers to an animation technique where a mesh's skeleton is used to give impulse to a character. For example, this allows animating in a way where steps actually match the floor below.
+%%%%VisibleOnScreenNotifier3D::Detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a Camera3D's view.
+%%%%%VisibleOnScreenEnabler3D::Will disable RigidBody3D and AnimationPlayer nodes when they are not visible. It will only affect other nodes within the same scene.
+%%%%VoxelGI::Real-time global illumination (GI) probe. Used to provide high-quality real-time indirect light and reflections to scenes.
+%%%XRNode3D::This node can be bound to a specific pose of a XRPositionalTracker and will automatically have its Node3D.transform updated by the XRServer.
+%%%%XRAnchor3D::A spatial node that maps a real world location identified by the AR platform to a position within the game world. 
+%%%%XRController3D::A helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.
+%%%XROrigin3D::A special node within the AR/VR system that maps the physical location of the center of our tracking space to the virtual location within our game world.
+%%ResourcePreloader::Used to preload sub-resources inside a scene, so when the scene is loaded, all the resources are ready to use and can be retrieved from the preloader.
+%%ShaderGlobalsOverride: Overrides shader globals.
+%%SkeletonIK3D:: Used to place the end bone of a Skeleton3D bone chain at a certain point in 3D by rotating all bones in the chain accordingly.
+%%Timer::Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode. Note: To create a one-shot timer without instantiating a node, use SceneTree.create_timer.
+%%Viewport::Base class for viewports. It creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera3D nodes will render on it.
+%%%SubViewport::Creates a sub-view into the screen. It is a Viewport that isn't a Window, i.e. it doesn't draw anything by itself.
+%%%Window::Base class for all windows. It creates a window. The window can either be a native system window or embedded inside another Window (see Viewport.gui_embed_subwindows).
+%%%%AcceptDialog::Base dialog for user notification. This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
+%%%%Popup::Popup is a base window container for popup-like subwindows. It's a modal by default (see Window.popup_window) and has helpers for custom popup behavior.
+%%%%%PopupMenu::A modal window used to display a list of options. They are popular in toolbars or context menus. Its size can be limited by using Window.max_size.
+%%%%%PopupPanel::Class for displaying popups with a panel background. In some cases it might be simpler to use than Popup, since it provides a configurable background.
+%%WorldEnvironment::Default environment properties for the entire scene (post-processing effects, lighting and background settings). It is used to configure the default Environment for the scene.
+%OS::Wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, delays, environment variables, execution of binaries, command line, etc.
+%Performance::Exposes a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same values displayed in the Monitor tab in the Debugger panel.
+%PhysicsDirectBodyState2D::Provides direct access to a physics body in the PhysicsServer2D, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies.
+%%PhysicsDirectBodyState2DExtension::Extension to PhysicsDirectBodyState2D.
+%PhysicsDirectBodyState3D::Provides direct access to a physics body in the PhysicsServer3D, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies.
+%%PhysicsDirectBodyState3DExtension::Extension to PhysicsDirectBodyState2D.
+%PhysicsDirectSpaceState2D::Direct access object to a space in the PhysicsServer2D. It's used mainly to do queries against objects and areas residing in a given space.
+%%PhysicsDirectSpaceState2DExtension::Extension to PhysicsDirectSpaceState2DExtension.
+%PhysicsDirectSpaceState3D::Direct access object to a space in the PhysicsServer3D. It's used mainly to do queries against objects and areas residing in a given space.
+%%PhysicsDirectSpaceState3DExtension::Extension to PhysicsDirectSpaceState3D.
+%PhysicsServer2D::Server interface for low-level 2D physics access. It is responsible for all 2D physics. It can directly create and manipulate all physics objects.
+%%PhysicsServer2DExtension::Extension to PhysicsServer2D.
+%PhysicsServer2DManager::The API for registering PhysicsServer2D implementations, and for setting the default implementation. This class is only used on startup at the server initialization level.
+%PhysicsServer3D::Server interface for low-level 3D physics access. It is responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
+%%PhysicsServer3DExtension::Extension to PhysicsServer3D.
+%PhysicsServer3DManager::The API for registering PhysicsServer3D implementations, and for setting the default implementation. This class is only used on startup at the server initialization level.
+%PhysicsServer3DRenderingServerHandler::Rendering server handler for 3D physics.
+%ProjectSettings::Contains global variables accessible from everywhere. Use get_setting, set_setting or has_setting to access them. Very useful for reading custom game configuration options.
+%RefCounted::Base class for reference-counted objects.
+%%RefCounted children::TOO DAMN MANY OF THEM. Use a RefCondom.
+%RenderingDevice::Abstraction for working with modern low-level graphics APIs.
+%RenderingServer::Server for anything visible.
+%ResourceLoader::Singleton used to load resource files.
+%ResourceSaver::Singleton for saving Godot-specific resource types.
+%ResourceUID::Singleton for managing a cache of resource UIDs within a project.
+%ScriptLanguage::The scripting language.
+%%ScriptLanguageExtension::Extension to ScriptLanguage.
+%TextServerManager::Manager for the font and complex text layout servers.
+%ThemeDB::An engine singleton providing access to static Theme information, such as default and project theme, and fallback values.
+%TileData::Settings for a single tile in a TileSet.
+%Time::Time singleton for working with time.
+%TranslationServer::Server that manages all translations.
+%TreeItem::Control for a single item inside a Tree.
+%UndoRedo::Helper to manage undo/redo operations in the editor or custom tools.
+%WorkerThreadPool::Handles tasks and group tasks in worker threads.
+%XRServer::Server for AR and VR features.

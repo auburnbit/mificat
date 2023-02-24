@@ -138,7 +138,7 @@ psutil.Process(pid=ra_pid).resume()
 
 while True:
 
-    '''*******************coordinates quiz and RAM editing logic*********************'''
+    '''*******************coordinating quiz and RAM editing logic*********************'''
 
     if 1 <= ene_mem_read <= 8 :
 

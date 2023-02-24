@@ -47,7 +47,9 @@ var qNum = 0
 var finalSoundHasPlayed = false
 var showingResults = false
 
-var q0 = ["prompt0", "answer0a", "answer0b", "answer0c", "answer0d", "waiting for input", 0]
+var q0 = ["This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a \
+Path2D, but can be manually sampled for other purposes.", "CollisionPolygon2D", \
+"CanvasGroup", "Marker2D", "Node2D", "waiting for input", 0]
 var q1 = ["prompt1", "answer1a", "answer1b", "answer1c", "answer1d", "waiting for input", 1]
 var q2 = ["prompt2", "answer2a", "answer2b", "answer2c", "answer2d", "waiting for input", 2]
 var q3 = ["prompt3", "answer3a", "answer3b", "answer3c", "answer3d", "waiting for input", 3]
@@ -62,10 +64,13 @@ var	a1 = "*Something?"
 var	a2 = "*Something"
 var	a3 = "*something."
 var	a4 = "*No"
-var	cof = "[center]COST OF FAILURE: NO GIL RECEIVED FROM THIS BATTLE[/center]"
+var	cof = "[center]COST OF FAILURE: NO EXP OR GIL RECEIVED FROM THIS BATTLE[/center]"
 
 var timer = 15
 var endDelay = 1
+
+
+var question_dic = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -96,6 +101,8 @@ func _ready():
 	
 	Music = $Music
 	get_tree().get_root().set_transparent_background(true)
+	
+	
 
 
 
@@ -123,7 +130,7 @@ func _process(delta):
 				+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
 				Needed.text = "[center][color=red]Score Needed: 100%[/color][/center]" 
 				#TODO: THIS 100% ALSO NEEDS variable
-				CostOfFailure.text = "[center][color=red]FAILURE! NO GIL RECEIVED FROM THIS BATTLE!"
+				CostOfFailure.text = "[center][color=red]FAILURE! NO EXP GIL RECEIVED FROM THIS BATTLE!"
 				quizStatus = "incorrect"
 				clear_flag("correct_answer")
 				if !finalSoundHasPlayed:
@@ -154,7 +161,7 @@ func _process(delta):
 		endDelay = 1
 		cursorIndex = 0
 		questions[qNum][5] = quizStatus #storing result of question 
-		cof = "[center]COST OF FAILURE: NO GIL RECEIVED FROM THIS BATTLE[/center]"
+		cof = "[center]COST OF FAILURE: NO EXP OR GIL RECEIVED FROM THIS BATTLE[/center]"
 		if !showingResults:
 			qNum += 1
 			endDelay = 1

@@ -17,6 +17,11 @@ boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 0)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+ImportData="*res://ImportData.gd"
+NewScript="*res://new_script.gd"
+
 [display]
 
 window/size/viewport_width=240
@@ -48,4 +53,5 @@ ui_accept={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 textures/default_filters/anisotropic_filtering_level=0

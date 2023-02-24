@@ -69,10 +69,10 @@ text = "[right]Full Quiz Timer: ###[/right]
 [node name="Prompt" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
-offset_left = 6.0
-offset_top = 16.0
-offset_right = 231.0
-offset_bottom = 111.0
+offset_left = 5.0
+offset_top = 15.0
+offset_right = 235.0
+offset_bottom = 110.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
@@ -82,15 +82,15 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "Place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder"
+text = "Exposes a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same values displayed in the Monitor tab in the Debugger panel."
 
 [node name="Answer1" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 20.5405
-offset_top = 43.2432
+offset_top = 47.5675
 offset_right = 123.541
-offset_bottom = 72.2433
+offset_bottom = 76.5676
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
@@ -100,15 +100,15 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "* Place holder place holder place holder place holder place holder place holder"
+text = "EditorVCSInterface"
 
 [node name="Answer2" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 131.892
-offset_top = 43.2432
+offset_top = 47.5675
 offset_right = 234.892
-offset_bottom = 72.2432
+offset_bottom = 76.5675
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
@@ -118,15 +118,15 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "* Place holder place holder place holder place holder place holder place holder"
+text = "JavaScriptBridge"
 
 [node name="Answer3" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 20.5405
-offset_top = 71.3513
+offset_top = 74.5946
 offset_right = 123.541
-offset_bottom = 100.351
+offset_bottom = 103.594
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
@@ -142,9 +142,9 @@ text = "* Place holder place holder place holder place holder place holder place
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 131.892
-offset_top = 71.3514
+offset_top = 74.5947
 offset_right = 234.892
-offset_bottom = 100.351
+offset_bottom = 103.594
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
@@ -216,7 +216,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("5_wjqfe")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "Place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder place holder"
+text = "A Container control that represents a single data unit in a GraphEdit graph. You can customize the number, type, and color of left- and right-side connection ports."
 
 [node name="QuestionInfo" type="RichTextLabel" parent="Quiz/DebugHelper"]
 visible = false

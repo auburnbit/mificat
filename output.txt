@@ -1,0 +1,2601 @@
+var quiz_dict = {
+	"Object":{
+		"Level": "0",
+		"Definition": "Base class for all other classes in the engine.",
+		"FallsUnder": "none",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AudioServer":{
+		"Level": "1",
+		"Definition": "Server interface for low-level audio access.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CameraServer":{
+		"Level": "1",
+		"Definition": "Server keeping track of different cameras accessible in Godot.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ClassDB":{
+		"Level": "1",
+		"Definition": "Class information repository.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"DisplayServer":{
+		"Level": "1",
+		"Definition": "Singleton for window management functions.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorFileSystemDirectory":{
+		"Level": "1",
+		"Definition": "A directory for the resource filesystem.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorPaths":{
+		"Level": "1",
+		"Definition": "Editor-only singleton that returns paths to various OS-specific data folders and files.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorSelection":{
+		"Level": "1",
+		"Definition": "Manages the SceneTree selection in the editor.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorUndoRedoManager":{
+		"Level": "1",
+		"Definition": "Manages undo history of scenes opened in the editor.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorVCSInterface":{
+		"Level": "1",
+		"Definition": "Version Control System (VCS) interface, which reads and writes to the local VCS in use.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Engine":{
+		"Level": "1",
+		"Definition": "Access to engine properties.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EngineDebugger":{
+		"Level": "1",
+		"Definition": "Exposes the internal debugger.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GDExtensionManager":{
+		"Level": "1",
+		"Definition": "Manages getting, loading, reloading, and unloading extensions.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Geometry2D":{
+		"Level": "1",
+		"Definition": "Helper node for calculate generic geometry operations in 2D space.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Geometry3D":{
+		"Level": "1",
+		"Definition": "Helper node to calculate generic geometry operations in 3D space.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GodotSharp":{
+		"Level": "1",
+		"Definition": "Bridge between Godot and the Mono runtime (Mono-enabled builds only).",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Input":{
+		"Level": "1",
+		"Definition": "A singleton that deals with inputs.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"InputMap":{
+		"Level": "1",
+		"Definition": "Singleton that manages InputEventAction.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"IP":{
+		"Level": "1",
+		"Definition": "Internet protocol (IP) support functions such as DNS resolution.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"JavaClassWrapper":{
+		"Level": "1",
+		"Definition": "Wrapper for JavaClass.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"JavaScriptBridge":{
+		"Level": "1",
+		"Definition": "Singleton that connects the engine with the browser's JavaScript context in Web export.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"JNISingleton":{
+		"Level": "1",
+		"Definition": "Singleton that connects the engine with Android plugins to interface with native Android code.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"JSONRPC":{
+		"Level": "1",
+		"Definition": "A helper to handle dictionaries which look like JSONRPC documents.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MainLoop":{
+		"Level": "1",
+		"Definition": "Abstract base class for the game's main loop.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SceneTree":{
+		"Level": "2",
+		"Definition": "Manages the game loop via a hierarchy of nodes.",
+		"FallsUnder": "MainLoop",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Marshalls":{
+		"Level": "1",
+		"Definition": "Data transformation (marshaling) and encoding helpers.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MovieWriter":{
+		"Level": "1",
+		"Definition": "Abstract class for non-real-time video recording encoders.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationMeshGenerator":{
+		"Level": "1",
+		"Definition": "Helper class for creating and clearing navigation meshes.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationServer2D":{
+		"Level": "1",
+		"Definition": "Server interface for low-level 2D navigation access.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationServer3D":{
+		"Level": "1",
+		"Definition": "Server interface for low-level 3D navigation access.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Node":{
+		"Level": "1",
+		"Definition": "Base class for all scene objects.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AnimationPlayer":{
+		"Level": "2",
+		"Definition": "Player of Animation resources.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AnimationTree":{
+		"Level": "2",
+		"Definition": "A node to be used for advanced animation transitions in an AnimationPlayer.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AudioStreamPlayer":{
+		"Level": "2",
+		"Definition": "Plays back audio non-positionally.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CanvasItem":{
+		"Level": "2",
+		"Definition": "Base class of anything 2D.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Control":{
+		"Level": "3",
+		"Definition": "All user interface nodes inherit from this class. Its anchors and offsets adapt its position and size relative to its parent.",
+		"FallsUnder": "CanvasItem",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"BaseButton":{
+		"Level": "4",
+		"Definition": "Base class for different kinds of buttons.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Button":{
+		"Level": "5",
+		"Definition": "Standard themed Button.",
+		"FallsUnder": "BaseButton",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CheckBox":{
+		"Level": "6",
+		"Definition": "Binary choice user interface widget.",
+		"FallsUnder": "Button",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CheckButton":{
+		"Level": "6",
+		"Definition": "Checkable button.",
+		"FallsUnder": "Button",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ColorPickerButton":{
+		"Level": "6",
+		"Definition": "Button that pops out a ColorPicker.",
+		"FallsUnder": "Button",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MenuButton":{
+		"Level": "6",
+		"Definition": "Special button that brings up a PopupMenu when clicked.",
+		"FallsUnder": "Button",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"OptionButton":{
+		"Level": "6",
+		"Definition": "Button control that provides selectable options when pressed.",
+		"FallsUnder": "Button",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"LinkButton":{
+		"Level": "5",
+		"Definition": "Simple button used to represent a link to some resource.",
+		"FallsUnder": "BaseButton",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TextureButton":{
+		"Level": "5",
+		"Definition": "Texture-based button. Supports Pressed, Hover, Disabled and Focused states.",
+		"FallsUnder": "BaseButton",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ColorRect":{
+		"Level": "4",
+		"Definition": "Displays a rectangle filled with a solid color. If you need to display the border alone, consider using ReferenceRect instead.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Container":{
+		"Level": "4",
+		"Definition": "Base node for containers.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AspectRatioContainer":{
+		"Level": "5",
+		"Definition": "Container that preserves its child controls' aspect ratio.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"BoxContainer":{
+		"Level": "5",
+		"Definition": "Base class for box containers.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"HBoxContainer":{
+		"Level": "6",
+		"Definition": "Horizontal box container.",
+		"FallsUnder": "BoxContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorResourcePicker":{
+		"Level": "7",
+		"Definition": "Godot editor's control for selecting Resource type properties.",
+		"FallsUnder": "HBoxContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorScriptPicker":{
+		"Level": "8",
+		"Definition": "Godot editor's control for selecting the script property of a Node.",
+		"FallsUnder": "EditorResourcePicker",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VBoxContainer":{
+		"Level": "6",
+		"Definition": "Vertical box container.",
+		"FallsUnder": "BoxContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ColorPicker":{
+		"Level": "7",
+		"Definition": "Color picker control.",
+		"FallsUnder": "VBoxContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"FileSystemDock":{
+		"Level": "7",
+		"Definition": " File System Dock.",
+		"FallsUnder": "VBoxContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ScriptEditorBase":{
+		"Level": "7",
+		"Definition": "Base editor for editing scripts in the ScriptEditor.",
+		"FallsUnder": "VBoxContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CenterContainer":{
+		"Level": "5",
+		"Definition": "Keeps children controls centered.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorProperty":{
+		"Level": "5",
+		"Definition": "Custom control to edit properties for adding into the inspector.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"FlowContainer":{
+		"Level": "5",
+		"Definition": "Base class for flow containers.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"HFlowContainer":{
+		"Level": "6",
+		"Definition": "Horizontal flow container.",
+		"FallsUnder": "FlowContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VFlowContainer":{
+		"Level": "6",
+		"Definition": "Vertical flow container.",
+		"FallsUnder": "FlowContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GraphNode":{
+		"Level": "5",
+		"Definition": "A Container control that represents a single data unit in a GraphEdit graph. You can customize the number, type, and color of left- and right-side connection ports.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GridContainer":{
+		"Level": "5",
+		"Definition": "Grid container used to arrange Control-derived children in a grid like layout.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MarginContainer":{
+		"Level": "5",
+		"Definition": "Adds a top, left, bottom, and right margin to all Control nodes that are direct children of the container.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PanelContainer":{
+		"Level": "5",
+		"Definition": " This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ScrollContainer":{
+		"Level": "5",
+		"Definition": "A helper node for displaying scrollable elements such as lists.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SplitContainer":{
+		"Level": "5",
+		"Definition": "Container for splitting and adjusting.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"HSplitContainer":{
+		"Level": "6",
+		"Definition": "Horizontal split container. Goes from left to right.",
+		"FallsUnder": "SplitContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VSplitContainer":{
+		"Level": "6",
+		"Definition": "Vertical split container. Goes from top to bottom.",
+		"FallsUnder": "SplitContainer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SubViewportContainer":{
+		"Level": "5",
+		"Definition": "A Container node that holds a SubViewport. It uses the SubViewport's size as minimum size, unless stretch is enabled.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TabContainer":{
+		"Level": "5",
+		"Definition": "Arranges Control children into a tabbed view, creating a tab for each one. Only the active tab's corresponding Control has its visible property set to true.",
+		"FallsUnder": "Container",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GraphEdit":{
+		"Level": "4",
+		"Definition": "A control responsible for displaying and manipulating graph-like data using GraphNodes. It provides access to creation, removal, connection, and disconnection of nodes.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ItemList":{
+		"Level": "4",
+		"Definition": "Control that provides a list of selectable items (and/or icons) in a single column, or optionally in multiple columns.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Label":{
+		"Level": "4",
+		"Definition": "Displays plain text in a line or wrapped inside a rectangle. For formatted text, use RichTextLabel.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"LineEdit":{
+		"Level": "4",
+		"Definition": "Control that provides single-line string editing.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MenuBar":{
+		"Level": "4",
+		"Definition": "A horizontal menu bar, which displays PopupMenus or system global menu. New items can be created by adding PopupMenu nodes to this node.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NinePatchRect":{
+		"Level": "4",
+		"Definition": "Scalable texture-based frame that tiles the texture's centers and sides, but keeps the corners' original size. Perfect for panels and dialog boxes.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Panel":{
+		"Level": "4",
+		"Definition": "Provides an opaque background for Control children.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Range":{
+		"Level": "4",
+		"Definition": "A base class for Control nodes that change a floating-point value between a min_value and max_value, using a configured step and page size. ",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ReferenceRect":{
+		"Level": "4",
+		"Definition": "A rectangle box that displays only a border_color border color around its rectangle. It has no fill Color.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RichTextLabel":{
+		"Level": "4",
+		"Definition": "Can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Seperator":{
+		"Level": "4",
+		"Definition": "Base class for separators. It is a Control used for separating other controls. It's purely a visual decoration.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"HSeperator":{
+		"Level": "5",
+		"Definition": "Even though it looks horizontal, it is used to separate objects vertically.",
+		"FallsUnder": "Seperator",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VSeparator":{
+		"Level": "5",
+		"Definition": "Even though it looks vertical, it is used to separate objects horizontally.",
+		"FallsUnder": "Seperator",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TabBar":{
+		"Level": "4",
+		"Definition": "Simple tabs control, similar to TabContainer but is only in charge of drawing tabs, not interacting with children.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TextEdit":{
+		"Level": "4",
+		"Definition": "Meant for editing large, multiline text. It also has facilities for editing code, such as syntax highlighting support and multiple levels of undo/redo.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TextureRect":{
+		"Level": "4",
+		"Definition": "Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the stretch_mode property. It can scale, tile, or stay centered.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Tree":{
+		"Level": "4",
+		"Definition": "Shows branching items that can be selected, expanded and collapsed. It can have multiple columns with custom controls like text editing, buttons and popups.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VideoStreamPlayer":{
+		"Level": "4",
+		"Definition": "Control node for playing streams using VideoStream resources. Supported formats are Ogg Theora (.ogv, VideoStreamTheora) and formats exposed via a GDExtension plugin.",
+		"FallsUnder": "Control",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Node2D":{
+		"Level": "3",
+		"Definition": "A 2D game object, with a transform (position, rotation, and scale). Use Node2D as a parent node to move, scale and rotate children. Also gives control of the node's render order.",
+		"FallsUnder": "CanvasItem",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AnimatedSprite2D":{
+		"Level": "4",
+		"Definition": "Sprite node that contains multiple textures as frames to play for animation.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AudioListener2D":{
+		"Level": "4",
+		"Definition": "Once added to the scene tree and enabled using make_current, this node will override the location sounds are heard from. Only one can be current.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AudioStreamPlayer2D":{
+		"Level": "4",
+		"Definition": "Plays positional sound in 2D space that is attenuated with distance to the listener. Call make_current to enable.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"BackBufferCopy":{
+		"Level": "4",
+		"Definition": "Copies a region of the screen (or the whole screen) to a buffer so it can be accessed in your shader scripts using the screen texture.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Bone2D":{
+		"Level": "4",
+		"Definition": "Joint used with Skeleton2D to control and animate other nodes.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Camera2D":{
+		"Level": "4",
+		"Definition": "Forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of CanvasItem-based nodes.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CanvasGroup":{
+		"Level": "4",
+		"Definition": "Merges several child CanvasItems into a single draw operation.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CanvasModulate":{
+		"Level": "4",
+		"Definition": "Tints the canvas elements using its assigned color.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CollisionObject2D":{
+		"Level": "4",
+		"Definition": "The base class for 2D physics objects. It holds 2D collision Shape2Ds, assigned to a shape owner. It can have any number of shape owners, only accessible through code.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Area2D":{
+		"Level": "5",
+		"Definition": "2D area that detects CollisionObject2D nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.",
+		"FallsUnder": "CollisionObject2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsBody2D":{
+		"Level": "5",
+		"Definition": "an abstract base class for implementing a physics body. All *Body2D types inherit from it.",
+		"FallsUnder": "CollisionObject2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CharacterBody2D":{
+		"Level": "6",
+		"Definition": "Specialized 2D physics body node for characters moved by script.",
+		"FallsUnder": "PhysicsBody2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RigidBody2D":{
+		"Level": "6",
+		"Definition": "Physics Body which is moved by 2D physics simulation. Useful for objects that have gravity and can be pushed by other objects.",
+		"FallsUnder": "PhysicsBody2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"StaticBody2D":{
+		"Level": "6",
+		"Definition": "Physics body for 2D physics which is static or moves only by script. Useful for floor and walls.",
+		"FallsUnder": "PhysicsBody2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AnimatableBody2D":{
+		"Level": "7",
+		"Definition": "Animatable body for 2D physics. An animatable body can't be moved by external forces or contacts, but can be moved by script or animation to affect other bodies in its path.",
+		"FallsUnder": "StaticBody2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CollisionPolygon2D":{
+		"Level": "4",
+		"Definition": "Provides a concave or convex 2D collision polygon to a CollisionObject2D parent. Polygons can be drawn in the editor or specified by a list of vertices. See also ConvexPolygonShape2D.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CollisionShape2D":{
+		"Level": "4",
+		"Definition": "Editor facility for creating and editing collision shapes in 2D space. Set the shape property to configure the shape. Use CollisionObject2D.shape_owner_get_shape to get the actual shape.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CPUParticles2D":{
+		"Level": "4",
+		"Definition": "CPU-based 2D particle node used to create a variety of particle systems and effects. More compatibility than GPU-based but without hardware acceleration.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GPUParticles2D":{
+		"Level": "4",
+		"Definition": "GPU-based 2D particle node used to create a variety of particle systems and effects. It features an emitter that generates some number of particles at a given rate.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Joint2D":{
+		"Level": "4",
+		"Definition": "Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"DampedSpringJoint2D":{
+		"Level": "5",
+		"Definition": "Constraint for 2D physics which always wants to go back to a given length.",
+		"FallsUnder": "Joint2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GrooveJoint2D":{
+		"Level": "5",
+		"Definition": "Constraint for 2D physics which is useful for making a body "slide" through a segment placed in another.",
+		"FallsUnder": "Joint2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PinJoint2D":{
+		"Level": "5",
+		"Definition": "Type of joint for 2D rigid bodies. It attaches two bodies (dynamic or static) together.",
+		"FallsUnder": "Joint2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Light2D":{
+		"Level": "4",
+		"Definition": "Casts light in a 2D environment. A light is defined as a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related).",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"DirectionalLight2D":{
+		"Level": "5",
+		"Definition": "Models an infinite number of parallel rays covering the entire scene. It is used for distant lights with strong intensity (for example: to model sunlight or moonlight).",
+		"FallsUnder": "Light2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PointLight2D":{
+		"Level": "5",
+		"Definition": "Casts light in a 2D environment. This light's shape is defined by a (usually grayscale) texture.",
+		"FallsUnder": "Light2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"LightOccluder2D":{
+		"Level": "4",
+		"Definition": "Occludes light cast by a Light2D, casting shadows. It must be provided with an OccluderPolygon2D in order for the shadow to be computed.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Line2D":{
+		"Level": "4",
+		"Definition": "A line through several points in 2D space.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Marker2D":{
+		"Level": "4",
+		"Definition": "Generic 2D position hint for a plain Node2D that displays a cross in the 2D editor at all times. You can set cross' visual size by using the gizmo in the 2D editor while the node is selected.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MeshInstance2D":{
+		"Level": "4",
+		"Definition": "Node used for displaying a Mesh in 2D. This can be automatically created from an existing Sprite2D via a tool in the editor toolbar.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MultiMeshInstance2D":{
+		"Level": "4",
+		"Definition": "A specialized node to instance a MultiMesh resource in 2D. Usage is the same as its 3D counterpart.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationLink2D":{
+		"Level": "4",
+		"Definition": "Creates a link between two positions that NavigationServer2D can route agents through. Links can be used to navigate off the navigation mesh, like teleporters or jumping across gaps.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationRegion2D":{
+		"Level": "4",
+		"Definition": "A region of the navigation map. It tells the NavigationServer2D what can be navigated and what cannot, based on its NavigationPolygon resource.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ParallaxLayer":{
+		"Level": "4",
+		"Definition": "Each of these layers can be set to move at different speeds relative to the camera movement or the ParallaxBackground.scroll_offset value. Must be the child of a ParallaxBackground node.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Path2D":{
+		"Level": "4",
+		"Definition": "Can have PathFollow2D child nodes moving along the Curve2D. The path is considered as relative to the moved nodes. As such, the curve should usually start with a zero vector ((0, 0)).",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PathFollow2D":{
+		"Level": "4",
+		"Definition": "This node takes its parent Path2D and returns the coordinates of a point within it, given a distance from the first vertex. It is useful for easily making other nodes follow a path.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Polygon2D":{
+		"Level": "4",
+		"Definition": "Defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed shape. Can be filled with color/texture.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RayCast2D":{
+		"Level": "4",
+		"Definition": "Represents a line from its origin to its destination position, target_position. It is used to query the 2D space in order to find the closest object along the path of the ray.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RemoteTransform2D":{
+		"Level": "4",
+		"Definition": "Pushes its own Transform2D to another Node2D derived node (called the remote node) in the scene. It can use either global or local coordinates.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ShapeCast2D":{
+		"Level": "4",
+		"Definition": "Node for physics collision sweep and immediate overlap queries. Similar to the RayCast2D node.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Skeleton2D":{
+		"Level": "4",
+		"Definition": "Parents a hierarchy of Bone2D objects. It is a requirement of Bone2D. It holds a reference to the rest pose of its children and acts as a single point of access to its bones.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Sprite2D":{
+		"Level": "4",
+		"Definition": "A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TileMap":{
+		"Level": "4",
+		"Definition": "Node for 2D tile-based maps. It uses a TileSet which contains a list of tiles which are used to create grid-based maps. It may have several layers, layouting tiles on top of each other.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TouchScreenButton":{
+		"Level": "4",
+		"Definition": "Allows you to create on-screen buttons for touch devices. It's intended for gameplay use, such as a unit you have to touch to move. ",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VisibleOnScreenNotifier2D":{
+		"Level": "4",
+		"Definition": "Detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.",
+		"FallsUnder": "Node2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VisibleOnScreenEnabler2D":{
+		"Level": "5",
+		"Definition": "Detects when it is visible on screen (just like its parent) and automatically enables or disables the target node. The target node is reenabled with this is on screen.",
+		"FallsUnder": "VisibleOnScreenNotifier2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CanvasLayer":{
+		"Level": "2",
+		"Definition": "Canvas drawing layer. CanvasItem nodes that are direct or indirect children of a CanvasLayer will be drawn in that layer. The layer is a numeric index that defines the draw order.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ParallaxBackground":{
+		"Level": "3",
+		"Definition": "Uses one or more ParallaxLayer child nodes to create a parallax effect. Each can move at a different speed using ParallaxLayer.motion_offset. ",
+		"FallsUnder": "CanvasLayer",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorFileSystem":{
+		"Level": "2",
+		"Definition": "This object holds information of all resources in the filesystem, their types, etc. Note: This class shouldn't be instantiated directly, rather use EditorInterface.get_resource_filesystem.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorInterface":{
+		"Level": "2",
+		"Definition": " Gives you control over Godot editor's window. Note: This class shouldn't be instantiated directly. Instead, access the singleton using EditorPlugin.get_editor_interface.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorPlugin":{
+		"Level": "2",
+		"Definition": "Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"EditorResourcePreview":{
+		"Level": "2",
+		"Definition": "This object is used to generate previews for resources of files. Note: This class shouldn't be instantiated directly. Rather, use EditorInterface.get_resource_previewer.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"HTTPRequest":{
+		"Level": "2",
+		"Definition": "A node with the ability to send HTTP requests. Uses HTTPClient internally. Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"InstancePlaceholder":{
+		"Level": "2",
+		"Definition": "Turning on the option Load As Placeholder for an instantiated scene in the editor causes it to be replaced by this when running the game. This will not replace the node in the editor. ",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MissingNode":{
+		"Level": "2",
+		"Definition": "This is an internal editor class intended for keeping data of nodes of unknown type (most likely this type was supplied by an extension that is no longer loaded).",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MultiplayerSpawner":{
+		"Level": "2",
+		"Definition": "Automatically replicates spawnable nodes from the authority to other multiplayer peers. Spawnable scenes can be configured in the editor or through code (see add_spawnable_scene).",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"MultiplayerSynchronizer":{
+		"Level": "2",
+		"Definition": "Synchronizes properties from the multiplayer authority to the remote peers. By default, it synchronizes configured properties to all peers.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationAgent2D":{
+		"Level": "2",
+		"Definition": "2D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. ",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationAgent3D":{
+		"Level": "2",
+		"Definition": "3D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationObstacle2D":{
+		"Level": "2",
+		"Definition": "2D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. It is physics safe.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationObstacle3D":{
+		"Level": "2",
+		"Definition": "3D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. It is physics safe.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Node3D":{
+		"Level": "2",
+		"Definition": "Most basic 3D game object, parent of all 3D-related nodes.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AudioListener3D":{
+		"Level": "3",
+		"Definition": "Added to the scene tree and enabled using make_current, this node overrides the location of sounds. This can be used to listen from a location different from the Camera3D.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AudioStreamPlayer3D":{
+		"Level": "3",
+		"Definition": "Added to the scene tree and enabled using make_current, this node overrides the location of sounds. This can be used to listen from a location different from the Camera3D.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"BoneAttachment3D":{
+		"Level": "3",
+		"Definition": "This node will allow you to select a bone for this node to attach to. It can copy the transform of the select bone, or can override the transform of the selected bone.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Camera3D":{
+		"Level": "3",
+		"Definition": "A special node that displays what is visible from its current location. Cameras register themselves in the nearest Viewport node (when ascending the tree).",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CollisionObject3D":{
+		"Level": "3",
+		"Definition": "The base class for physics objects. It can hold any number of collision Shape3Ds. Each shape must be assigned to a shape owner. It can have any number of shape owners.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Area3D":{
+		"Level": "4",
+		"Definition": "Region that detects CollisionObject3D nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.",
+		"FallsUnder": "CollisionObject3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsBody3D":{
+		"Level": "4",
+		"Definition": "An abstract base class for implementing a physics body. All *Body3D types inherit from it.",
+		"FallsUnder": "CollisionObject3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CharacterBody3D":{
+		"Level": "5",
+		"Definition": "Specialized 3D physics body node for characters moved by script.",
+		"FallsUnder": "PhysicsBody3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicalBone3D":{
+		"Level": "5",
+		"Definition": "3D physical bone. Be sure to keep its scale uniform and change the size(s) of the collision shape instead.",
+		"FallsUnder": "PhysicsBody3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RigidBody3D":{
+		"Level": "5",
+		"Definition": "Physics Body which is moved by 3D physics simulation. Useful for objects that have gravity and can be pushed by other objects.",
+		"FallsUnder": "PhysicsBody3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"StaticBody3D":{
+		"Level": "5",
+		"Definition": "Physics body for 3D physics which is static or moves only by script. Useful for floor and walls.",
+		"FallsUnder": "PhysicsBody3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AnimatableBody3D":{
+		"Level": "6",
+		"Definition": "Physics body for 3D physics which moves only by script or animation. Useful for moving platforms and doors.",
+		"FallsUnder": "StaticBody3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CollisionPolygon3D":{
+		"Level": "3",
+		"Definition": "Editor-only node for defining a collision polygon in 3D space. Allows editing a concave or convex collision polygon's vertices on a selected plane. Can also set a perpendicular depth.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"CollisionShape3D":{
+		"Level": "3",
+		"Definition": "Editor facility for creating and editing collision shapes in 3D space. Set the shape property to configure the shape. Use CollisionObject3D.shape_owner_get_shape to get the actual shape.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GridMap":{
+		"Level": "3",
+		"Definition": "Node for 3D tile-based maps. It lets you place meshes on a grid interactively. It works both from the editor and from scripts, which can help you create in-game level editors.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ImporterMeshInstance3D":{
+		"Level": "3",
+		"Definition": "MeshInstance3D Importer. Gets and sets meshes, skeleton paths, and skins.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Joint3D":{
+		"Level": "3",
+		"Definition": "Base class for all 3D joints. Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ConeTwistJoint3D":{
+		"Level": "4",
+		"Definition": "A joint between two 3D PhysicsBodies that can rotate the bodies across an axis defined by the local x-axes of the Joint3D. The twist axis is initiated as the X axis of the Joint3D.",
+		"FallsUnder": "Joint3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Generic6DOFJoint3D":{
+		"Level": "4",
+		"Definition": "The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation.",
+		"FallsUnder": "Joint3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"HingeJoint3D":{
+		"Level": "4",
+		"Definition": "A hinge between two 3D PhysicsBodies. It normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though.",
+		"FallsUnder": "Joint3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PinJoint3D":{
+		"Level": "4",
+		"Definition": "A joint for 3D rigid that pins 2 bodies (dynamic or static) together. See also Generic6DOFJoint3D.",
+		"FallsUnder": "Joint3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SliderJoint3D":{
+		"Level": "4",
+		"Definition": "Slider between two PhysicsBodies in 3D. Slides across the X axis of the pivot object. See also Generic6DOFJoint3D.",
+		"FallsUnder": "Joint3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"LightmapProbe":{
+		"Level": "3",
+		"Definition": "Represents the position of a single manually placed probe for dynamic object lighting with LightmapGI.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Marker3D":{
+		"Level": "3",
+		"Definition": "Generic 3D position hint for editing. It's just like a plain Node3D, but it displays as a cross in the 3D editor at all times.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationLink3D":{
+		"Level": "3",
+		"Definition": "Creates a link between two positions that NavigationServer3D can route agents through. Links can be used to navigate off the navigation mesh, like teleporters or jumping across gaps.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"NavigationRegion3D":{
+		"Level": "3",
+		"Definition": "A region of the navigation map. It tells the NavigationServer3D what can be navigated and what cannot, based on its NavigationMesh resource.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"OccluderInstance3D":{
+		"Level": "3",
+		"Definition": "Provides occlusion culling for 3D nodes, which improves performance in closed areas. Can improve rendering performance by hiding geometry that is occluded by other objects.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"OpenXRHand":{
+		"Level": "3",
+		"Definition": "This node enables OpenXR's hand tracking functionality. The node should be a child node of an XROrigin3D node, tracking will update its position to where the player's actual hand is positioned. ",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Path3D":{
+		"Level": "3",
+		"Definition": "Can have PathFollow3D child nodes moving along the Curve3D. See PathFollow3D for more information on the usage.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PathFollow3D":{
+		"Level": "3",
+		"Definition": "This node takes its parent Path3D, and returns the coordinates of a point within it, given a distance from the first vertex. It is useful for easily making other nodes follow a path. ",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RayCast3D":{
+		"Level": "3",
+		"Definition": "Represents a line from its origin to its destination position, target_position. It is used to query the 3D space in order to find the closest object along the path of the ray.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RemoteTransform3D":{
+		"Level": "3",
+		"Definition": "Pushes its own Transform3D to another Node3D derived Node (called the remote node) in the scene. It can be set to update another Node's position, rotation and/or scale.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ShapeCast3D":{
+		"Level": "3",
+		"Definition": "Node for physics collision sweep and immediate overlap queries. Similar to the RayCast3D node.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Skeleton3D":{
+		"Level": "3",
+		"Definition": "Provides a hierarchical interface for managing 3D bones, including pose, rest and animation (see Animation). It can also use ragdoll physics.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SpringArm3D":{
+		"Level": "3",
+		"Definition": "A helper node, mostly used in 3rd person cameras. It casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VehicleWheel3D":{
+		"Level": "3",
+		"Definition": "Needs to be used as a child node of VehicleBody3D and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VisualInstance3D":{
+		"Level": "3",
+		"Definition": "Parent of all visual 3D nodes. It is used to connect a resource to a visual representation. You should not access its properties directly. Node representation of RenderingServer.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Decal":{
+		"Level": "4",
+		"Definition": "Node that projects a texture onto a MeshInstance3D. Use Decals to add detail to a scene without affecting the underlying Mesh. They are often used to add weathering, dirt, and prop variety.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"FogVolume":{
+		"Level": "4",
+		"Definition": "Used to add localized fog into the global volumetric fog effect. These can also remove volumetric fog from specific areas if using a FogMaterial with a negative FogMaterial.density.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GeometryInstance3D":{
+		"Level": "4",
+		"Definition": "Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GPUParticlesAttractor3D":{
+		"Level": "4",
+		"Definition": "Abstract class for 3D particle attractors affecting GPUParticles3D nodes. They can be used to attract particles towards them or push particles away from them.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GPUParticlesCollision3D":{
+		"Level": "4",
+		"Definition": "Abstract class for 3D particle collision shapes affecting GPUParticles3D nodes. Particle collision shapes can be used to make particles stop or bounce against them.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GPUParticlesCollisionBox3D":{
+		"Level": "5",
+		"Definition": "Box-shaped 3D particle collision shape affecting GPUParticles3D nodes.",
+		"FallsUnder": "GPUParticlesCollision3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GPUParticlesCollisionHeightField3D":{
+		"Level": "5",
+		"Definition": "Real-time heightmap-shaped 3D particle attractor affecting GPUParticles3D nodes. Less flexible than GPUParticlesCollisionSDF3D, but doesn't require baking.",
+		"FallsUnder": "GPUParticlesCollision3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GPUParticlesCollisionSDF3D":{
+		"Level": "5",
+		"Definition": "Baked signed distance field 3D particle attractor affecting GPUParticles3D nodes. More flexible than GPUParticlesCollisionHeightField3D, but it requires a baking step.",
+		"FallsUnder": "GPUParticlesCollision3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"GPUParticlesCollisionSphere3D":{
+		"Level": "5",
+		"Definition": "Sphere-shaped 3D particle collision shape affecting GPUParticles3D nodes.",
+		"FallsUnder": "GPUParticlesCollision3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Light3D":{
+		"Level": "4",
+		"Definition": "The abstract base class for light nodes. As it can't be instantiated, it shouldn't be used directly. Other types of light nodes inherit from it.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"DirectionalLight3D":{
+		"Level": "5",
+		"Definition": "A type of Light3D node that models an infinite number of parallel rays covering the entire scene. It is used for distant lights with strong intensity to model sunlight or moonlight.",
+		"FallsUnder": "Light3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"OmniLight3D":{
+		"Level": "5",
+		"Definition": "A type of Light3D that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.",
+		"FallsUnder": "Light3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SpotLight3D":{
+		"Level": "5",
+		"Definition": "A spotlight, such as a reflector spotlight or a lantern. A type of Light3D node that emits lights in a specific direction, in the shape of a cone. ",
+		"FallsUnder": "Light3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"LightmapGI":{
+		"Level": "4",
+		"Definition": "Used to compute and store baked lightmaps. Lightmaps are used to provide high-quality indirect lighting with very little light leaking.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ReflectionProbe":{
+		"Level": "4",
+		"Definition": "Captures its surroundings as a cubemap, and stores versions of it with increasing levels of blur to simulate different material roughnesses.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RootMotionView":{
+		"Level": "4",
+		"Definition": "Refers to an animation technique where a mesh's skeleton is used to give impulse to a character. For example, this allows animating in a way where steps actually match the floor below.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VisibleOnScreenNotifier3D":{
+		"Level": "4",
+		"Definition": "Detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a Camera3D's view.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VisibleOnScreenEnabler3D":{
+		"Level": "5",
+		"Definition": "Will disable RigidBody3D and AnimationPlayer nodes when they are not visible. It will only affect other nodes within the same scene.",
+		"FallsUnder": "VisibleOnScreenNotifier3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"VoxelGI":{
+		"Level": "4",
+		"Definition": "Real-time global illumination (GI) probe. Used to provide high-quality real-time indirect light and reflections to scenes.",
+		"FallsUnder": "VisualInstance3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"XRNode3D":{
+		"Level": "3",
+		"Definition": "This node can be bound to a specific pose of a XRPositionalTracker and will automatically have its Node3D.transform updated by the XRServer.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"XRAnchor3D":{
+		"Level": "4",
+		"Definition": "A spatial node that maps a real world location identified by the AR platform to a position within the game world. ",
+		"FallsUnder": "XRNode3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"XRController3D":{
+		"Level": "4",
+		"Definition": "A helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.",
+		"FallsUnder": "XRNode3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"XROrigin3D":{
+		"Level": "3",
+		"Definition": "A special node within the AR/VR system that maps the physical location of the center of our tracking space to the virtual location within our game world.",
+		"FallsUnder": "Node3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ResourcePreloader":{
+		"Level": "2",
+		"Definition": "Used to preload sub-resources inside a scene, so when the scene is loaded, all the resources are ready to use and can be retrieved from the preloader.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ShaderGlobalsOverride":{
+		"Level": "2",
+		"Definition": "Overrides shader globals.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SkeletonIK3D":{
+		"Level": "2",
+		"Definition": " Used to place the end bone of a Skeleton3D bone chain at a certain point in 3D by rotating all bones in the chain accordingly.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Timer":{
+		"Level": "2",
+		"Definition": "Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode. Note: To create a one-shot timer without instantiating a node, use SceneTree.create_timer.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Viewport":{
+		"Level": "2",
+		"Definition": "Base class for viewports. It creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera3D nodes will render on it.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"SubViewport":{
+		"Level": "3",
+		"Definition": "Creates a sub-view into the screen. It is a Viewport that isn't a Window, i.e. it doesn't draw anything by itself.",
+		"FallsUnder": "Viewport",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Window":{
+		"Level": "3",
+		"Definition": "Base class for all windows. It creates a window. The window can either be a native system window or embedded inside another Window (see Viewport.gui_embed_subwindows).",
+		"FallsUnder": "Viewport",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"AcceptDialog":{
+		"Level": "4",
+		"Definition": "Base dialog for user notification. This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.",
+		"FallsUnder": "Window",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Popup":{
+		"Level": "4",
+		"Definition": "Popup is a base window container for popup-like subwindows. It's a modal by default (see Window.popup_window) and has helpers for custom popup behavior.",
+		"FallsUnder": "Window",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PopupMenu":{
+		"Level": "5",
+		"Definition": "A modal window used to display a list of options. They are popular in toolbars or context menus. Its size can be limited by using Window.max_size.",
+		"FallsUnder": "Popup",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PopupPanel":{
+		"Level": "5",
+		"Definition": "Class for displaying popups with a panel background. In some cases it might be simpler to use than Popup, since it provides a configurable background.",
+		"FallsUnder": "Popup",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"WorldEnvironment":{
+		"Level": "2",
+		"Definition": "Default environment properties for the entire scene (post-processing effects, lighting and background settings). It is used to configure the default Environment for the scene.",
+		"FallsUnder": "Node",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"OS":{
+		"Level": "1",
+		"Definition": "Wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, delays, environment variables, execution of binaries, command line, etc.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Performance":{
+		"Level": "1",
+		"Definition": "Exposes a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same values displayed in the Monitor tab in the Debugger panel.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectBodyState2D":{
+		"Level": "1",
+		"Definition": "Provides direct access to a physics body in the PhysicsServer2D, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectBodyState2DExtension":{
+		"Level": "2",
+		"Definition": "Extension to PhysicsDirectBodyState2D.",
+		"FallsUnder": "PhysicsDirectBodyState2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectBodyState3D":{
+		"Level": "1",
+		"Definition": "Provides direct access to a physics body in the PhysicsServer3D, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectBodyState3DExtension":{
+		"Level": "2",
+		"Definition": "Extension to PhysicsDirectBodyState2D.",
+		"FallsUnder": "PhysicsDirectBodyState3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectSpaceState2D":{
+		"Level": "1",
+		"Definition": "Direct access object to a space in the PhysicsServer2D. It's used mainly to do queries against objects and areas residing in a given space.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectSpaceState2DExtension":{
+		"Level": "2",
+		"Definition": "Extension to PhysicsDirectSpaceState2DExtension.",
+		"FallsUnder": "PhysicsDirectSpaceState2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectSpaceState3D":{
+		"Level": "1",
+		"Definition": "Direct access object to a space in the PhysicsServer3D. It's used mainly to do queries against objects and areas residing in a given space.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsDirectSpaceState3DExtension":{
+		"Level": "2",
+		"Definition": "Extension to PhysicsDirectSpaceState3D.",
+		"FallsUnder": "PhysicsDirectSpaceState3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsServer2D":{
+		"Level": "1",
+		"Definition": "Server interface for low-level 2D physics access. It is responsible for all 2D physics. It can directly create and manipulate all physics objects.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsServer2DExtension":{
+		"Level": "2",
+		"Definition": "Extension to PhysicsServer2D.",
+		"FallsUnder": "PhysicsServer2D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsServer2DManager":{
+		"Level": "1",
+		"Definition": "The API for registering PhysicsServer2D implementations, and for setting the default implementation. This class is only used on startup at the server initialization level.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsServer3D":{
+		"Level": "1",
+		"Definition": "Server interface for low-level 3D physics access. It is responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsServer3DExtension":{
+		"Level": "2",
+		"Definition": "Extension to PhysicsServer3D.",
+		"FallsUnder": "PhysicsServer3D",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsServer3DManager":{
+		"Level": "1",
+		"Definition": "The API for registering PhysicsServer3D implementations, and for setting the default implementation. This class is only used on startup at the server initialization level.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"PhysicsServer3DRenderingServerHandler":{
+		"Level": "1",
+		"Definition": "Rendering server handler for 3D physics.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ProjectSettings":{
+		"Level": "1",
+		"Definition": "Contains global variables accessible from everywhere. Use get_setting, set_setting or has_setting to access them. Very useful for reading custom game configuration options.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RefCounted":{
+		"Level": "1",
+		"Definition": "Base class for reference-counted objects.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RefCounted children":{
+		"Level": "2",
+		"Definition": "TOO DAMN MANY OF THEM. Use a RefCondom.",
+		"FallsUnder": "RefCounted",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RenderingDevice":{
+		"Level": "1",
+		"Definition": "Abstraction for working with modern low-level graphics APIs.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"RenderingServer":{
+		"Level": "1",
+		"Definition": "Server for anything visible.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ResourceLoader":{
+		"Level": "1",
+		"Definition": "Singleton used to load resource files.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ResourceSaver":{
+		"Level": "1",
+		"Definition": "Singleton for saving Godot-specific resource types.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ResourceUID":{
+		"Level": "1",
+		"Definition": "Singleton for managing a cache of resource UIDs within a project.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ScriptLanguage":{
+		"Level": "1",
+		"Definition": "The scripting language.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ScriptLanguageExtension":{
+		"Level": "2",
+		"Definition": "Extension to ScriptLanguage.",
+		"FallsUnder": "ScriptLanguage",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TextServerManager":{
+		"Level": "1",
+		"Definition": "Manager for the font and complex text layout servers.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"ThemeDB":{
+		"Level": "1",
+		"Definition": "An engine singleton providing access to static Theme information, such as default and project theme, and fallback values.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TileData":{
+		"Level": "1",
+		"Definition": "Settings for a single tile in a TileSet.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"Time":{
+		"Level": "1",
+		"Definition": "Time singleton for working with time.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TranslationServer":{
+		"Level": "1",
+		"Definition": "Server that manages all translations.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"TreeItem":{
+		"Level": "1",
+		"Definition": "Control for a single item inside a Tree.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"UndoRedo":{
+		"Level": "1",
+		"Definition": "Helper to manage undo/redo operations in the editor or custom tools.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"WorkerThreadPool":{
+		"Level": "1",
+		"Definition": "Handles tasks and group tasks in worker threads.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
+	"XRServer":{
+		"Level": "1",
+		"Definition": "Server for AR and VR features.",
+		"FallsUnder": "Object",
+		"UserGrade": "0",
+		"RepNumber": "0",
+		"Easiness": "0",
+		"Interval": "0",
+		"LastDateAndTime": "never",
+	}
