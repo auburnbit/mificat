@@ -46,28 +46,16 @@ var qNum = 0
 var finalSoundHasPlayed = false
 var showingResults = false
 
-var q0 = ["This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a \
-Path2D, but can be manually sampled for other purposes.", "CollisionPolygon2D", \
-"CanvasGroup", "Marker2D", "Node2D", "waiting for input", 0]
-var q1 = ["prompt1", "answer1a", "answer1b", "answer1c", "answer1d", "waiting for input", 1]
-var q2 = ["prompt2", "answer2a", "answer2b", "answer2c", "answer2d", "waiting for input", 2]
-var q3 = ["prompt3", "answer3a", "answer3b", "answer3c", "answer3d", "waiting for input", 3]
-var q4 = ["prompt4", "answer4a", "answer4b", "answer4c", "answer4d", "waiting for input", 0]
-
-var questions = [q0, q1, q2, q3, q4]
+var questions = [[], [], [], [], [], [], [], [], [], []]
 
 var	qn = "Question Number 1 of "
 var	qt = "[right]Question Timer: [/right]"
-var	prom = "\n[center]Say something.[/center]"
-var	a1 = "*Something?"
-var	a2 = "*Something"
-var	a3 = "*something."
-var	a4 = "*No"
 var	cof = "[center]COST OF FAILURE: NO EXP OR GIL RECEIVED FROM THIS BATTLE[/center]"
 
 var timer = 15
 var endDelay = 1
 
+var quiz_list_populated = false
 
 var question_dic = {}
 
@@ -103,6 +91,37 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	'''
+	var term = "none"
+	var category = "none"
+	var definition = "none"
+	var user_grade = "0"
+	var rep_number = "0"
+	var easiness = "0"
+	var interval = "0"
+	var last_date_and_time = "never"
+	var correct_answer_index = "0"
+	var answers = []
+	'''
+	
+	#q0 = ["term", "answer0", "answer0", "answer0c", "answer0d", "waiting for input", 0]
+	
+	if quiz_list_populated == false:	
+		var number_questions_this_quiz = randi_range(2,3)
+		print(number_questions_this_quiz)
+		var qp_copy = QuizDict.question_pool
+		for i in number_questions_this_quiz:
+			var qp_random_index = randi_range(0,qp_copy.size())
+			questions[i].append(qp_copy[qp_random_index].definition)
+			questions[i].append(qp_copy[qp_random_index].answers[0])
+			questions[i].append(qp_copy[qp_random_index].answers[1])
+			questions[i].append(qp_copy[qp_random_index].answers[2])
+			questions[i].append(qp_copy[qp_random_index].answers[3])
+			questions[i].append("waiting for input")
+			questions[i].append(qp_copy[qp_random_index].correct_answer_index)
+			print(i)		
+		quiz_list_populated = true
 	
 	if endDelay > 0 and (quizStatus == "correct" or quizStatus == "incorrect"):
 		endDelay -= delta

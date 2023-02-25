@@ -1,6 +1,7 @@
 extends Node
 
 var question_pool = []
+var pool_size = 5
 
 var quiz_dict = {
 	"Object":{
@@ -2346,7 +2347,7 @@ var quiz_dict = {
 }
 
 func _ready():
-	var pool_size = 5
+
 	populate_question_pool(pool_size)
 
 func populate_question_pool(pool_size):
