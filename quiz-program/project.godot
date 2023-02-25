@@ -19,8 +19,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ImportData="*res://ImportData.gd"
-NewScript="*res://new_script.gd"
+QuizDict="*res://QuizDict.gd"
 
 [display]
 
