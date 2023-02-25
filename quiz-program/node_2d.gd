@@ -52,12 +52,14 @@ var	qn = "Question Number 1 of "
 var	qt = "[right]Question Timer: [/right]"
 var	cof = "[center]COST OF FAILURE: NO EXP OR GIL RECEIVED FROM THIS BATTLE[/center]"
 
-var timer = 15
+var timer = 30
 var endDelay = 1
 
 var quiz_list_populated = false
 
 var question_dic = {}
+
+var number_questions_this_quiz = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -108,11 +110,11 @@ func _process(delta):
 	#q0 = ["term", "answer0", "answer0", "answer0c", "answer0d", "waiting for input", 0]
 	
 	if quiz_list_populated == false:	
-		var number_questions_this_quiz = randi_range(2,3)
+		number_questions_this_quiz = randi_range(2,3)
 		print(number_questions_this_quiz)
 		var qp_copy = QuizDict.question_pool
 		for i in number_questions_this_quiz:
-			var qp_random_index = randi_range(0,qp_copy.size())
+			var qp_random_index = randi_range(0,QuizDict.pool_size)
 			questions[i].append(qp_copy[qp_random_index].definition)
 			questions[i].append(qp_copy[qp_random_index].answers[0])
 			questions[i].append(qp_copy[qp_random_index].answers[1])
@@ -134,8 +136,8 @@ func _process(delta):
 			endDelay = 4
 			
 			if percent_correct_int() < 100: #TODO: this 100 needs to be a variable
-				Prompt.text = "[color=red][center]\n\n\nNumber of correct answers: "\
-				+ str(number_of_correct_answers()) + " of " + str(questions.size())\
+				Prompt.text = "[color=red][center]\n\n\nNumber correct answers: "\
+				+ str(number_of_correct_answers()) + " of " + str(number_questions_this_quiz)\
 				+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
 				Needed.text = "[center][color=red]Score Needed: 100%[/color][/center]" 
 				#TODO: THIS 100% ALSO NEEDS variable
@@ -166,7 +168,7 @@ func _process(delta):
 		
 	if endDelay <= 0:			
 		#Reset for next question \
-		timer = 15
+		timer = 30
 		endDelay = 1
 		cursorIndex = 0
 		questions[qNum][5] = quizStatus #storing result of question 
@@ -218,17 +220,17 @@ func _process(delta):
 		
 	match cursorIndex:
 		0:
-			Cursor.position = Answer0.position
+			Cursor.position = Answer0.position + Vector2(-9, 6.5)
 		1:
-			Cursor.position = Answer1.position
+			Cursor.position = Answer1.position + Vector2(-9, 6.5)
 		2:
-			Cursor.position = Answer2.position
+			Cursor.position = Answer2.position + Vector2(-9, 6.5)
 		3: 
-			Cursor.position = Answer3.position
+			Cursor.position = Answer3.position + Vector2(-9, 6.5)
 	if !showingResults:
 		var fourBytes = "0x%08x"
 		QuestionNumber.text = "Question " + str(qNum + 1) \
-		+ " of " + str(questions.size())
+		+ " of " + str(number_questions_this_quiz)
 		QuizTimer.text = qt + str(int(timer)+1)
 		Prompt.text = questions[qNum][0]
 		Answer0.text = questions[qNum][1]
@@ -249,19 +251,16 @@ func _process(delta):
 				cof = "[center][color=red]TIME UP!"
 				CursorWrong.play()
 				clear_flag("correct_answer")
-		
-	
-
 			
 func number_of_correct_answers():
-	var sum = 0
-	for n in questions.size():
+	var sum = 0	
+	for n in number_questions_this_quiz:
 		if questions[n][5] == "correct":
 			sum += 1
 	return sum	
 
 func percent_correct_int():
-	return int(float(number_of_correct_answers()) / float(questions.size()) * 100)
+	return int(float(number_of_correct_answers()) / float(number_questions_this_quiz) * 100)
 	
 func _input(event):
 	if quizStatus == "quizzing" and !showingResults:
@@ -363,7 +362,7 @@ func flag_is_set(flag_name):
 				return flag_is_set_by_bit(30)
 
 func on_last_question():
-	if qNum >= questions.size() - 1:
+	if qNum >= number_questions_this_quiz - 1:
 		return true
 	else:
 		return false

@@ -1,7 +1,7 @@
 extends Node
 
 var question_pool = []
-var pool_size = 5
+var pool_size = 20
 
 var quiz_dict = {
 	"Object":{

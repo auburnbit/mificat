@@ -83,7 +83,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "Exposes a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same values displayed in the Monitor tab in the Debugger panel."
+text = "IT DIDN'T WORK"
 
 [node name="Answer0" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
@@ -101,7 +101,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "EditorVCSInterface"
+text = "WHAT'"
 
 [node name="Answer1" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
@@ -119,7 +119,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "JavaScriptBridge"
+text = "DEAR GOD"
 
 [node name="Answer2" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
@@ -137,7 +137,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "* Place holder place holder place holder place holder place holder place holder"
+text = "FIX IT FIX IT FIX IT"
 
 [node name="Answer3" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
@@ -155,7 +155,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "*PhysicsServer3DRenderingServerHandler"
+text = "WHY DID THIS HAPPEN WHY DID THIS HAPPEN"
 
 [node name="Needed" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
