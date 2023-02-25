@@ -20,14 +20,13 @@ var Primary
 var QuestionNumber
 var QuizTimer
 var Prompt
+var Answer0
 var Answer1
 var Answer2
 var Answer3
-var Answer4
 var Needed
 var CostOfFailure
 var Cursor
-
 var DebugHelper
 var DebugHelperInfo
 var ToggleFlag29
@@ -81,10 +80,10 @@ func _ready():
 	QuestionNumber = $Quiz/Primary/QuestionNumber
 	QuizTimer = $Quiz/Primary/QuizTimer
 	Prompt = $Quiz/Primary/Prompt
+	Answer0 = $Quiz/Primary/Answer0
 	Answer1 = $Quiz/Primary/Answer1
 	Answer2 = $Quiz/Primary/Answer2
 	Answer3 = $Quiz/Primary/Answer3
-	Answer4 = $Quiz/Primary/Answer4
 	Needed = $Quiz/Primary/Needed
 	CostOfFailure = $Quiz/Primary/CostOfFailure
 	Cursor = $Quiz/Primary/Cursor
@@ -101,15 +100,6 @@ func _ready():
 	
 	Music = $Music
 	get_tree().get_root().set_transparent_background(true)
-	
-	
-
-
-
-
-
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -150,10 +140,10 @@ func _process(delta):
 				#TODO: THIS 100% ALSO NEEDS variable
 			QuestionNumber.text = ""
 			QuizTimer.text = ""
+			Answer0.text = ""
 			Answer1.text = ""
 			Answer2.text = ""
 			Answer3.text = ""
-			Answer4.text = ""
 		
 	if endDelay <= 0:			
 		#Reset for next question \
@@ -209,23 +199,23 @@ func _process(delta):
 		
 	match cursorIndex:
 		0:
-			Cursor.position = Vector2(12,48.65)
+			Cursor.position = Answer0.position
 		1:
-			Cursor.position = Vector2(123,48.65)
+			Cursor.position = Answer1.position
 		2:
-			Cursor.position = Vector2(12,76.76)
+			Cursor.position = Answer2.position
 		3: 
-			Cursor.position = Vector2(123,76.76)
+			Cursor.position = Answer3.position
 	if !showingResults:
 		var fourBytes = "0x%08x"
 		QuestionNumber.text = "Question " + str(qNum + 1) \
 		+ " of " + str(questions.size())
 		QuizTimer.text = qt + str(int(timer)+1)
 		Prompt.text = questions[qNum][0]
-		Answer1.text = questions[qNum][1]
-		Answer2.text = questions[qNum][2]
-		Answer3.text = questions[qNum][3]
-		Answer4.text = questions[qNum][4]
+		Answer0.text = questions[qNum][1]
+		Answer1.text = questions[qNum][2]
+		Answer2.text = questions[qNum][3]
+		Answer3.text = questions[qNum][4]
 		correctIndex = questions[qNum][6]
 		CostOfFailure.text = cof
 		

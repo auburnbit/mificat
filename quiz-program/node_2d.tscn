@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b56c0ox1mugxm"]
+[gd_scene load_steps=12 format=3 uid="uid://b56c0ox1mugxm"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_v7i1q"]
 [ext_resource type="FontFile" uid="uid://bw5p4vk1ovdti" path="res://fonts/final-fantasy-dawn-of-souls.ttf" id="2_1c6nl"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://c0sffwudbxwnv" path="res://music/212 Magician's Tower.mp3" id="6_asdac"]
 [ext_resource type="AudioStream" uid="uid://cwym8kao7wjdr" path="res://sounds/FF8 Cursor Wrong.wav" id="7_4sfmr"]
 [ext_resource type="AudioStream" uid="uid://dxe0h1cjd1vrq" path="res://sounds/FF8 Positive Outcome.wav" id="8_j2w1b"]
+[ext_resource type="Script" path="res://Question.gd" id="11_ym4th"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_v7i1q")
@@ -84,7 +85,7 @@ theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 text = "Exposes a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same values displayed in the Monitor tab in the Debugger panel."
 
-[node name="Answer1" type="RichTextLabel" parent="Quiz/Primary"]
+[node name="Answer0" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 20.5405
@@ -102,7 +103,7 @@ theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 text = "EditorVCSInterface"
 
-[node name="Answer2" type="RichTextLabel" parent="Quiz/Primary"]
+[node name="Answer1" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 131.892
@@ -120,7 +121,7 @@ theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 text = "JavaScriptBridge"
 
-[node name="Answer3" type="RichTextLabel" parent="Quiz/Primary"]
+[node name="Answer2" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 20.5405
@@ -138,7 +139,7 @@ theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 text = "* Place holder place holder place holder place holder place holder place holder"
 
-[node name="Answer4" type="RichTextLabel" parent="Quiz/Primary"]
+[node name="Answer3" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
 texture_filter = 2
 offset_left = 131.892
@@ -154,7 +155,7 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("2_1c6nl")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "* Place holder place holder place holder place holder place holder place holder"
+text = "*PhysicsServer3DRenderingServerHandler"
 
 [node name="Needed" type="RichTextLabel" parent="Quiz/Primary"]
 modulate = Color(1, 1, 1, 0.905882)
@@ -265,5 +266,8 @@ stream = ExtResource("6_7hh6k")
 stream = ExtResource("6_asdac")
 volume_db = 10.0
 pitch_scale = 0.75
+
+[node name="Question" type="Node" parent="."]
+script = ExtResource("11_ym4th")
 
 [connection signal="toggled" from="Quiz/DebugHelper/ToggleFlag29" to="." method="_on_toggle_flag_29_toggled"]

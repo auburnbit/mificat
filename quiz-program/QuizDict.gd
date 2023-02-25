@@ -1,5 +1,7 @@
 extends Node
 
+var question_pool = []
+
 var quiz_dict = {
 	"Object":{
 		"Definition": "Base class for all other classes in the engine.",
@@ -2344,17 +2346,59 @@ var quiz_dict = {
 }
 
 func _ready():
-	var term = "XRServer"
-	var definition = quiz_dict.get(term).get("Definition")
-	var category = quiz_dict.get(term).get("Category")
-	
-	var siblings = []
+	var pool_size = 5
+	populate_question_pool(pool_size)
+
+func populate_question_pool(pool_size):
+	#put all terms in an array
+	var all_terms = []	
 	for key in quiz_dict.keys():
-		if key != term:
-			if category == quiz_dict.get(key).get("Category"):
-				siblings.append(key)
-				
-	print("Siblings of " + term + ":")
-	for i in siblings:
-		print(i)
-	#if not enough siblings just grab randomly from all terms
+		all_terms.append(key)		
+	var remaining_terms = all_terms
+		
+	var i = 0
+	while i < pool_size:
+		#TODO: WARN IF POOL SIZE IS GREATER THAN ALL TERMS SIZE
+		var new_q = Question.new()
+		new_q.term = remaining_terms.pop_at(randi() % remaining_terms.size())
+		new_q.category = quiz_dict.get(new_q.term).get("Category")
+		new_q.definition = quiz_dict.get(new_q.term).get("Definition")
+		new_q.user_grade = quiz_dict.get(new_q.term).get("UserGrade")
+		new_q.rep_number = quiz_dict.get(new_q.term).get("RepNumber")
+		new_q.easiness = quiz_dict.get(new_q.term).get("Easiness")
+		new_q.interval = quiz_dict.get(new_q.term).get("Interval")
+		new_q.last_date_and_time = quiz_dict.get(new_q.term).get("LastDateAndTime")
+		question_pool.append(new_q)
+		
+		#picking siblings as wrong answers first
+		var siblings = []
+		for key in quiz_dict.keys():
+			if key != new_q.term:
+				if new_q.category == quiz_dict.get(key).get("Category"):
+					siblings.append(key)
+		
+		#needed if not enough siblings, just choose from all terms
+		var all_terms_left = all_terms
+		all_terms_left.erase(new_q.term)
+		while new_q.answers.size() < 4:
+			if siblings.size() != 0:
+				var new_wrong_answer = siblings.pop_at(randi() % siblings.size())
+				new_q.answers.append(new_wrong_answer)
+				all_terms_left.erase(new_wrong_answer)
+			else:
+				var new_wrong_answer = all_terms_left.pop_at(randi() % all_terms_left.size())
+				new_q.answers.append(new_wrong_answer)
+		
+		new_q.correct_answer_index = randi_range(0,3)
+		new_q.answers[new_q.correct_answer_index] = new_q.term		
+					
+		print ("\nPool Question: " + str(i + 1))
+		new_q.print_term_and_definition()
+		new_q.print_answer_selection()
+		
+		question_pool.append(new_q)
+		i += 1
+	
+
+func generateWrongAnswers():
+	pass
