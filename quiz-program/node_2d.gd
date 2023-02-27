@@ -108,13 +108,14 @@ func _process(delta):
 	'''
 	
 	#q0 = ["term", "answer0", "answer0", "answer0c", "answer0d", "waiting for input", 0]
+	CostOfFailure.text = cof
+	
 	
 	if quiz_list_populated == false:	
 		number_questions_this_quiz = randi_range(2,3)
-		print(number_questions_this_quiz)
-		var qp_copy = QuizDict.question_pool
+		var qp_copy = [] + QuizDict.question_pool
 		for i in number_questions_this_quiz:
-			var qp_random_index = randi_range(0,QuizDict.pool_size)
+			var qp_random_index = randi_range(0,QuizDict.pool_size-i)
 			questions[i].append(qp_copy[qp_random_index].definition)
 			questions[i].append(qp_copy[qp_random_index].answers[0])
 			questions[i].append(qp_copy[qp_random_index].answers[1])
@@ -122,7 +123,7 @@ func _process(delta):
 			questions[i].append(qp_copy[qp_random_index].answers[3])
 			questions[i].append("waiting for input")
 			questions[i].append(qp_copy[qp_random_index].correct_answer_index)
-			print(i)		
+			qp_copy.pop_at(qp_random_index)
 		quiz_list_populated = true
 	
 	if endDelay > 0 and (quizStatus == "correct" or quizStatus == "incorrect"):
@@ -134,14 +135,14 @@ func _process(delta):
 			showingResults = true
 			Cursor.visible = false
 			endDelay = 4
-			
+						
 			if percent_correct_int() < 100: #TODO: this 100 needs to be a variable
 				Prompt.text = "[color=red][center]\n\n\nNumber correct answers: "\
 				+ str(number_of_correct_answers()) + " of " + str(number_questions_this_quiz)\
 				+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
-				Needed.text = "[center][color=red]Score Needed: 100%[/color][/center]" 
+				Needed.text = "[center][color=red]Score Needed: 100%[/color][/center]"
 				#TODO: THIS 100% ALSO NEEDS variable
-				CostOfFailure.text = "[center][color=red]FAILURE! NO EXP GIL RECEIVED FROM THIS BATTLE!"
+				cof = "[center][color=red]FAILURE! NO EXP OR GIL RECEIVED FROM THIS BATTLE!"
 				quizStatus = "incorrect"
 				clear_flag("correct_answer")
 				if !finalSoundHasPlayed:
@@ -149,10 +150,10 @@ func _process(delta):
 					finalSoundHasPlayed = true				
 			else:
 				Prompt.text = "[color=green][center]\n\n\nNumber of correct answers: "\
-				+ str(number_of_correct_answers()) + " of " + str(questions.size())\
+				+ str(number_of_correct_answers()) + " of " + str(number_questions_this_quiz)\
 				+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
 				Needed.text = "[center][color=green]Score Needed: 100%[/color][/center]"
-				CostOfFailure.text = "[center][color=green]SUCCESS!!"
+				cof = "[center][color=green]SUCCESS!!"
 				quizStatus = "correct"
 				set_flag("correct_answer")
 				if !finalSoundHasPlayed:
@@ -180,13 +181,17 @@ func _process(delta):
 			
 		else:
 				#Close and reset for next round
-				quizStatus = "not quizzing" #redudant with flag clearing too				
+				quizStatus = "not quizzing" #redudant with flag clearing too	
+				questions.clear()
+				questions = [[], [], [], [], [], [], [], [], [], []]
+				quiz_list_populated = false			
 				Primary.visible = false
 				Music.playing = false
 				qNum = 0
 				finalSoundHasPlayed = false
 				showingResults = false
 				Cursor.visible = true
+				Needed.text = "[center]Score Needed: 100%[/center]" 
 				clear_flag("currently_quizzing")
 				
 	
@@ -227,7 +232,7 @@ func _process(delta):
 			Cursor.position = Answer2.position + Vector2(-9, 6.5)
 		3: 
 			Cursor.position = Answer3.position + Vector2(-9, 6.5)
-	if !showingResults:
+	if !showingResults and quizStatus == "quizzing":
 		var fourBytes = "0x%08x"
 		QuestionNumber.text = "Question " + str(qNum + 1) \
 		+ " of " + str(number_questions_this_quiz)
