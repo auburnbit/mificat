@@ -158,7 +158,7 @@ while True:
         ########Hmmmm#########
         # Maybe I can't set bit 31 because it's the integer sign bit?
         #####################
-        qm.write_int(getPointerAddress(qm.base_address + 0x03F35120, offsets=[0x2b8, 0x388, 0x108, 0x1a0, 0x70, 0x28, 0x8]), 0X20000000)
+        qm.write_int(getPointerAddress(qm.base_address + 0x03F3D388, offsets=[0xB0, 0x150, 0x1C8, 0x2B8, 0x70, 0x28, 0x8]), 0X20000000)
         quiz_flag29_currently_quizzing = 1
         current_quizzing_state = "started and waiting on user"
 
@@ -234,7 +234,7 @@ while True:
     
     #qm.write_int(getPointerAddress(qm.base_address + 0x03F35120, offsets=[0x2b8, 0x388, 0x108, 0x1a0, 0x70, 0x28, 0x8]), 0x8000000)
     quiz_ecf_mem_read = int.from_bytes(qm.read_bytes(getPointerAddress(qm.base_address \
-                        + 0x03F35120, offsets=[0x2b8, 0x388, 0x108, 0x1a0, 0x70, 0x28, 0x8]),QUIZ_ECF_SIZE), "little")
+                        + 0x03F3D388, offsets=[0xB0, 0x150, 0x1C8, 0x2B8, 0x70, 0x28, 0x8]),QUIZ_ECF_SIZE), "little")
     
     quiz_flag29_currently_quizzing = (quiz_ecf_mem_read & 0b00100000000000000000000000000000) >> 29
     quiz_flag30_correct_answer = (quiz_ecf_mem_read & 0b01000000000000000000000000000000) >> 30

@@ -2,6 +2,7 @@ extends Node
 
 var question_pool = []
 var pool_size = 20
+var all_terms = []
 
 var quiz_dict = {
 	"Object":{
@@ -2352,7 +2353,6 @@ func _ready():
 
 func populate_question_pool(pool_size):
 	#put all terms in an array
-	var all_terms = []	
 	for key in quiz_dict.keys():
 		all_terms.append(key)		
 	var remaining_terms = all_terms
@@ -2379,7 +2379,7 @@ func populate_question_pool(pool_size):
 					siblings.append(key)
 		
 		#needed if not enough siblings, just choose from all terms
-		var all_terms_left = all_terms
+		var all_terms_left = [] + all_terms
 		all_terms_left.erase(new_q.term)
 		while new_q.answers.size() < 4:
 			if siblings.size() != 0:

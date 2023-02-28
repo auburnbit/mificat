@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 #TODO: CHANGE "SCORE NEEDED" BACK TO OLD COLOR AFTER DONE
 
@@ -52,7 +52,7 @@ var	qn = "Question Number 1 of "
 var	qt = "[right]Question Timer: [/right]"
 var	cof = "[center]COST OF FAILURE: NO EXP OR GIL RECEIVED FROM THIS BATTLE[/center]"
 
-var timer = 30
+var timer = 15
 var endDelay = 1
 
 var quiz_list_populated = false
@@ -94,22 +94,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	'''
-	var term = "none"
-	var category = "none"
-	var definition = "none"
-	var user_grade = "0"
-	var rep_number = "0"
-	var easiness = "0"
-	var interval = "0"
-	var last_date_and_time = "never"
-	var correct_answer_index = "0"
-	var answers = []
-	'''
-	
-	#q0 = ["term", "answer0", "answer0", "answer0c", "answer0d", "waiting for input", 0]
-	CostOfFailure.text = cof
-	
+	CostOfFailure.text = cof	
 	
 	if quiz_list_populated == false:	
 		number_questions_this_quiz = randi_range(2,3)
@@ -127,49 +112,50 @@ func _process(delta):
 		quiz_list_populated = true
 	
 	if endDelay > 0 and (quizStatus == "correct" or quizStatus == "incorrect"):
-		endDelay -= delta
+		#endDelay -= delta
+		pass
 			
-		if on_last_question() and endDelay <= 0 and !showingResults:
-			
-			questions[qNum][5] = quizStatus #storing result of question 
-			showingResults = true
-			Cursor.visible = false
-			endDelay = 4
-						
-			if percent_correct_int() < 100: #TODO: this 100 needs to be a variable
-				Prompt.text = "[color=red][center]\n\n\nNumber correct answers: "\
-				+ str(number_of_correct_answers()) + " of " + str(number_questions_this_quiz)\
-				+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
-				Needed.text = "[center][color=red]Score Needed: 100%[/color][/center]"
-				#TODO: THIS 100% ALSO NEEDS variable
-				cof = "[center][color=red]FAILURE! NO EXP OR GIL RECEIVED FROM THIS BATTLE!"
-				quizStatus = "incorrect"
-				clear_flag("correct_answer")
-				if !finalSoundHasPlayed:
-					KefkaLaugh.play()
-					finalSoundHasPlayed = true				
-			else:
-				Prompt.text = "[color=green][center]\n\n\nNumber of correct answers: "\
-				+ str(number_of_correct_answers()) + " of " + str(number_questions_this_quiz)\
-				+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
-				Needed.text = "[center][color=green]Score Needed: 100%[/color][/center]"
-				cof = "[center][color=green]SUCCESS!!"
-				quizStatus = "correct"
-				set_flag("correct_answer")
-				if !finalSoundHasPlayed:
-					PositiveOutcome.play()
-					finalSoundHasPlayed = true
-				#TODO: THIS 100% ALSO NEEDS variable
-			QuestionNumber.text = ""
-			QuizTimer.text = ""
-			Answer0.text = ""
-			Answer1.text = ""
-			Answer2.text = ""
-			Answer3.text = ""
+	if on_last_question() and endDelay <= 0 and !showingResults:
+		
+		questions[qNum][5] = quizStatus #storing result of question 
+		showingResults = true
+		Cursor.visible = false
+		endDelay = 4
+					
+		if percent_correct_int() < 100: #TODO: this 100 needs to be a variable
+			Prompt.text = "[color=red][center]\n\n\nNumber correct answers: "\
+			+ str(number_of_correct_answers()) + " of " + str(number_questions_this_quiz)\
+			+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
+			Needed.text = "[center][color=red]Score Needed: 100%[/color][/center]"
+			#TODO: THIS 100% ALSO NEEDS variable
+			cof = "[center][color=red]FAILURE! NO EXP OR GIL RECEIVED FROM THIS BATTLE!"
+			quizStatus = "incorrect"
+			clear_flag("correct_answer")
+			if !finalSoundHasPlayed:
+				KefkaLaugh.play()
+				finalSoundHasPlayed = true				
+		else:
+			Prompt.text = "[color=green][center]\n\n\nNumber of correct answers: "\
+			+ str(number_of_correct_answers()) + " of " + str(number_questions_this_quiz)\
+			+ "\n\n Percent correct: " + str(percent_correct_int()) + "%[/center][/color]"
+			Needed.text = "[center][color=green]Score Needed: 100%[/color][/center]"
+			cof = "[center][color=green]SUCCESS!!"
+			quizStatus = "correct"
+			set_flag("correct_answer")
+			if !finalSoundHasPlayed:
+				PositiveOutcome.play()
+				finalSoundHasPlayed = true
+			#TODO: THIS 100% ALSO NEEDS variable
+		QuestionNumber.text = ""
+		QuizTimer.text = ""
+		Answer0.text = ""
+		Answer1.text = ""
+		Answer2.text = ""
+		Answer3.text = ""
 		
 	if endDelay <= 0:			
 		#Reset for next question \
-		timer = 30
+		timer = 15
 		endDelay = 1
 		cursorIndex = 0
 		questions[qNum][5] = quizStatus #storing result of question 
@@ -181,6 +167,7 @@ func _process(delta):
 			
 		else:
 				#Close and reset for next round
+				reshuffleWrongAnswers()
 				quizStatus = "not quizzing" #redudant with flag clearing too	
 				questions.clear()
 				questions = [[], [], [], [], [], [], [], [], [], []]
@@ -232,7 +219,7 @@ func _process(delta):
 			Cursor.position = Answer2.position + Vector2(-9, 6.5)
 		3: 
 			Cursor.position = Answer3.position + Vector2(-9, 6.5)
-	if !showingResults and quizStatus == "quizzing":
+	if !showingResults and quizStatus == "quizzing" and questions != [[], [], [], [], [], [], [], [], [], []]:
 		var fourBytes = "0x%08x"
 		QuestionNumber.text = "Question " + str(qNum + 1) \
 		+ " of " + str(number_questions_this_quiz)
@@ -241,7 +228,7 @@ func _process(delta):
 		Answer0.text = questions[qNum][1]
 		Answer1.text = questions[qNum][2]
 		Answer2.text = questions[qNum][3]
-		Answer3.text = questions[qNum][4]
+		Answer3.text = "[HIDDEN]"
 		correctIndex = questions[qNum][6]
 		CostOfFailure.text = cof
 		
@@ -251,11 +238,13 @@ func _process(delta):
 			Primary.visible = true
 			timer -= delta
 			if timer <= 0:
+				QuizTimer.text = "0"
 				timer = -1
 				quizStatus = "incorrect"
 				cof = "[center][color=red]TIME UP!"
 				CursorWrong.play()
 				clear_flag("correct_answer")
+				color_answers_appropriately()
 			
 func number_of_correct_answers():
 	var sum = 0	
@@ -268,6 +257,11 @@ func percent_correct_int():
 	return int(float(number_of_correct_answers()) / float(number_questions_this_quiz) * 100)
 	
 func _input(event):
+	
+	if endDelay > 0 and (quizStatus == "correct" or quizStatus == "incorrect"):
+		if event.is_action_pressed("ui_accept"):
+			endDelay = 0
+	
 	if quizStatus == "quizzing" and !showingResults:
 		if (event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down")):
 			CursorSound.play()
@@ -294,6 +288,7 @@ func _input(event):
 					cursorIndex = 2
 					
 		if event.is_action_pressed("ui_accept"):
+			color_answers_appropriately()
 			if cursorIndex == correctIndex:
 				quizStatus = "correct"
 				CursorSound.play()
@@ -379,4 +374,52 @@ func past_last_question():
 		return false
 		
 
+func reshuffleWrongAnswers():
 	
+	var i = 0
+	while i < QuizDict.pool_size:
+		#TODO: WARN IF POOL SIZE IS GREATER THAN ALL TERMS SIZE
+		var old_q = QuizDict.question_pool[i]
+		old_q.answers.clear()
+		var siblings = []
+		for key in QuizDict.quiz_dict.keys():
+			if key != old_q.term:
+				if old_q.category == QuizDict.quiz_dict.get(key).get("Category"):
+					siblings.append(key)
+		
+		#all terms left will be needed if not enough siblings. Then just choose from all other terms
+		var all_terms_left = [] + QuizDict.all_terms
+		all_terms_left.erase(old_q.term)
+		while old_q.answers.size() < 4:
+			if siblings.size() != 0:
+				var new_wrong_answer = siblings.pop_at(randi() % siblings.size())
+				old_q.answers.append(new_wrong_answer)
+				all_terms_left.erase(new_wrong_answer)
+			else:
+				var new_wrong_answer = all_terms_left.pop_at(randi() % all_terms_left.size())
+				old_q.answers.append(new_wrong_answer)
+		
+		old_q.correct_answer_index = randi_range(0,3)
+		old_q.answers[old_q.correct_answer_index] = old_q.term				
+					
+		print ("\nPool Question Updated:")
+		old_q.print_term_and_definition()
+		old_q.print_answer_selection()	
+		#old q is reborn with new wrong answers
+		
+		i += 1 #don't forget this and get stuck in a loop again dammit
+
+func color_answers_appropriately():
+	Answer0.text = "[color=Lightcoral]" + questions[qNum][1] + "[/color]"
+	Answer1.text = "[color=Lightcoral]" + questions[qNum][2] + "[/color]"
+	Answer2.text = "[color=Lightcoral]" + questions[qNum][3] + "[/color]"
+	Answer3.text = "[color=Lightcoral]" + questions[qNum][4] + "[/color]"
+	match correctIndex:
+		0: 
+			Answer0.text = "[color=Palegreen]" + questions[qNum][1] + "[/color]"
+		1: 
+			Answer1.text = "[color=Palegreen]" + questions[qNum][2] + "[/color]"
+		2: 
+			Answer2.text = "[color=Palegreen]" + questions[qNum][3] + "[/color]"
+		3: 
+			Answer3.text = "[color=Palegreen]" + questions[qNum][4] + "[/color]"

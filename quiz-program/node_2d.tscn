@@ -7,12 +7,26 @@
 [ext_resource type="AudioStream" uid="uid://dgmutdrxipxaq" path="res://sounds/ff7_cursor.mp3" id="5_jehnk"]
 [ext_resource type="FontFile" uid="uid://bkppawxcjsukp" path="res://fonts/lucon.ttf" id="5_wjqfe"]
 [ext_resource type="AudioStream" uid="uid://pdmj71og3cb" path="res://music/Kefka_Laugh_Sound_Effect.mp3" id="6_7hh6k"]
-[ext_resource type="AudioStream" uid="uid://c0sffwudbxwnv" path="res://music/212 Magician's Tower.mp3" id="6_asdac"]
 [ext_resource type="AudioStream" uid="uid://cwym8kao7wjdr" path="res://sounds/FF8 Cursor Wrong.wav" id="7_4sfmr"]
 [ext_resource type="AudioStream" uid="uid://dxe0h1cjd1vrq" path="res://sounds/FF8 Positive Outcome.wav" id="8_j2w1b"]
+[ext_resource type="AudioStream" uid="uid://cde4x1loqcq06" path="res://music/8bit Bossa.mp3" id="10_wennb"]
 [ext_resource type="Script" path="res://Question.gd" id="11_ym4th"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -77.0
+offset_right = -120.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_v7i1q")
 
 [node name="Quiz" type="Node2D" parent="."]
@@ -201,7 +215,6 @@ position = Vector2(123.243, 76.7567)
 texture = ExtResource("4_5muda")
 
 [node name="DebugHelper" type="Node2D" parent="Quiz"]
-visible = false
 
 [node name="DebugHelperInfo" type="RichTextLabel" parent="Quiz/DebugHelper"]
 modulate = Color(1, 1, 1, 0.905882)
@@ -265,9 +278,8 @@ volume_db = 22.358
 stream = ExtResource("6_7hh6k")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_asdac")
+stream = ExtResource("10_wennb")
 volume_db = 10.0
-pitch_scale = 0.75
 
 [node name="Question" type="Node" parent="."]
 script = ExtResource("11_ym4th")
