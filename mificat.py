@@ -31,10 +31,13 @@ gpsp_libretro.dll+001D722C
 gpsp_libretro.dll+001D7274
 
 gpsp_libretro.dll+001E893E	1 byte		[run 1] Number of Enemies Remaining 
+gpsp_libretro.dll+1ECC2E area
                                         (value changes from 0 to 9 at victory)
 gpsp_libretro.dll+001E911A	2 bytes		[run 1] EXP to be given (reduced before given)
+gpsp_libretro.dll+1ED40A area
 
 gpsp_libretro.dll+001E911C	2 bytes		[run 1] Gil to be given
+gpsp_libretro.dll+1ED40C area
 
 gpsp_libretro.dll+001E926A	1 bytes		[run 1] Countdown for end of battle messages 
                                         (129 on overworld)
@@ -58,10 +61,13 @@ from pymem.ptypes import RemotePointer
 
 #Constants for game RAM
 ENE_LOCA = 0X001E893E
+ENE_LOCA2 = 0X001ECC2E
 ENE_SIZE = 1
 EXP_LOCA = 0X001E911A
+EXP_LOCA2 = 0X001ED40A
 EXP_SIZE = 2
 GIL_LOCA = 0x001E911C
+GIL_LOCA2 = 0x001ED40C
 GIL_SIZE = 2
 
 PM1_CEXP_LOCA = 0x001D719C
@@ -84,6 +90,8 @@ pm1_exp_mem_read = None
 pm2_exp_mem_read = None
 pm3_exp_mem_read = None
 pm4_exp_mem_read = None
+
+on_overworld = True
 
 quiz_ecf_mem_read = None
 quiz_flag29_currently_quizzing = None
@@ -149,7 +157,7 @@ while True:
         old_pm4_exp = pm4_exp_mem_read
 
     if current_quizzing_state == "not currently quizzing" and \
-        (ene_mem_read == 9) and \
+        ene_mem_read == 9 and \
         (exp_mem_read > 0 or
         gil_mem_read > 0):
         # if the above are true the last enemy just died
@@ -174,8 +182,12 @@ while True:
     elif current_quizzing_state == "answer was incorrect":
         psutil.Process(pid=ra_pid).resume()          
         # punish with no EXP/gil.
-        gm.write_bytes(gameModule + EXP_LOCA,
-                        (0).to_bytes(EXP_SIZE, 'little'), EXP_SIZE)
+        if on_overworld == True:
+            gm.write_bytes(gameModule + EXP_LOCA,
+                            (0).to_bytes(EXP_SIZE, 'little'), EXP_SIZE)
+        else:
+            gm.write_bytes(gameModule + EXP_LOCA2,
+                            (0).to_bytes(EXP_SIZE, 'little'), EXP_SIZE)
         
         # have to revert the EXP values as they're added too early
         gm.write_bytes(gameModule + PM1_CEXP_LOCA,
@@ -186,9 +198,12 @@ while True:
                     (old_pm3_exp).to_bytes(PM3_CEXP_SIZE, 'little'), PM3_CEXP_SIZE)        
         gm.write_bytes(gameModule + PM4_CEXP_LOCA,
                     (old_pm4_exp).to_bytes(PM4_CEXP_SIZE, 'little'), PM4_CEXP_SIZE)
-
-        gm.write_bytes(gameModule + GIL_LOCA,
-                        (0).to_bytes(GIL_SIZE, 'little'), GIL_SIZE)
+        if on_overworld == True:
+            gm.write_bytes(gameModule + GIL_LOCA,
+                            (0).to_bytes(GIL_SIZE, 'little'), GIL_SIZE)
+        else:
+            gm.write_bytes(gameModule + GIL_LOCA2,
+                            (0).to_bytes(GIL_SIZE, 'little'), GIL_SIZE)
         psutil.Process(pid=ra_pid).resume()
         # and make sure eob timer is done counting
         if ene_mem_read != 9:
@@ -221,7 +236,19 @@ while True:
         gameModule + EXP_LOCA, EXP_SIZE), "little")
     gil_mem_read = int.from_bytes(gm.read_bytes(
         gameModule + GIL_LOCA, GIL_SIZE), "little")
+    on_overworld = True
     
+    if ene_mem_read > 9:
+
+        ene_mem_read = int.from_bytes(gm.read_bytes(
+            gameModule + ENE_LOCA2, ENE_SIZE), "little")
+        exp_mem_read = int.from_bytes(gm.read_bytes(
+            gameModule + EXP_LOCA2, EXP_SIZE), "little")
+        gil_mem_read = int.from_bytes(gm.read_bytes(
+            gameModule + GIL_LOCA2, GIL_SIZE), "little")
+        on_overworld = False
+        
+        
     # reading individual total exp values from game
     pm1_exp_mem_read = int.from_bytes(gm.read_bytes(
         gameModule + PM1_CEXP_LOCA, PM1_CEXP_SIZE), "little")
