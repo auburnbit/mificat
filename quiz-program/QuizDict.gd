@@ -2397,7 +2397,7 @@ func populate_question_pool(pool_size):
 		new_q.print_term_and_definition()
 		new_q.print_answer_selection()
 		
-		question_pool.append(new_q)
+		#question_pool.append(new_q)
 		i += 1
 	
 

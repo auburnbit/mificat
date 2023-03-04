@@ -371,7 +371,11 @@ func reshuffleWrongAnswers():
 	
 	for i in QuizDict.pool_size:
 		#TODO: WARN IF POOL SIZE IS GREATER THAN ALL TERMS SIZE
+		for j in QuizDict.pool_size:
+			print(str(QuizDict.question_pool[j]))
 		var old_q = QuizDict.question_pool[i]
+		print("i valuse: " + str(i))
+		print("old_q value: " + str(old_q))
 		old_q.answers.clear()
 		var siblings = []
 		for key in QuizDict.quiz_dict.keys():
