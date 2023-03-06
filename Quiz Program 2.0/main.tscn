@@ -1,0 +1,457 @@
+[gd_scene load_steps=9 format=3 uid="uid://c46m0xiuvdjre"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hltup"]
+[ext_resource type="FontFile" uid="uid://qadonlh0s2l4" path="res://fonts/BergenMono-Webfont/BergenMono-Regular.woff2" id="1_i8h4u"]
+[ext_resource type="Script" path="res://Card.gd" id="4_0muy6"]
+[ext_resource type="Texture2D" uid="uid://cnplrlaigkw62" path="res://card_images/11.jpg" id="4_32ftp"]
+[ext_resource type="Script" path="res://Quiz.gd" id="4_yynlu"]
+[ext_resource type="Texture2D" uid="uid://cipnyyd3hxbxe" path="res://images/cursor.png" id="5_cgou4"]
+[ext_resource type="Script" path="res://ExternalFlags.gd" id="5_ewg4j"]
+
+[sub_resource type="GDScript" id="GDScript_bmut3"]
+script/source = "extends Node2D
+
+var card_number = 0
+var cards = []
+var dict = QuestionDict.dict
+
+func _ready():
+	for key in dict.keys():
+		var card = Card.new()
+		card.unique_key = key
+		card.question_type = dict.get(key).get(\"QuestionType\")
+		card.category = dict.get(key).get(\"Category\")
+		card.prompt = dict.get(key).get(\"Prompt\")
+		card.image = dict.get(key).get(\"Image\")
+		card.answer = dict.get(key).get(\"Answer\")
+		card.answer_type = dict.get(key).get(\"AnswerType\")
+		cards.append(card)
+
+func _process(delta):
+	if visible:
+		var card = cards[card_number]
+		$UniqueKeyLabel/UniqueKeyText.text = card.unique_key
+		$CardNumberLabel/CardNumberText.text = str(card_number + 1)  + \" of \" + str(cards.size())
+		$QuestionTypeLabel/QuestionTypeText.text = card.question_type
+		$CategoryLabel/CategoryText.text = str(card.category)
+		if card.image == \"none\":		
+			$PromptLabel/PromptText.text = card.prompt
+			$PromptLabel/ImagePrompt.texture = load(\"res://card_images/no_image.jpg\")
+			$PromptLabel/ImagePromptText.text = \"\"			
+			$PromptLabel/PromptText.visible = true
+			$PromptLabel/ImagePrompt.visible = false
+			$PromptLabel/ImagePromptText.visible = false
+		else: 
+			$PromptLabel/PromptText.text = \"\"
+			$PromptLabel/ImagePrompt.texture = load(\"res://card_images/\" + card.image)
+			$PromptLabel/ImagePromptText.text = card.prompt			
+			$PromptLabel/PromptText.visible = false
+			$PromptLabel/ImagePrompt.visible = true
+			$PromptLabel/ImagePromptText.visible = true
+		$AnswerLabel/AnswerText.text = card.answer
+		$AnswerTypeLabel/AnswerTypeText.text = card.answer_type
+		$AtLevelLabel/OptionButton.selected = int(card.level)
+		$RepetitionLabel/RepetitionText.text = card.repitition
+		$EasinessLabel/EasinessText.text = card.easiness
+		$IntervalLabel/IntervalText.text = card.interval
+
+func _on_next_button_button_down():
+	if visible:
+		if card_number >= cards.size() - 1:
+			card_number = 0
+		else:
+			card_number += 1
+
+func _on_prev_button_button_down():
+	if visible:
+		if card_number <= 0:
+			card_number = cards.size() - 1
+		else:
+			card_number -= 1
+
+func _input(event):
+	if visible:
+		if event.is_action_pressed(\"ui_left\"):
+			if card_number <= 0:
+				card_number = cards.size() - 1
+			else:
+				card_number -= 1
+		elif event.is_action_pressed(\"ui_right\"):
+			if card_number >= cards.size() - 1:
+				card_number = 0
+			else:
+				card_number += 1
+"
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hltup")
+
+[node name="CardViewer" type="Node2D" parent="."]
+visible = false
+script = SubResource("GDScript_bmut3")
+
+[node name="PromptLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 99.0
+offset_top = 107.0
+offset_right = 197.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Prompt:"
+
+[node name="PromptText" type="RichTextLabel" parent="CardViewer/PromptLabel"]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = 1.0
+offset_right = 583.0
+offset_bottom = 191.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
+
+[node name="ImagePromptText" type="RichTextLabel" parent="CardViewer/PromptLabel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 2.0
+offset_right = 272.0
+offset_bottom = 192.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
+
+[node name="ImagePrompt" type="TextureRect" parent="CardViewer/PromptLabel"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = -2.0
+offset_right = 591.0
+offset_bottom = 197.0
+texture = ExtResource("4_32ftp")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AnswerLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 100.0
+offset_top = 315.0
+offset_right = 198.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Answer:"
+
+[node name="AnswerText" type="RichTextLabel" parent="CardViewer/AnswerLabel"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 1.0
+offset_right = 554.0
+offset_bottom = 32.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur"
+
+[node name="AnswerTypeLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 99.0
+offset_top = 358.0
+offset_right = 216.0
+offset_bottom = 393.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Answer Type:"
+
+[node name="AnswerTypeText" type="RichTextLabel" parent="CardViewer/AnswerTypeLabel"]
+layout_mode = 0
+offset_left = 123.0
+offset_right = 383.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet"
+
+[node name="UniqueKeyLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 99.0
+offset_top = 18.0
+offset_right = 207.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Unique Key:"
+
+[node name="UniqueKeyText" type="RichTextLabel" parent="CardViewer/UniqueKeyLabel"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = -1.0
+offset_right = 252.0
+offset_bottom = 30.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum"
+
+[node name="CategoryLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 99.0
+offset_top = 62.0
+offset_right = 203.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Category:"
+
+[node name="CategoryText" type="RichTextLabel" parent="CardViewer/CategoryLabel"]
+layout_mode = 0
+offset_left = 97.0
+offset_right = 229.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum"
+
+[node name="AtLevelLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 98.0
+offset_top = 448.0
+offset_right = 202.0
+offset_bottom = 483.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "At Level:"
+
+[node name="OptionButton" type="OptionButton" parent="CardViewer/AtLevelLabel"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = -5.0
+offset_right = 503.0
+offset_bottom = 26.0
+focus_mode = 0
+disabled = true
+item_count = 6
+selected = 1
+popup/item_0/text = "0: Multiple choice/True or False/Yes or No"
+popup/item_0/id = 0
+popup/item_1/text = "1: Multiple choice with [missing] answer"
+popup/item_1/id = 1
+popup/item_2/text = "2: Recall with guides"
+popup/item_2/id = 2
+popup/item_3/text = "3: Recall without guides"
+popup/item_3/id = 3
+popup/item_4/text = "4: Reversed recall with guides"
+popup/item_4/id = 4
+popup/item_5/text = "5: Reversed recall without guides"
+popup/item_5/id = 5
+
+[node name="CardNumberLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 407.0
+offset_top = 20.0
+offset_right = 524.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Card Number:"
+
+[node name="CardNumberText" type="RichTextLabel" parent="CardViewer/CardNumberLabel"]
+layout_mode = 0
+offset_left = 127.0
+offset_right = 259.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum"
+
+[node name="QuestionTypeLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 407.0
+offset_top = 63.0
+offset_right = 524.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Question Type:"
+
+[node name="QuestionTypeText" type="RichTextLabel" parent="CardViewer/QuestionTypeLabel"]
+layout_mode = 0
+offset_left = 143.0
+offset_right = 345.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum"
+
+[node name="RepetitionLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 97.0
+offset_top = 403.0
+offset_right = 206.0
+offset_bottom = 438.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Repetition:"
+
+[node name="RepetitionText" type="RichTextLabel" parent="CardViewer/RepetitionLabel"]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 244.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lor"
+
+[node name="EasinessLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 296.0
+offset_top = 403.0
+offset_right = 405.0
+offset_bottom = 438.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Easiness:"
+
+[node name="EasinessText" type="RichTextLabel" parent="CardViewer/EasinessLabel"]
+layout_mode = 0
+offset_left = 93.0
+offset_right = 225.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lor"
+
+[node name="IntervalLabel" type="Label" parent="CardViewer"]
+z_as_relative = false
+offset_left = 479.0
+offset_top = 403.0
+offset_right = 588.0
+offset_bottom = 438.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Interval:"
+
+[node name="IntervalText" type="RichTextLabel" parent="CardViewer/IntervalLabel"]
+layout_mode = 0
+offset_left = 93.0
+offset_right = 225.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lor"
+
+[node name="PrevButton" type="Button" parent="CardViewer"]
+offset_left = 18.0
+offset_top = 215.0
+offset_right = 82.0
+offset_bottom = 247.0
+focus_mode = 0
+text = "< Prev"
+
+[node name="NextButton" type="Button" parent="CardViewer"]
+offset_left = 697.0
+offset_top = 216.0
+offset_right = 761.0
+offset_bottom = 248.0
+focus_mode = 0
+text = "Next >"
+
+[node name="Quiz" type="Node2D" parent="."]
+script = ExtResource("4_yynlu")
+
+[node name="PromptLabel" type="Label" parent="Quiz"]
+z_as_relative = false
+offset_left = 99.0
+offset_top = 107.0
+offset_right = 197.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+
+[node name="PromptText" type="RichTextLabel" parent="Quiz/PromptLabel"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 1.0
+offset_right = 508.0
+offset_bottom = 86.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
+
+[node name="ImagePromptText" type="RichTextLabel" parent="Quiz/PromptLabel"]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 272.0
+offset_bottom = 89.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
+
+[node name="ImagePrompt" type="TextureRect" parent="Quiz/PromptLabel"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = -44.0
+offset_right = 587.0
+offset_bottom = 88.0
+texture = ExtResource("4_32ftp")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CategoryLabel" type="Label" parent="Quiz"]
+z_as_relative = false
+offset_left = 99.0
+offset_top = 62.0
+offset_right = 203.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("1_i8h4u")
+text = "Category:"
+
+[node name="CategoryText" type="RichTextLabel" parent="Quiz/CategoryLabel"]
+layout_mode = 0
+offset_left = 97.0
+offset_right = 229.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Lorem ipsum"
+
+[node name="Answer0" type="RichTextLabel" parent="Quiz"]
+offset_left = 92.0
+offset_top = 214.0
+offset_right = 364.0
+offset_bottom = 254.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+text = "Lorem ipsum dolor sit amet"
+
+[node name="Answer1" type="RichTextLabel" parent="Quiz"]
+offset_left = 420.0
+offset_top = 215.0
+offset_right = 692.0
+offset_bottom = 255.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+text = "Lorem ipsum dolor sit amet"
+
+[node name="Answer2" type="RichTextLabel" parent="Quiz"]
+offset_left = 92.0
+offset_top = 271.0
+offset_right = 364.0
+offset_bottom = 311.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+text = "Lorem ipsum dolor sit amet"
+
+[node name="Answer3" type="RichTextLabel" parent="Quiz"]
+offset_left = 420.0
+offset_top = 271.0
+offset_right = 692.0
+offset_bottom = 311.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+text = "Lorem ipsum dolor sit amet"
+
+[node name="Cursor" type="Sprite2D" parent="Quiz"]
+texture_filter = 1
+position = Vector2(65, 241)
+scale = Vector2(2, 2)
+texture = ExtResource("5_cgou4")
+
+[node name="Card" type="Node" parent="."]
+script = ExtResource("4_0muy6")
+
+[node name="ExternalFlags" type="Node" parent="."]
+script = ExtResource("5_ewg4j")
+
+[connection signal="button_down" from="CardViewer/PrevButton" to="CardViewer" method="_on_prev_button_button_down"]
+[connection signal="button_down" from="CardViewer/NextButton" to="CardViewer" method="_on_next_button_button_down"]

@@ -1,0 +1,47 @@
+need to be able to work with images
+when not quizzing
+ press otherwise unused key to pause game and enter review mode
+ press again to unpause game and leave review mode
+In review mode
+ view question stats
+ edit mastery requirements
+ increase/decrease appearance rate
+ remove question from pool entirely
+Put confidence in answer along bottom?
+Put punishment warning before quiz
+Need to be able to identify words and letters and their positions in those words
+Types of questions:
+	Besides review: (not a question)
+	All are scalable by time allowed (but min/max times based on length of definition: time to read, or write, or count letter position)
+	Keyboard questions are scalable by number of mistakes allowed
+	Length factors into difficulty of all definition recall.	
+	
+	Multiple choice
+	Multiple choice with [hidden] answer
+	Term recall with blanks
+	Term recall with no blanks, nth letter
+	Term recall with no blanks, keyboard only
+	Def recall with blanks and letters, nth letter (scalable by number of letters given)
+	Def recall with blanks and letters, keyboard only (scalable by letters given)
+	Def recall with blanks only, nth letter
+	Def recall with blanks only, keyboard only
+	Def recall with no blanks, nth letter
+	Def recall with no blanks, keyboard only
+	
+	probably need an "I give up" button
+	
+Calculating easiness
+	Student feedback
+	Time since last quizzing, (failure vs success matter?)
+	Answer speed vs expected
+	
+Images
+Questions with same term as answer
+
+Number based answers
+calculation based answers like math problems probably out of scope
+
+Returning more info than just yes or no
+
+
+	

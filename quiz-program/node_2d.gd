@@ -194,7 +194,7 @@ func populate_quiz_list():
 	number_questions_this_quiz = randi_range(2,3)
 	var qp_copy = [] + QuizDict.question_pool
 	for i in number_questions_this_quiz:
-		var qp_random_index = randi_range(0,QuizDict.pool_size-i)
+		var qp_random_index = randi_range(0,QuizDict.pool_size-1-i)
 		questions[i].append(qp_copy[qp_random_index].definition)
 		questions[i].append(qp_copy[qp_random_index].answers[0])
 		questions[i].append(qp_copy[qp_random_index].answers[1])
@@ -371,11 +371,7 @@ func reshuffleWrongAnswers():
 	
 	for i in QuizDict.pool_size:
 		#TODO: WARN IF POOL SIZE IS GREATER THAN ALL TERMS SIZE
-		for j in QuizDict.pool_size:
-			print(str(QuizDict.question_pool[j]))
 		var old_q = QuizDict.question_pool[i]
-		print("i valuse: " + str(i))
-		print("old_q value: " + str(old_q))
 		old_q.answers.clear()
 		var siblings = []
 		for key in QuizDict.quiz_dict.keys():

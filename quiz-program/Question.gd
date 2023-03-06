@@ -1,5 +1,6 @@
 class_name Question extends Node
 
+var key_ID = "none"
 var term = "none"
 var category = "none"
 var definition = "none"

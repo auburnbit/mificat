@@ -1,0 +1,185 @@
+0
+LTS Unity release as of March 3rd, 2023
+2021.3
+
+1
+The hotkey to create a new empty GameObject
+Press Ctrl+Shift+N
+
+2
+The hotkey to toggle visibility of all descendant GameObjects of the root GameObject
+Press Alt while clicking the drop-down arrow
+
+3
+The hotkey to create a parent GameObject
+Press Ctrl+Shift+G
+
+4
+The hotkey to duplicate GameObjects
+Press Ctrl+D
+
+5
+The hotkey to paste a GameObject as a child
+Press Ctrl+Shift+V
+
+6
+For naming/casing, use this unless noted otherwise
+PascalCase
+
+7
+For naming/casing local/private variables and parameters, use this
+camelCase
+
+8
+For naming/casing, avoid these
+snake_case, kebab-case, and Hungarian notation
+
+9
+For naming/casing, if you have this in a file, the source file name must match
+Monobehavior
+
+10
+For formatting, choose one of these for braces
+K&R or Allman
+
+11
+For formatting, choose a max line width in the range of this many characters
+80 and 120
+
+12
+For formatting, use a single space before these
+flow control conditions
+
+13
+For formatting, avoid spaces inside these
+brackets
+
+14
+For formatting, use a single space after a comma between these
+function arguments
+
+15
+For formatting, don't add space after these in function arguments
+parenthesis
+
+16
+For formatting, don't add space between these
+function names and parenthesis
+
+17
+For formatting, use this for visual separation
+vertical spacing
+
+18
+For comments, rather than simply answering 'what' or 'how', they can do this
+fill in the gaps and tell us 'why'
+
+19
+For comments, use // to do this
+keep the explanation next to the logic
+
+20
+For comments, use this instead of a comment for serialized fields.
+a Tooltip
+
+21
+For comments, avoid these, as they encourage large class sizes.
+Regions
+
+22
+For comments, use this for legal information or licensing to save space
+a link to an external reference
+
+23
+Use this in front of public methods or functions for output documentation/Intellisense
+a summary XML tag
+
+24
+For 'using' lines, keep them here
+at the top of the file
+
+25
+For 'using' lines, remove these
+unused lines
+
+26
+For namespaces, use this type of casing
+PascalCase
+
+27
+For namespaces, add this at the top to avoid typing namespace repeatedly
+a using line
+
+28
+For namespaces, create sub-namespaces with this
+the dot operator
+
+29
+When naming enums, use this plurality of type name
+singular
+
+30
+When naming enums and Flags enums, do not use either of these
+a prefix or suffix
+
+31
+When naming Flags enums, use this plurality of type name
+plural
+
+32
+For Flags enums, use column alignment for these
+binary values
+
+33
+When naming interfaces, use these type of phrases
+adjective
+
+34
+When naming interfaces, use this in front
+the 'I' prefix
+
+35
+When naming methods, start the name with this part of speech
+a verb or verb phrase
+
+36
+When naming parameters, use this casing
+camelCase
+
+37
+When naming classes or structs, name them using this part of speech
+a noun or noun phrase
+
+38
+When naming classes or structs, you should avoid attaching these to the name
+prefixes
+
+39
+For classes or structs, there should be only one of these per file.
+Monobehavior
+
+40
+When naming events, use this part of speech
+a verb phrase
+
+41
+When naming events, use this verb form before the event
+present participle
+
+42
+When naming events, use this verb form after the event
+past participle
+
+43
+For events, use this for most events
+System.Action delegate
+
+44
+System.Action delegate can take this many parameters
+0 to 16
+
+
+
+
+
+
