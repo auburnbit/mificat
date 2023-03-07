@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-QuestionDict="*res://QuestionDict.gd"
+CardDict="*res://CardDict.gd"
 ExternalFlags="*res://ExternalFlags.gd"
 
 [dotnet]

@@ -10,17 +10,17 @@ var answer = "none"
 var answer_type = "none"
 var answer_list = []
 var correct_index = 0
-var repitition = 0
-var easiness = 0
-var interval = 0
-var level = 0
-var last_date_and_time = "none"
+var in_churn = false
+var reps_at_least_3 = 0
+var reps_at_least_4 = 0
+var reps_at_least_5 = 0
+var time_left_churn = "none"
 
 func determine_wrong_answers():
 	
 	#multiple choice gets same types of wrong answers from other cards
 	if question_type == "multiple choice":
-		var dict = QuestionDict.dict
+		var dict = CardDict.dict
 		for key in dict.keys():
 			
 			#grabbing necessary info from other card
