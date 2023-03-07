@@ -13,7 +13,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 53,
 		"Answer": "2021.3",
 		"AnswerType": "number",
 	},
@@ -26,7 +26,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 73,
 		"Answer": "Ctrl+Shift+N",
 		"AnswerType": "hotkey",
 	},
@@ -39,7 +39,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 68,
 		"Answer": "Alt while clicking the drop-down arrow",
 		"AnswerType": "hotkey",
 	},
@@ -52,7 +52,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 46,
 		"Answer": "Ctrl+D",
 		"AnswerType": "hotkey",
 	},
@@ -65,7 +65,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 42,
 		"Answer": "Ctrl+Shift+V",
 		"AnswerType": "hotkey",
 	},
@@ -78,7 +78,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 47,
 		"Answer": "PascalCase",
 		"AnswerType": "formatting",
 	},
@@ -91,7 +91,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 45,
 		"Answer": "camelCase",
 		"AnswerType": "formatting",
 	},
@@ -104,7 +104,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 242,
 		"Answer": "snake_case, kebab-case, and Hungarian notation",
 		"AnswerType": "formatting",
 	},
@@ -117,7 +117,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 54,
 		"Answer": "MonoBehaviour",
 		"AnswerType": "class",
 	},
@@ -130,7 +130,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 14,
 		"Answer": "K&R or Allman",
 		"AnswerType": "formatting",
 	},
@@ -143,7 +143,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 2,
 		"Answer": "80 and 120",
 		"AnswerType": "number",
 	},
@@ -156,7 +156,7 @@ var dict = {
 		"RepsAtLeast3": 0,
 		"RepsAtLeast4": 0,
 		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 0,
+		"TimeLeftChurn": 1,
 		"Answer": "true",
 		"AnswerType": "number",
 	},
@@ -190,12 +190,22 @@ func _ready():
 	for card in all_cards:
 		card.randomize_answers()
 		
-	all_cards.sort_custom(sort_by_time_oldest_first)		
+	all_cards.sort_custom(sort_by_time_oldest_first)
+	grab_random_cards_from_churn(5)		
 
 func sort_by_time_oldest_first(a, b):
 	if a.time_left_churn < b.time_left_churn:
 		return true
 	return false
+	
+func grab_random_cards_from_churn(number_to_grab):
+	var churn = all_cards.slice(0, churn_max_size - 1)
+	var quiz_cards = []
+	for i in number_to_grab:
+		quiz_cards.append(churn.pop_at(randi() % churn.size()))
+	print(quiz_cards)
+	return quiz_cards
+
 
 
 
