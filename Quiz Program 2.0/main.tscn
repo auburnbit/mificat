@@ -20,12 +20,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Quiz" type="Node2D" parent="."]
+[node name="QuizProgram" type="Node2D" parent="."]
 script = ExtResource("4_yynlu")
 
-[node name="Prompt" type="Node2D" parent="Quiz"]
+[node name="Prompt" type="Node2D" parent="QuizProgram"]
+visible = false
 
-[node name="PromptLabel" type="Label" parent="Quiz/Prompt"]
+[node name="PromptLabel" type="Label" parent="QuizProgram/Prompt"]
 z_as_relative = false
 offset_left = 99.0
 offset_top = 107.0
@@ -33,7 +34,8 @@ offset_right = 197.0
 offset_bottom = 142.0
 theme_override_fonts/font = ExtResource("1_i8h4u")
 
-[node name="PromptText" type="RichTextLabel" parent="Quiz/Prompt/PromptLabel"]
+[node name="PromptText" type="RichTextLabel" parent="QuizProgram/Prompt/PromptLabel"]
+layout_mode = 0
 offset_left = 61.0
 offset_top = 1.0
 offset_right = 508.0
@@ -42,7 +44,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
 
-[node name="ImagePromptText" type="RichTextLabel" parent="Quiz/Prompt/PromptLabel"]
+[node name="ImagePromptText" type="RichTextLabel" parent="QuizProgram/Prompt/PromptLabel"]
 visible = false
 layout_mode = 0
 offset_left = -2.0
@@ -53,7 +55,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
 
-[node name="ImagePrompt" type="TextureRect" parent="Quiz/Prompt/PromptLabel"]
+[node name="ImagePrompt" type="TextureRect" parent="QuizProgram/Prompt/PromptLabel"]
 visible = false
 layout_mode = 0
 offset_left = 288.0
@@ -64,7 +66,7 @@ texture = ExtResource("4_32ftp")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="CategoryLabel" type="Label" parent="Quiz/Prompt"]
+[node name="CategoryLabel" type="Label" parent="QuizProgram/Prompt"]
 z_as_relative = false
 offset_left = 99.0
 offset_top = 62.0
@@ -73,7 +75,7 @@ offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("1_i8h4u")
 text = "Category:"
 
-[node name="CategoryText" type="RichTextLabel" parent="Quiz/Prompt/CategoryLabel"]
+[node name="CategoryText" type="RichTextLabel" parent="QuizProgram/Prompt/CategoryLabel"]
 layout_mode = 0
 offset_left = 97.0
 offset_right = 229.0
@@ -82,10 +84,10 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum"
 
-[node name="Answers" type="Node2D" parent="Quiz"]
+[node name="Choices" type="Node2D" parent="QuizProgram"]
 visible = false
 
-[node name="Answer0" type="RichTextLabel" parent="Quiz/Answers"]
+[node name="Answer0" type="RichTextLabel" parent="QuizProgram/Choices"]
 offset_left = 92.0
 offset_top = 214.0
 offset_right = 364.0
@@ -94,7 +96,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet"
 
-[node name="Answer1" type="RichTextLabel" parent="Quiz/Answers"]
+[node name="Answer1" type="RichTextLabel" parent="QuizProgram/Choices"]
 offset_left = 420.0
 offset_top = 215.0
 offset_right = 692.0
@@ -103,7 +105,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet"
 
-[node name="Answer2" type="RichTextLabel" parent="Quiz/Answers"]
+[node name="Answer2" type="RichTextLabel" parent="QuizProgram/Choices"]
 offset_left = 92.0
 offset_top = 271.0
 offset_right = 364.0
@@ -112,7 +114,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet"
 
-[node name="Answer3" type="RichTextLabel" parent="Quiz/Answers"]
+[node name="Answer3" type="RichTextLabel" parent="QuizProgram/Choices"]
 offset_left = 420.0
 offset_top = 271.0
 offset_right = 692.0
@@ -121,11 +123,11 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet"
 
-[node name="Feedback" type="Node2D" parent="Quiz"]
+[node name="Feedback" type="Node2D" parent="QuizProgram"]
 visible = false
 position = Vector2(449, 305)
 
-[node name="Feedback0" type="RichTextLabel" parent="Quiz/Feedback"]
+[node name="Feedback0" type="RichTextLabel" parent="QuizProgram/Feedback"]
 offset_left = -200.0
 offset_top = 40.0
 offset_right = -160.0
@@ -135,7 +137,7 @@ bbcode_enabled = true
 text = "[color=red]0[/color]"
 metadata/_edit_use_anchors_ = true
 
-[node name="Feedback1" type="RichTextLabel" parent="Quiz/Feedback"]
+[node name="Feedback1" type="RichTextLabel" parent="QuizProgram/Feedback"]
 offset_left = -150.0
 offset_top = 40.0
 offset_right = -110.0
@@ -146,7 +148,7 @@ text = "[color=salmon]1[/color]
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Feedback2" type="RichTextLabel" parent="Quiz/Feedback"]
+[node name="Feedback2" type="RichTextLabel" parent="QuizProgram/Feedback"]
 offset_left = -100.0
 offset_top = 40.0
 offset_right = -60.0
@@ -157,7 +159,7 @@ text = "[color=lightsalmon]2[/color]
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Feedback3" type="RichTextLabel" parent="Quiz/Feedback"]
+[node name="Feedback3" type="RichTextLabel" parent="QuizProgram/Feedback"]
 offset_left = -50.0
 offset_top = 40.0
 offset_right = -10.0
@@ -168,7 +170,7 @@ text = "[color=Palegreen]3[/color]
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Feedback4" type="RichTextLabel" parent="Quiz/Feedback"]
+[node name="Feedback4" type="RichTextLabel" parent="QuizProgram/Feedback"]
 offset_top = 40.0
 offset_right = 40.0
 offset_bottom = 80.0
@@ -178,7 +180,7 @@ text = "[color=Green]4[/color]
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Feedback5" type="RichTextLabel" parent="Quiz/Feedback"]
+[node name="Feedback5" type="RichTextLabel" parent="QuizProgram/Feedback"]
 offset_left = 50.0
 offset_top = 40.0
 offset_right = 90.0
@@ -188,7 +190,7 @@ bbcode_enabled = true
 text = "[color=Lime]5[/color]"
 metadata/_edit_use_anchors_ = true
 
-[node name="FeedbackText" type="RichTextLabel" parent="Quiz/Feedback"]
+[node name="FeedbackText" type="RichTextLabel" parent="QuizProgram/Feedback"]
 offset_left = -354.0
 offset_top = 15.0
 offset_right = 246.0
@@ -199,9 +201,45 @@ bbcode_enabled = true
 text = "Lorem"
 metadata/_edit_use_anchors_ = true
 
-[node name="Results" type="Node2D" parent="Quiz"]
+[node name="Results" type="Node2D" parent="QuizProgram"]
 
-[node name="Cursor" type="Sprite2D" parent="Quiz"]
+[node name="NumberCorrect" type="RichTextLabel" parent="QuizProgram/Results"]
+offset_left = 291.0
+offset_top = 19.0
+offset_right = 491.0
+offset_bottom = 70.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "## out of ## correct"
+
+[node name="PercentCorrect" type="RichTextLabel" parent="QuizProgram/Results"]
+offset_left = 267.0
+offset_top = 45.0
+offset_right = 515.0
+offset_bottom = 96.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "###% correct, ###% needed"
+
+[node name="FailureText" type="RichTextLabel" parent="QuizProgram/Results"]
+offset_left = 349.0
+offset_top = 142.0
+offset_right = 439.0
+offset_bottom = 193.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Failure!"
+
+[node name="PunishmentText" type="RichTextLabel" parent="QuizProgram/Results"]
+offset_left = 125.0
+offset_top = 219.0
+offset_right = 676.0
+offset_bottom = 271.0
+theme_override_fonts/normal_font = ExtResource("1_i8h4u")
+bbcode_enabled = true
+text = "Punishment punishment punishment punishment punishment!"
+
+[node name="Cursor" type="Sprite2D" parent="QuizProgram"]
 texture_filter = 1
 position = Vector2(65, 241)
 scale = Vector2(2, 2)
