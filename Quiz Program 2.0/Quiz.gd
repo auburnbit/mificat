@@ -3,8 +3,12 @@ extends Node2D
 var card_number = 0
 var dict = CardDict.dict
 var cursorIndex = 0
-var quiz_step = "prompt"
+var quiz_step = "prequiz"
 var got_question_correct = false
+var percent_needed = 1.0
+var correct_number = 0
+var success = false
+var punishment = "No EXP nor Gil will be received from this battle!"
 
 func _ready():
 	
@@ -12,6 +16,17 @@ func _ready():
 
 func _process(delta):
 	if visible:
+		
+		if quiz_step == "prequiz":
+			$"../Music".stop()
+		else:
+			if $"../Music".playing != true:
+				$"../Music".play()
+		
+		if correct_number / CardDict.quiz_cards.size() >= percent_needed:
+			success = true
+		else:
+			success = false
 		
 		update_cursor_draw_location()	
 	
@@ -35,25 +50,36 @@ func _process(delta):
 			
 		# perhaps make this: show_feedback()
 		
-		if quiz_step == "prompt":
+		if quiz_step == "prequiz":
+			$Prequiz.visible = true
+			$Prompt.visible = false
+			$Choices.visible = false
+			$Feedback.visible = false
+			$Results.visible = false
+					
+		elif quiz_step == "prompt":
+			$Prequiz.visible = false
 			$Prompt.visible = true
 			$Choices.visible = false
 			$Feedback.visible = false
 			$Results.visible = false
 			
-		if quiz_step == "choices":
+		elif quiz_step == "choices":
+			$Prequiz.visible = false
 			$Prompt.visible = true
 			$Choices.visible = true
 			$Feedback.visible = false
 			$Results.visible = false
 		
-		if quiz_step == "feedback":
+		elif quiz_step == "feedback":
+			$Prequiz.visible = false
 			$Prompt.visible = true
 			$Choices.visible = true
 			$Feedback.visible = true
 			$Results.visible = false
 			
-		if quiz_step == "results":
+		elif quiz_step == "results":
+			$Prequiz.visible = false
 			$Prompt.visible = false
 			$Choices.visible = false
 			$Feedback.visible = false
@@ -77,10 +103,13 @@ func update_cursor_draw_location():
 	var question_offset = Vector2(-20, 25)
 	var feedback_offset = Vector2(-20, 25)	
 	
+	if quiz_step == "prequiz":
+		$Cursor.visible = false
+	
 	if quiz_step == "prompt":
 		$Cursor.visible = false
 	
-	if quiz_step == "choices":
+	elif quiz_step == "choices":
 		$Cursor.visible = true
 		match cursorIndex:
 			0:
@@ -107,6 +136,18 @@ func update_cursor_draw_location():
 				$Cursor.position = $Feedback/Feedback4.global_position + feedback_offset
 			5: 
 				$Cursor.position = $Feedback/Feedback5.global_position + feedback_offset
+	elif quiz_step == "results":
+		$Cursor.visible = false
+		if success == true:
+			$Results/NumberCorrect.text = "[center][color=green]" + str(correct_number) + " out of " + str(CardDict.quiz_cards.size()) + " correct[/color][/center]"
+			$Results/PercentCorrect.text = "[center][color=green]" + str(int((correct_number/CardDict.quiz_cards.size())*100)) + "% correct, " + str(percent_needed * 100) + "% needed[/color][/center]"
+			$Results/SuccessText.text = "[center][color=green]Success![/color][/center]"
+			$Results/PunishmentText.text = ""
+		else:
+			$Results/NumberCorrect.text = "[center][color=red]" + str(correct_number) + " out of " + str(CardDict.quiz_cards.size()) + " correct[/color]"
+			$Results/PercentCorrect.text = "[center][color=red]" + str(int((correct_number/CardDict.quiz_cards.size())*100)) + "% correct, " + str(percent_needed * 100) + "% needed[/color][/center]"
+			$Results/SuccessText.text = "[center][color=red]Success![/color][/center]"
+			$Results/PunishmentText.text = "[center][color=red]" + punishment + "[/color][/center]"		
 
 func _input(event):
 	if visible and quiz_step == "prompt":
@@ -147,6 +188,8 @@ func _input(event):
 				#quizStatus = "correct"
 				$"../CursorRight".play()
 				got_question_correct = true
+				correct_number += 1
+				
 				#set_flag("correct_answer") #yes answer_was_correct
 				cursorIndex = 3
 			else:
@@ -183,13 +226,22 @@ func _input(event):
 				$"../CursorWrong".play()
 		
 		if event.is_action_pressed("ui_accept"):
-			$"../CursorFeedback".play()
 			quiz_step = "prompt"
 			if card_number < CardDict.quiz_cards.size() - 1:
+				$"../CursorFeedback".play()
 				card_number += 1
 			else:
 				quiz_step = "results"
+				if success == true:
+					$"../Success".play()
+				else:
+					$"../Failure".play()
 			cursorIndex = 0		
+			
+	elif visible and quiz_step == "results":
+		if event.is_action_pressed("ui_accept"):
+			$"../CursorFeedback".play()
+			quiz_step = "prequiz"
 
 func color_answers_appropriately():
 	var wrong_color = "[color=White]"
@@ -217,3 +269,10 @@ func color_answers_appropriately():
 			$Choices/Answer2.text = right_color + CardDict.quiz_cards[card_number].answer_list[2] + "[/color]"
 		3: 
 			$Choices/Answer3.text = right_color + CardDict.quiz_cards[card_number].answer_list[3] + "[/color]"
+
+
+func _on_start_quiz_button_button_down():
+	card_number = 0
+	correct_number = 0
+	quiz_step = "prompt"
+	CardDict.grab_random_cards_from_churn(5)

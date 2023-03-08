@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c46m0xiuvdjre"]
+[gd_scene load_steps=15 format=3 uid="uid://c46m0xiuvdjre"]
 
 [ext_resource type="FontFile" uid="uid://qadonlh0s2l4" path="res://fonts/BergenMono-Webfont/BergenMono-Regular.woff2" id="1_i8h4u"]
 [ext_resource type="Script" path="res://Card.gd" id="4_0muy6"]
@@ -10,7 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://bydvtp3lg4xvw" path="res://audio/cursor_wrong.wav" id="9_kb65f"]
 [ext_resource type="AudioStream" uid="uid://cjumplybek8l2" path="res://audio/cursor_right.wav" id="10_48npr"]
 [ext_resource type="AudioStream" uid="uid://qhkqk2xad46q" path="res://audio/cursor_feedback.wav" id="11_8hsqx"]
+[ext_resource type="AudioStream" uid="uid://bvv76l7c6brbg" path="res://audio/success.wav" id="12_8j073"]
 [ext_resource type="AudioStream" uid="uid://7anhd0xtq1qd" path="res://audio/cursor_choices.wav" id="12_v3ntw"]
+[ext_resource type="AudioStream" uid="uid://nxv4i6pith4w" path="res://audio/failure.wav" id="13_yd3uq"]
+[ext_resource type="AudioStream" uid="uid://crwuv3wvstcyh" path="res://audio/8bit Bossa.mp3" id="14_dru1i"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -22,6 +25,15 @@ grow_vertical = 2
 
 [node name="QuizProgram" type="Node2D" parent="."]
 script = ExtResource("4_yynlu")
+
+[node name="Prequiz" type="Node2D" parent="QuizProgram"]
+
+[node name="StartQuizButton" type="Button" parent="QuizProgram/Prequiz"]
+offset_left = 321.0
+offset_top = 121.0
+offset_right = 454.0
+offset_bottom = 182.0
+text = "New Quiz!"
 
 [node name="Prompt" type="Node2D" parent="QuizProgram"]
 visible = false
@@ -221,7 +233,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "###% correct, ###% needed"
 
-[node name="FailureText" type="RichTextLabel" parent="QuizProgram/Results"]
+[node name="SuccessText" type="RichTextLabel" parent="QuizProgram/Results"]
 offset_left = 349.0
 offset_top = 142.0
 offset_right = 439.0
@@ -268,3 +280,15 @@ volume_db = -5.0
 
 [node name="CursorChoices" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_v3ntw")
+
+[node name="Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_8j073")
+
+[node name="Failure" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_yd3uq")
+volume_db = 10.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_dru1i")
+
+[connection signal="button_down" from="QuizProgram/Prequiz/StartQuizButton" to="QuizProgram" method="_on_start_quiz_button_button_down"]
