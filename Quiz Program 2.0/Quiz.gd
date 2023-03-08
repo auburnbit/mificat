@@ -7,6 +7,7 @@ var quiz_step = "prompt"
 var got_question_correct = false
 
 func _ready():
+	
 	pass
 
 func _process(delta):
@@ -14,23 +15,24 @@ func _process(delta):
 		
 		update_cursor_draw_location()
 		
-		var card = CardDict.all_cards[card_number]
-		$CategoryLabel/CategoryText.text = str(card.category)
+	
+		var card = CardDict.quiz_cards[card_number]
+		$Prompt/CategoryLabel/CategoryText.text = str(card.category)
 		color_answers_appropriately()
 		if card.image == "none":		
-			$PromptLabel/PromptText.text = card.prompt
-			$PromptLabel/ImagePrompt.texture = load("res://card_images/no_image.jpg")
-			$PromptLabel/ImagePromptText.text = ""			
-			$PromptLabel/PromptText.visible = true
-			$PromptLabel/ImagePrompt.visible = false
-			$PromptLabel/ImagePromptText.visible = false
+			$Prompt/PromptLabel/PromptText.text = card.prompt
+			$Prompt/PromptLabel/ImagePrompt.texture = load("res://card_images/no_image.jpg")
+			$Prompt/PromptLabel/ImagePromptText.text = ""			
+			$Prompt/PromptLabel/PromptText.visible = true
+			$Prompt/PromptLabel/ImagePrompt.visible = false
+			$Prompt/PromptLabel/ImagePromptText.visible = false
 		else: 
-			$PromptLabel/PromptText.text = ""
-			$PromptLabel/ImagePrompt.texture = load("res://card_images/" + card.image)
-			$PromptLabel/ImagePromptText.text = card.prompt			
-			$PromptLabel/PromptText.visible = false
-			$PromptLabel/ImagePrompt.visible = true
-			$PromptLabel/ImagePromptText.visible = true	
+			$Prompt/PromptLabel/PromptText.text = ""
+			$Prompt/PromptLabel/ImagePrompt.texture = load("res://card_images/" + card.image)
+			$Prompt/PromptLabel/ImagePromptText.text = card.prompt			
+			$Prompt/PromptLabel/PromptText.visible = false
+			$Prompt/PromptLabel/ImagePrompt.visible = true
+			$Prompt/PromptLabel/ImagePromptText.visible = true	
 			
 		# perhaps make this show_feedback()
 		if quiz_step == "prompt":
@@ -101,7 +103,7 @@ func _input(event):
 	
 	elif visible and quiz_step == "choices":		
 		#if true or false we don't want to move up or down
-		if CardDict.all_cards[card_number].question_type == "multiple choice":
+		if CardDict.quiz_cards[card_number].question_type == "multiple choice":
 			if (event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down")):
 				$"../CursorSound".play()
 				match cursorIndex:
@@ -128,7 +130,7 @@ func _input(event):
 					
 		if event.is_action_pressed("ui_accept"):
 			quiz_step = "feedback"
-			if cursorIndex == CardDict.all_cards[card_number].correct_index:
+			if cursorIndex == CardDict.quiz_cards[card_number].correct_index:
 				#quizStatus = "correct"
 				$"../CursorRight".play()
 				got_question_correct = true
@@ -180,22 +182,22 @@ func color_answers_appropriately():
 		wrong_color = "[color=Lightcoral]"
 		right_color = "[color=Palegreen]"
 	
-	$Answers/Answer0.text = wrong_color + CardDict.all_cards[card_number].answer_list[0] + "[/color]"
-	$Answers/Answer1.text = wrong_color + CardDict.all_cards[card_number].answer_list[1] + "[/color]"
+	$Answers/Answer0.text = wrong_color + CardDict.quiz_cards[card_number].answer_list[0] + "[/color]"
+	$Answers/Answer1.text = wrong_color + CardDict.quiz_cards[card_number].answer_list[1] + "[/color]"
 	#if true or false we don't have answers 2 or 3
-	if CardDict.all_cards[card_number].question_type == "multiple choice":
-		$Answers/Answer2.text = wrong_color + CardDict.all_cards[card_number].answer_list[2] + "[/color]"
-		$Answers/Answer3.text = wrong_color + CardDict.all_cards[card_number].answer_list[3] + "[/color]"
-	elif CardDict.all_cards[card_number].question_type == "true or false":
+	if CardDict.quiz_cards[card_number].question_type == "multiple choice":
+		$Answers/Answer2.text = wrong_color + CardDict.quiz_cards[card_number].answer_list[2] + "[/color]"
+		$Answers/Answer3.text = wrong_color + CardDict.quiz_cards[card_number].answer_list[3] + "[/color]"
+	elif CardDict.quiz_cards[card_number].question_type == "true or false":
 		$Answers/Answer2.text = ""
 		$Answers/Answer3.text = ""
 	
-	match CardDict.all_cards[card_number].correct_index:
+	match CardDict.quiz_cards[card_number].correct_index:
 		0: 
-			$Answers/Answer0.text = right_color + CardDict.all_cards[card_number].answer_list[0] + "[/color]"
+			$Answers/Answer0.text = right_color + CardDict.quiz_cards[card_number].answer_list[0] + "[/color]"
 		1: 
-			$Answers/Answer1.text = right_color + CardDict.all_cards[card_number].answer_list[1] + "[/color]"
+			$Answers/Answer1.text = right_color + CardDict.quiz_cards[card_number].answer_list[1] + "[/color]"
 		2: 
-			$Answers/Answer2.text = right_color + CardDict.all_cards[card_number].answer_list[2] + "[/color]"
+			$Answers/Answer2.text = right_color + CardDict.quiz_cards[card_number].answer_list[2] + "[/color]"
 		3: 
-			$Answers/Answer3.text = right_color + CardDict.all_cards[card_number].answer_list[3] + "[/color]"
+			$Answers/Answer3.text = right_color + CardDict.quiz_cards[card_number].answer_list[3] + "[/color]"

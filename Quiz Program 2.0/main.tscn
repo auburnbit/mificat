@@ -23,7 +23,9 @@ grow_vertical = 2
 [node name="Quiz" type="Node2D" parent="."]
 script = ExtResource("4_yynlu")
 
-[node name="PromptLabel" type="Label" parent="Quiz"]
+[node name="Prompt" type="Node2D" parent="Quiz"]
+
+[node name="PromptLabel" type="Label" parent="Quiz/Prompt"]
 z_as_relative = false
 offset_left = 99.0
 offset_top = 107.0
@@ -31,8 +33,7 @@ offset_right = 197.0
 offset_bottom = 142.0
 theme_override_fonts/font = ExtResource("1_i8h4u")
 
-[node name="PromptText" type="RichTextLabel" parent="Quiz/PromptLabel"]
-layout_mode = 0
+[node name="PromptText" type="RichTextLabel" parent="Quiz/Prompt/PromptLabel"]
 offset_left = 61.0
 offset_top = 1.0
 offset_right = 508.0
@@ -41,7 +42,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
 
-[node name="ImagePromptText" type="RichTextLabel" parent="Quiz/PromptLabel"]
+[node name="ImagePromptText" type="RichTextLabel" parent="Quiz/Prompt/PromptLabel"]
 visible = false
 layout_mode = 0
 offset_left = -2.0
@@ -52,7 +53,7 @@ theme_override_fonts/normal_font = ExtResource("1_i8h4u")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
 
-[node name="ImagePrompt" type="TextureRect" parent="Quiz/PromptLabel"]
+[node name="ImagePrompt" type="TextureRect" parent="Quiz/Prompt/PromptLabel"]
 visible = false
 layout_mode = 0
 offset_left = 288.0
@@ -63,7 +64,7 @@ texture = ExtResource("4_32ftp")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="CategoryLabel" type="Label" parent="Quiz"]
+[node name="CategoryLabel" type="Label" parent="Quiz/Prompt"]
 z_as_relative = false
 offset_left = 99.0
 offset_top = 62.0
@@ -72,7 +73,7 @@ offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("1_i8h4u")
 text = "Category:"
 
-[node name="CategoryText" type="RichTextLabel" parent="Quiz/CategoryLabel"]
+[node name="CategoryText" type="RichTextLabel" parent="Quiz/Prompt/CategoryLabel"]
 layout_mode = 0
 offset_left = 97.0
 offset_right = 229.0
@@ -82,6 +83,7 @@ bbcode_enabled = true
 text = "Lorem ipsum"
 
 [node name="Answers" type="Node2D" parent="Quiz"]
+visible = false
 
 [node name="Answer0" type="RichTextLabel" parent="Quiz/Answers"]
 offset_left = 92.0
@@ -120,6 +122,7 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet"
 
 [node name="Feedback" type="Node2D" parent="Quiz"]
+visible = false
 position = Vector2(449, 305)
 
 [node name="Feedback0" type="RichTextLabel" parent="Quiz/Feedback"]
@@ -195,6 +198,8 @@ theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Lorem"
 metadata/_edit_use_anchors_ = true
+
+[node name="Results" type="Node2D" parent="Quiz"]
 
 [node name="Cursor" type="Sprite2D" parent="Quiz"]
 texture_filter = 1

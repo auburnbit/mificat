@@ -1,6 +1,7 @@
 extends Node
 var all_keys_array = []
 var all_cards = []
+var quiz_cards = []
 var churn_max_size = 20
 
 var dict = {
@@ -200,7 +201,7 @@ func sort_by_time_oldest_first(a, b):
 	
 func grab_random_cards_from_churn(number_to_grab):
 	var churn = all_cards.slice(0, churn_max_size - 1)
-	var quiz_cards = []
+	quiz_cards = []
 	for i in number_to_grab:
 		quiz_cards.append(churn.pop_at(randi() % churn.size()))
 	print(quiz_cards)
