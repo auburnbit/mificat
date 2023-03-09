@@ -236,6 +236,7 @@ func _input(event):
 			quiz_step = "prompt"
 			if card_number < CardDict.quiz_cards.size() - 1:
 				$CursorFeedback.play()
+				CardDict.quiz_cards[card_number].update_card_location_and_dictionary_entry(cursorIndex)
 				card_number += 1
 			else:
 				quiz_step = "results"

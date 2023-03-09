@@ -39,7 +39,14 @@ func update_card_location_and_dictionary_entry(feedback : int):
 		5:
 			reps_at_least_3 += 1
 			reps_at_least_4 += 1
-			reps_at_least_5 += 1			
+			reps_at_least_5 += 1		
+			
+	if reps_at_least_3 < 0:
+		reps_at_least_3 = 0	
+	if reps_at_least_4 < 0:
+		reps_at_least_4 = 0	
+	if reps_at_least_5 < 0:
+		reps_at_least_5 = 0	
 	
 	if reps_at_least_3 >= 6 or reps_at_least_4 >= 4 or reps_at_least_5 >= 2:
 		
@@ -47,13 +54,15 @@ func update_card_location_and_dictionary_entry(feedback : int):
 		reps_at_least_3 >= 0
 		reps_at_least_3 >= 0
 		reps_at_least_3 >= 0
-		time_left_churn = Time.get_unix_time_from_system()
+		time_left_churn = int(Time.get_unix_time_from_system()) - 1678388443
 		
 	CardDict.save_data.dict[unique_key]["InChurn"] = in_churn
 	CardDict.save_data.dict[unique_key]["RepsAtLeast3"] = reps_at_least_3
 	CardDict.save_data.dict[unique_key]["RepsAtLeast4"] = reps_at_least_4
 	CardDict.save_data.dict[unique_key]["RepsAtLeast5"] = reps_at_least_5
 	CardDict.save_data.dict[unique_key]["TimeLeftChurn"] = time_left_churn
+	
+	CardDict.save_data.save_card_data()
 
 func determine_wrong_answers():
 	

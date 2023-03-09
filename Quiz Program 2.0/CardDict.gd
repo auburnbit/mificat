@@ -45,8 +45,6 @@ func _ready():
 		all_cards.append(card)
 		if card.in_churn == true:
 			churn.append(card)
-		else: 
-			not_churn.append(card)
 		
 	for card in all_cards:
 		card.randomize_answers()
