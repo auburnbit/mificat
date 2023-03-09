@@ -21,6 +21,15 @@ config/icon="res://icon.svg"
 CardDict="*res://CardDict.gd"
 ExternalFlags="*res://ExternalFlags.gd"
 
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=640
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="Quiz Program 2.0"
