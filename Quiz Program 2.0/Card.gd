@@ -1,6 +1,6 @@
 class_name Card extends Node
 
-var unique_key = "none"
+var unique_key = 0
 var question_type = "none"
 var category = "none"
 var wrong_answers = []
