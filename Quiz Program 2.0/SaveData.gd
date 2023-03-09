@@ -1,7 +1,7 @@
 extends Resource
 class_name SaveData
 
-const PATH = "user://save.tres"
+const PATH = "res://save.tres"
 
 @export var dict : Dictionary
 

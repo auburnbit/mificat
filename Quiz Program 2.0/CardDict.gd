@@ -1,6 +1,7 @@
 extends Node
 
-var save_data = preload("user://save.tres")
+var save_data = preload("res://save.tres")
+#var save_data = SaveData.new()
 var dict = save_data.dict
 
 var all_keys_array = []

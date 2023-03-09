@@ -1,0 +1,164 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://SaveData.gd" id="1_ht2ss"]
+
+[resource]
+script = ExtResource("1_ht2ss")
+dict = {
+0: {
+"Answer": "2021.3",
+"AnswerType": "number",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "LTS Unity release as of March 3rd, 2023",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 53
+},
+1: {
+"Answer": "Ctrl+Shift+N",
+"AnswerType": "hotkey",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "The hotkey to create a new empty GameObject",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 73
+},
+2: {
+"Answer": "Alt while clicking the drop-down arrow",
+"AnswerType": "hotkey",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "The hotkey to toggle visibility of all descendant GameObjects of the root GameObject",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 68
+},
+3: {
+"Answer": "Ctrl+D",
+"AnswerType": "hotkey",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "The hotkey to duplicate GameObjects",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 46
+},
+4: {
+"Answer": "Ctrl+Shift+V",
+"AnswerType": "hotkey",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "The hotkey to paste a GameObject as a child",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 42
+},
+5: {
+"Answer": "PascalCase",
+"AnswerType": "formatting",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "For naming/casing, use this unless noted otherwise",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 47
+},
+6: {
+"Answer": "camelCase",
+"AnswerType": "formatting",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "For naming/casing local/private variables and parameters, use this",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 45
+},
+7: {
+"Answer": "snake_case, kebab-case, and Hungarian notation",
+"AnswerType": "formatting",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "For naming/casing, avoid these",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 242
+},
+8: {
+"Answer": "MonoBehaviour",
+"AnswerType": "class",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "For naming/casing, if you have this in a file, the source file name must match",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 54
+},
+9: {
+"Answer": "K&R or Allman",
+"AnswerType": "formatting",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "For formatting, choose one of these for braces",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 14
+},
+10: {
+"Answer": "80 and 120",
+"AnswerType": "number",
+"Category": "Unity",
+"Image": "none",
+"InChurn": false,
+"Prompt": "For formatting, choose a max line width in the range of this many characters",
+"QuestionType": "multiple choice",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 2
+},
+11: {
+"Answer": "true",
+"AnswerType": "number",
+"Category": "Laundry",
+"Image": "11.jpg",
+"InChurn": false,
+"Prompt": "These are pajamas.",
+"QuestionType": "true or false",
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 1
+}
+}

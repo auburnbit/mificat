@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://qadonlh0s2l4" path="res://fonts/BergenMono-Webfont/BergenMono-Regular.woff2" id="1_i8h4u"]
 [ext_resource type="Texture2D" uid="uid://dwx2ape03p53" path="res://images/dialog_box.png" id="2_ui8gs"]
 [ext_resource type="Script" path="res://Card.gd" id="4_0muy6"]
-[ext_resource type="Texture2D" uid="uid://cnplrlaigkw62" path="res://card_images/11.jpg" id="4_32ftp"]
+[ext_resource type="Texture2D" uid="uid://dukfcxq5jofxw" path="res://card_images/no_image.jpg" id="4_gduu4"]
 [ext_resource type="Script" path="res://Quiz.gd" id="4_yynlu"]
 [ext_resource type="Texture2D" uid="uid://cipnyyd3hxbxe" path="res://images/cursor.png" id="5_cgou4"]
 [ext_resource type="Script" path="res://ExternalFlags.gd" id="5_ewg4j"]
@@ -93,11 +93,12 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
 
 [node name="ImagePrompt" type="TextureRect" parent="Prompt/PromptLabel"]
+layout_mode = 0
 offset_left = 57.0
 offset_top = 50.0
 offset_right = 487.0
 offset_bottom = 237.0
-texture = ExtResource("4_32ftp")
+texture = ExtResource("4_gduu4")
 expand_mode = 1
 stretch_mode = 6
 
