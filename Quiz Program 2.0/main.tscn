@@ -352,7 +352,7 @@ script = ExtResource("5_ewg4j")
 visible = false
 texture_filter = 1
 position = Vector2(65, 241)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_cgou4")
 
 [node name="CursorSound" type="AudioStreamPlayer" parent="."]

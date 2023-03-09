@@ -24,7 +24,7 @@ func _process(delta):
 			if $Music.playing != true:
 				$Music.play()
 		
-		if correct_number / CardDict.quiz_cards.size() >= percent_needed:
+		if float(correct_number) / float(CardDict.quiz_cards.size()) >= percent_needed:
 			success = true
 		else:
 			success = false

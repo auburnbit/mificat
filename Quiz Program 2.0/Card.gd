@@ -16,6 +16,45 @@ var reps_at_least_4 = 0
 var reps_at_least_5 = 0
 var time_left_churn = "none"
 
+func update_card_location_and_dictionary_entry(feedback : int):
+	
+	match feedback:
+		0: 
+			reps_at_least_3 = 0
+			reps_at_least_4 = 0
+			reps_at_least_5 = 0
+		1:
+			reps_at_least_3 = 0
+			reps_at_least_4 = 0
+			reps_at_least_5 = 0
+		2:
+			reps_at_least_3 -= 1
+			reps_at_least_4 -= 1
+			reps_at_least_5 -= 1
+		3:
+			reps_at_least_3 += 1
+		4:
+			reps_at_least_3 += 1
+			reps_at_least_4 += 1
+		5:
+			reps_at_least_3 += 1
+			reps_at_least_4 += 1
+			reps_at_least_5 += 1			
+	
+	if reps_at_least_3 >= 6 or reps_at_least_4 >= 4 or reps_at_least_5 >= 2:
+		
+		in_churn = false
+		reps_at_least_3 >= 0
+		reps_at_least_3 >= 0
+		reps_at_least_3 >= 0
+		time_left_churn = Time.get_unix_time_from_system()
+		
+	CardDict.save_data.dict[unique_key]["InChurn"] = in_churn
+	CardDict.save_data.dict[unique_key]["RepsAtLeast3"] = reps_at_least_3
+	CardDict.save_data.dict[unique_key]["RepsAtLeast4"] = reps_at_least_4
+	CardDict.save_data.dict[unique_key]["RepsAtLeast5"] = reps_at_least_5
+	CardDict.save_data.dict[unique_key]["TimeLeftChurn"] = time_left_churn
+
 func determine_wrong_answers():
 	
 	#multiple choice gets same types of wrong answers from other cards

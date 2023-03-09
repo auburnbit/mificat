@@ -1,7 +1,7 @@
 extends Node
 
-var path = "user://save.tres"
-var save_data = SaveData.new()
+var save_data = preload("user://save.tres")
+var dict = save_data.dict
 
 var all_keys_array = []
 var all_cards = []
@@ -9,168 +9,17 @@ var quiz_cards = []
 var churn_max_size = 20
 var json = JSON.new()
 
-var dict = {
-	0:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "LTS Unity release as of March 3rd, 2023",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 53,
-		"Answer": "2021.3",
-		"AnswerType": "number",
-	},
-	1:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "The hotkey to create a new empty GameObject",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 73,
-		"Answer": "Ctrl+Shift+N",
-		"AnswerType": "hotkey",
-	},
-	2:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "The hotkey to toggle visibility of all descendant GameObjects of the root GameObject",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 68,
-		"Answer": "Alt while clicking the drop-down arrow",
-		"AnswerType": "hotkey",
-	},
-	3:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "The hotkey to duplicate GameObjects",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 46,
-		"Answer": "Ctrl+D",
-		"AnswerType": "hotkey",
-	},
-	4:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "The hotkey to paste a GameObject as a child",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 42,
-		"Answer": "Ctrl+Shift+V",
-		"AnswerType": "hotkey",
-	},
-	5:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "For naming/casing, use this unless noted otherwise",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 47,
-		"Answer": "PascalCase",
-		"AnswerType": "formatting",
-	},
-	6:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "For naming/casing local/private variables and parameters, use this",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 45,
-		"Answer": "camelCase",
-		"AnswerType": "formatting",
-	},
-	7:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "For naming/casing, avoid these",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 242,
-		"Answer": "snake_case, kebab-case, and Hungarian notation",
-		"AnswerType": "formatting",
-	},
-	8:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "For naming/casing, if you have this in a file, the source file name must match",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 54,
-		"Answer": "MonoBehaviour",
-		"AnswerType": "class",
-	},
-	9:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "For formatting, choose one of these for braces",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 14,
-		"Answer": "K&R or Allman",
-		"AnswerType": "formatting",
-	},
-	10:{
-		"QuestionType": "multiple choice",
-		"Category": "Unity",
-		"Prompt": "For formatting, choose a max line width in the range of this many characters",
-		"Image": "none",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 2,
-		"Answer": "80 and 120",
-		"AnswerType": "number",
-	},
-	11:{
-		"QuestionType": "true or false",
-		"Category": "Laundry",
-		"Prompt": "These are pajamas.",
-		"Image": "11.jpg",
-		"InChurn": false,
-		"RepsAtLeast3": 0,
-		"RepsAtLeast4": 0,
-		"RepsAtLeast5": 0,
-		"TimeLeftChurn": 1,
-		"Answer": "true",
-		"AnswerType": "number",
-	},
-}
+var in_churn = false
+var reps_at_least_3 = 0
+var reps_at_least_4 = 0
+var reps_at_least_5 = 0
+var time_left_churn = "none"
 
-func _ready():
-	ResourceSaver.save(save_data, path)
+var churn = []
+var not_churn = []
 	
+func _ready():
+		
 	for key in dict.keys():
 		all_keys_array.append(key)
 	
@@ -194,10 +43,15 @@ func _ready():
 		card.determine_wrong_answers()
 		
 		all_cards.append(card)
+		if card.in_churn == true:
+			churn.append(card)
+		else: 
+			not_churn.append(card)
 		
 	for card in all_cards:
 		card.randomize_answers()
-		
+	
+	#NEED TO HANDLE DIFFERENTLY, SAVED CHURN CARDS MUST GO IN CHURN FIRST	
 	all_cards.sort_custom(sort_by_time_oldest_first)
 	grab_random_cards_from_churn(5)		
 
@@ -207,7 +61,8 @@ func sort_by_time_oldest_first(a, b):
 	return false
 	
 func grab_random_cards_from_churn(number_to_grab):
-	var churn = all_cards.slice(0, churn_max_size - 1)
+	churn = all_cards.slice(0, churn_max_size - 1)
+	not_churn = all_cards.slice(churn_max_size, all_cards.size())
 	quiz_cards = []
 	for i in number_to_grab:
 		quiz_cards.append(churn.pop_at(randi() % churn.size()))
