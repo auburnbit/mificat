@@ -14,9 +14,9 @@ dict = {
 "Prompt": "LTS Unity release as of March 3rd, 2023",
 "QuestionType": "multiple choice",
 "RepsAtLeast3": 0,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 20705
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 0
 },
 1: {
 "Answer": "Ctrl+Shift+N",
@@ -26,7 +26,7 @@ dict = {
 "InChurn": false,
 "Prompt": "The hotkey to create a new empty GameObject",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 1,
+"RepsAtLeast3": 0,
 "RepsAtLeast4": 0,
 "RepsAtLeast5": 0,
 "TimeLeftChurn": 1
@@ -52,9 +52,9 @@ dict = {
 "InChurn": false,
 "Prompt": "The hotkey to duplicate GameObjects",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 3
 },
 4: {
@@ -65,7 +65,7 @@ dict = {
 "InChurn": false,
 "Prompt": "The hotkey to paste a GameObject as a child",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 1,
+"RepsAtLeast3": 0,
 "RepsAtLeast4": 0,
 "RepsAtLeast5": 0,
 "TimeLeftChurn": 4
@@ -78,10 +78,10 @@ dict = {
 "InChurn": false,
 "Prompt": "For naming/casing, use this unless noted otherwise",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 3,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 20143
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 5
 },
 6: {
 "Answer": "camelCase",
@@ -91,10 +91,10 @@ dict = {
 "InChurn": false,
 "Prompt": "For naming/casing local/private variables and parameters, use this",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 3,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 19878
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 6
 },
 7: {
 "Answer": "snake_case, kebab-case, and Hungarian notation",
@@ -104,10 +104,10 @@ dict = {
 "InChurn": false,
 "Prompt": "For naming/casing, avoid these",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 20132
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 7
 },
 8: {
 "Answer": "MonoBehaviour",
@@ -117,7 +117,7 @@ dict = {
 "InChurn": false,
 "Prompt": "For naming/casing, if you have this in a file, the source file name must match",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 2,
+"RepsAtLeast3": 0,
 "RepsAtLeast4": 0,
 "RepsAtLeast5": 0,
 "TimeLeftChurn": 8
@@ -130,9 +130,9 @@ dict = {
 "InChurn": false,
 "Prompt": "For formatting, choose one of these for braces",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 9
 },
 10: {
@@ -143,9 +143,9 @@ dict = {
 "InChurn": false,
 "Prompt": "For formatting, choose a max line width in the range of this many characters",
 "QuestionType": "multiple choice",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 10
 },
 11: {
@@ -156,10 +156,10 @@ dict = {
 "InChurn": false,
 "Prompt": "These are pajamas.",
 "QuestionType": "true or false",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 19754
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 11
 },
 12: {
 "Answer": "true",
@@ -169,10 +169,10 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 12. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 19847
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 12
 },
 13: {
 "Answer": "true",
@@ -182,10 +182,10 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 13. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 20324
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 13
 },
 14: {
 "Answer": "true",
@@ -195,9 +195,9 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 14. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 14
 },
 15: {
@@ -208,10 +208,10 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 15. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 19821
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 15
 },
 16: {
 "Answer": "true",
@@ -221,10 +221,10 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 16. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 19815
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 16
 },
 17: {
 "Answer": "true",
@@ -234,10 +234,10 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 17. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 19868
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 17
 },
 18: {
 "Answer": "true",
@@ -247,9 +247,9 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 18. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 18
 },
 19: {
@@ -260,10 +260,10 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 19. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 2,
-"RepsAtLeast4": 2,
-"RepsAtLeast5": 2,
-"TimeLeftChurn": 20422
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
+"TimeLeftChurn": 19
 },
 20: {
 "Answer": "true",
@@ -273,8 +273,8 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 20. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
 "RepsAtLeast5": 0,
 "TimeLeftChurn": 20
 },
@@ -286,9 +286,9 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 21. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 21
 },
 22: {
@@ -325,9 +325,9 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 24. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 24
 },
 25: {
@@ -338,9 +338,9 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 25. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 25
 },
 26: {
@@ -364,9 +364,9 @@ dict = {
 "InChurn": false,
 "Prompt": "This is question 27. True or false?",
 "QuestionType": "true or false",
-"RepsAtLeast3": 1,
-"RepsAtLeast4": 1,
-"RepsAtLeast5": 1,
+"RepsAtLeast3": 0,
+"RepsAtLeast4": 0,
+"RepsAtLeast5": 0,
 "TimeLeftChurn": 27
 },
 28: {

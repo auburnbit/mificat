@@ -50,8 +50,6 @@ func _ready():
 	for card in all_cards:
 		card.randomize_answers()
 	
-	#NEED TO HANDLE DIFFERENTLY, SAVED CHURN CARDS MUST GO IN CHURN FIRST	
-	all_cards.sort_custom(sort_by_time_oldest_first)
 	grab_random_cards_from_churn(5)		
 
 func sort_by_time_oldest_first(a, b):
@@ -59,7 +57,10 @@ func sort_by_time_oldest_first(a, b):
 		return true
 	return false
 	
+#NEW QUIZ
 func grab_random_cards_from_churn(number_to_grab):
+	
+	all_cards.sort_custom(sort_by_time_oldest_first)	
 	churn = all_cards.slice(0, churn_max_size - 1)
 	not_churn = all_cards.slice(churn_max_size, all_cards.size())
 	quiz_cards = []
@@ -67,7 +68,3 @@ func grab_random_cards_from_churn(number_to_grab):
 		quiz_cards.append(churn.pop_at(randi() % churn.size()))
 	print(quiz_cards)
 	return quiz_cards
-
-
-
-

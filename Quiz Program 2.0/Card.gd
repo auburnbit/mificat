@@ -51,10 +51,11 @@ func update_card_location_and_dictionary_entry(feedback : int):
 	if reps_at_least_3 >= 6 or reps_at_least_4 >= 4 or reps_at_least_5 >= 2:
 		
 		in_churn = false
-		reps_at_least_3 >= 0
-		reps_at_least_3 >= 0
-		reps_at_least_3 >= 0
+		reps_at_least_3 = 0
+		reps_at_least_3 = 0
+		reps_at_least_3 = 0
 		time_left_churn = int(Time.get_unix_time_from_system()) - 1678388443
+		
 		
 	CardDict.save_data.dict[unique_key]["InChurn"] = in_churn
 	CardDict.save_data.dict[unique_key]["RepsAtLeast3"] = reps_at_least_3
@@ -120,4 +121,4 @@ func randomize_answers():
 	print("-----------")
 	print(prompt)
 	print(answer)
-	print(answer_list)	
+	print(answer_list)
