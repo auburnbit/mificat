@@ -23,14 +23,14 @@ func set_flag(flag_name):
 	match flag_name:
 		"currently_quizzing":
 			set_flag_by_bit(29)
-		"correct_answer":
+		"success":
 			set_flag_by_bit(30)
 
 func clear_flag(flag_name):
 	match flag_name:
 		"currently_quizzing":
 			clear_flag_by_bit(29)
-		"correct_answer":
+		"success":
 			clear_flag_by_bit(30)
 
 func flag_is_set_by_bit(bit_number):
@@ -50,5 +50,5 @@ func flag_is_set(flag_name):
 		match flag_name:
 			"currently_quizzing":
 				return flag_is_set_by_bit(29)
-			"correct_answer":
+			"success":
 				return flag_is_set_by_bit(30)

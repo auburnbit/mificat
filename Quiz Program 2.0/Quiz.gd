@@ -19,6 +19,10 @@ func _process(delta):
 	if visible:
 		
 		if quiz_step == "prequiz":
+			if ExternalFlags.flag_is_set_by_bit(29):
+				quiz_step = "prompt"
+		
+		if quiz_step == "prequiz":
 			$Music.stop()
 		else:
 			if $Music.playing != true:
@@ -242,14 +246,20 @@ func _input(event):
 				quiz_step = "results"
 				if success == true:
 					$Success.play()
+					ExternalFlags.set_flag("success")
 				else:
 					$Failure.play()
+					ExternalFlags.clear_flag("success")
 			cursorIndex = 0		
 			
 	elif visible and quiz_step == "results":
 		if event.is_action_pressed("ui_accept"):
 			$CursorFeedback.play()
 			quiz_step = "prequiz"
+			card_number = 0
+			correct_number = 0
+			CardDict.grab_random_cards_from_churn(5)
+			ExternalFlags.clear_flag("currently_quizzing")
 
 func color_answers_appropriately():
 	var wrong_color = "[color=White]"
@@ -280,7 +290,4 @@ func color_answers_appropriately():
 
 
 func _on_start_quiz_button_button_down():
-	card_number = 0
-	correct_number = 0
-	quiz_step = "prompt"
-	CardDict.grab_random_cards_from_churn(5)
+	ExternalFlags.set_flag_by_bit(29)
