@@ -38,6 +38,7 @@ script = ExtResource("4_yynlu")
 [node name="Prequiz" type="Node2D" parent="."]
 
 [node name="StartQuizButton" type="Button" parent="Prequiz"]
+visible = false
 offset_left = 314.286
 offset_top = 117.857
 offset_right = 447.286

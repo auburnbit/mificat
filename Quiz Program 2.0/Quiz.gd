@@ -9,102 +9,102 @@ var percent_needed = 1.0
 var correct_number = 0
 var success = false
 var punishment = "No EXP nor Gil will be received from this battle!"
-
+var filecheck_timer = 0
 func _ready():
+	if quiz_step == "prequiz" and FileAccess.file_exists("user://start.signal"):
+		DirAccess.remove_absolute("user://start.signal")
 		#must do this or window can't be transparent
 	get_tree().get_root().set_transparent_background(true)
-	
 
 func _process(delta):
-	if visible:
-		
-		if quiz_step == "prequiz":
-			if ExternalFlags.flag_is_set_by_bit(29):
-				quiz_step = "prompt"
-		
-		if quiz_step == "prequiz":
-			$Music.stop()
-		else:
-			if $Music.playing != true:
-				$Music.play()
-		
-		if float(correct_number) / float(CardDict.quiz_cards.size()) >= percent_needed:
-			success = true
-		else:
-			success = false
-		
-		update_cursor_draw_location()	
 	
-		var card = CardDict.quiz_cards[card_number]
-		$Prompt/PromptLabel/CategoryText.text = "Category: " + str(card.category)
-		$Prompt/PromptLabel/QuestionNumber.text = "Question " + str(card_number + 1) + " of " + str(CardDict.quiz_cards.size())
-		$Prompt/PromptLabel/ScoreNeeded.text = "Score Needed: " + str(int(percent_needed * 100)) + "%"
-		color_answers_appropriately()
-		if card.image == "none":		
-			$Prompt/PromptLabel/PromptText.text = card.prompt
-			$Prompt/PromptLabel/ImagePrompt.texture = load("res://card_images/no_image.jpg")
-			$Prompt/PromptLabel/ImagePromptText.text = ""			
-			$Prompt/PromptLabel/PromptText.visible = true
-			$Prompt/PromptLabel/ImagePrompt.visible = false
-			$Prompt/PromptLabel/ImagePromptText.visible = false
-		else: 
-			$Prompt/PromptLabel/PromptText.text = ""
-			$Prompt/PromptLabel/ImagePrompt.texture = load("res://card_images/" + card.image)
-			$Prompt/PromptLabel/ImagePromptText.text = card.prompt			
-			$Prompt/PromptLabel/PromptText.visible = false
-			$Prompt/PromptLabel/ImagePrompt.visible = true
-			$Prompt/PromptLabel/ImagePromptText.visible = true	
-			
-		# perhaps make this: show_feedback()
+	if quiz_step == "prequiz" and FileAccess.file_exists("user://start.signal"):
+		quiz_step = "prompt"
+		DirAccess.remove_absolute("user://start.signal")
+	
+	if quiz_step == "prequiz":
+		$Music.stop()
+	else:
+		if $Music.playing != true:
+			$Music.play()
+	
+	if float(correct_number) / float(CardDict.quiz_cards.size()) >= percent_needed:
+		success = true
+	else:
+		success = false
+	
+	update_cursor_draw_location()	
+
+	var card = CardDict.quiz_cards[card_number]
+	$Prompt/PromptLabel/CategoryText.text = "Category: " + str(card.category)
+	$Prompt/PromptLabel/QuestionNumber.text = "Question " + str(card_number + 1) + " of " + str(CardDict.quiz_cards.size())
+	$Prompt/PromptLabel/ScoreNeeded.text = "Score Needed: " + str(int(percent_needed * 100)) + "%"
+	color_answers_appropriately()
+	if card.image == "none":		
+		$Prompt/PromptLabel/PromptText.text = card.prompt
+		$Prompt/PromptLabel/ImagePrompt.texture = load("res://card_images/no_image.jpg")
+		$Prompt/PromptLabel/ImagePromptText.text = ""			
+		$Prompt/PromptLabel/PromptText.visible = true
+		$Prompt/PromptLabel/ImagePrompt.visible = false
+		$Prompt/PromptLabel/ImagePromptText.visible = false
+	else: 
+		$Prompt/PromptLabel/PromptText.text = ""
+		$Prompt/PromptLabel/ImagePrompt.texture = load("res://card_images/" + card.image)
+		$Prompt/PromptLabel/ImagePromptText.text = card.prompt			
+		$Prompt/PromptLabel/PromptText.visible = false
+		$Prompt/PromptLabel/ImagePrompt.visible = true
+		$Prompt/PromptLabel/ImagePromptText.visible = true	
 		
-		if quiz_step == "prequiz":
-			$Prequiz.visible = true
-			$Prompt.visible = false
-			$Choices.visible = false
-			$Feedback.visible = false
-			$Results.visible = false
-					
-		elif quiz_step == "prompt":
-			$Prequiz.visible = false
-			$Prompt.visible = true
-			$Choices.visible = false
-			$Feedback.visible = false
-			$Results.visible = false
-			
-		elif quiz_step == "choices":
-			$Prequiz.visible = false
-			$Prompt.visible = true
-			$Choices.visible = true
-			$Feedback.visible = false
-			$Results.visible = false
+	# perhaps make this: show_feedback()
+	
+	if quiz_step == "prequiz":
+		$Prequiz.visible = true
+		$Prompt.visible = false
+		$Choices.visible = false
+		$Feedback.visible = false
+		$Results.visible = false
+				
+	elif quiz_step == "prompt":
+		$Prequiz.visible = false
+		$Prompt.visible = true
+		$Choices.visible = false
+		$Feedback.visible = false
+		$Results.visible = false
 		
-		elif quiz_step == "feedback":
-			$Prequiz.visible = false
-			$Prompt.visible = true
-			$Choices.visible = true
-			$Feedback.visible = true
-			$Results.visible = false
-			
-			match cursorIndex:
-				0:
-					$Feedback/FeedbackText.text = "[center]Did not know even after seeing choices.[/center]"
-				1:
-					$Feedback/FeedbackText.text = "[center]Did not know until after seeing choices.[/center]"
-				2:
-					$Feedback/FeedbackText.text = "[center]Wasn't certain before choices, or took far too long.[/center]"
-				3:
-					$Feedback/FeedbackText.text = "[center]Recited it without looking at choices, after thinking.[/center]"
-				4:
-					$Feedback/FeedbackText.text = "[center]Recited it without looking at choices, with only slight hesitation.[/center]"
-				5:
-					$Feedback/FeedbackText.text = "[center]Too easy. Knew it instantly in detail without looking at choices.[/center]"
-			
-		elif quiz_step == "results":
-			$Prequiz.visible = false
-			$Prompt.visible = false
-			$Choices.visible = false
-			$Feedback.visible = false
-			$Results.visible = true
+	elif quiz_step == "choices":
+		$Prequiz.visible = false
+		$Prompt.visible = true
+		$Choices.visible = true
+		$Feedback.visible = false
+		$Results.visible = false
+	
+	elif quiz_step == "feedback":
+		$Prequiz.visible = false
+		$Prompt.visible = true
+		$Choices.visible = true
+		$Feedback.visible = true
+		$Results.visible = false
+		
+		match cursorIndex:
+			0:
+				$Feedback/FeedbackText.text = "[center]Did not know even after seeing choices.[/center]"
+			1:
+				$Feedback/FeedbackText.text = "[center]Did not know until after seeing choices.[/center]"
+			2:
+				$Feedback/FeedbackText.text = "[center]Wasn't certain before choices, or took far too long.[/center]"
+			3:
+				$Feedback/FeedbackText.text = "[center]Recited it without looking at choices, after thinking.[/center]"
+			4:
+				$Feedback/FeedbackText.text = "[center]Recited it without looking at choices, with only slight hesitation.[/center]"
+			5:
+				$Feedback/FeedbackText.text = "[center]Too easy. Knew it instantly in detail without looking at choices.[/center]"
+		
+	elif quiz_step == "results":
+		$Prequiz.visible = false
+		$Prompt.visible = false
+		$Choices.visible = false
+		$Feedback.visible = false
+		$Results.visible = true
 			
 			
 			
@@ -246,10 +246,8 @@ func _input(event):
 				quiz_step = "results"
 				if success == true:
 					$Success.play()
-					ExternalFlags.set_flag("success")
 				else:
 					$Failure.play()
-					ExternalFlags.clear_flag("success")
 			cursorIndex = 0		
 			
 	elif visible and quiz_step == "results":
@@ -259,7 +257,14 @@ func _input(event):
 			card_number = 0
 			correct_number = 0
 			CardDict.grab_random_cards_from_churn(5)
-			ExternalFlags.clear_flag("currently_quizzing")
+			if success == true:
+				var file = FileAccess.open("user://success.signal",FileAccess.WRITE)
+				#file.store_string("")
+				file.close()
+			else:
+				var file = FileAccess.open("user://failure.signal",FileAccess.WRITE)
+				#file.store_string("")
+				file.close()
 
 func color_answers_appropriately():
 	var wrong_color = "[color=White]"

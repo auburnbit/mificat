@@ -56,8 +56,9 @@ Quiz External Flag current location (it's moving)      127BA85AB08
 import threading
 import psutil
 from pymem import *
-from pymem.process import *
+import pymem.process
 from pymem.ptypes import RemotePointer
+from pathlib import Path
 
 #Constants for game RAM
 ENE_LOCA = 0X001E893E
@@ -78,6 +79,9 @@ PM3_CEXP_LOCA = 0x001D722C
 PM3_CEXP_SIZE = 2
 PM4_CEXP_LOCA = 0x001D7274
 PM4_CEXP_SIZE = 2
+
+#path to userdata folder
+path = str(Path.home()) + "\\AppData\\Roaming\\Godot\\app_userdata\\Quiz Program 2.0\\"
 
 # Constants for quiz RAM
 QUIZ_ECF_SIZE = 4
@@ -124,18 +128,10 @@ quiz_flag30_correct_answer = True
 current_quizzing_state = "not currently quizzing"
 
 gm = pymem.Pymem("retroarch.exe")
-qm = pymem.Pymem("Quiz Program.exe")
 
-gameModule = module_from_name(
+
+gameModule = pymem.process.module_from_name(
     gm.process_handle, "gpsp_libretro.dll").lpBaseOfDll
-
-def getPointerAddress(base, offsets):
-    remote_pointer = RemotePointer(qm.process_handle, base)
-    for offset in offsets:
-        if offset != offsets[-1]:
-            remote_pointer = RemotePointer(qm.process_handle, remote_pointer.value + offset)
-        else:
-            return remote_pointer.value + offset
 
 process = filter(lambda p: p.name() == "retroarch.exe",
                     psutil.process_iter())
@@ -164,20 +160,35 @@ while True:
         # but the EXP/gil hasn't been rewarded yet
         psutil.Process(pid=ra_pid).suspend()
         ########Hmmmm#########
-        # Maybe I can't set bit 31 because it's the integer sign bit?
+        # CREATE start.signal FILE IN THE USER DIRECTORY
         #####################
-        qm.write_int(getPointerAddress(qm.base_address + 0x03F3D388, offsets=[0xB0, 0x150, 0x1C8, 0x2B8, 0x70, 0x28, 0x8]), 0X20000000)
+        with open(path + "start.signal", "w") as f:
+        
+        
+            f.write("")
+        
         quiz_flag29_currently_quizzing = 1
         current_quizzing_state = "started and waiting on user"
 
     elif current_quizzing_state == "started and waiting on user":
         # external process is suspended at this point
         # to prevent game from rewarding EXP/gil yet
-        if quiz_flag29_currently_quizzing == 0:
-            if quiz_flag30_correct_answer == 1:
-                current_quizzing_state = "answer was correct"
-            else:
-                current_quizzing_state = "answer was incorrect"        
+
+        f = Path(path + "success.signal")
+        if f.is_file():
+            current_quizzing_state = "answer was correct"
+            Path(path + "success.signal").unlink()
+
+        f = Path(path + "failure.signal")
+        if f.is_file():
+            current_quizzing_state = "answer was incorrect"
+            Path(path + "failure.signal").unlink()
+
+        #if quiz_flag29_currently_quizzing == 0:
+        #    if quiz_flag30_correct_answer == 1:
+        #        current_quizzing_state = "answer was correct"
+        #    else:
+        #        current_quizzing_state = "answer was incorrect"        
 
     elif current_quizzing_state == "answer was incorrect":
         psutil.Process(pid=ra_pid).resume()          
@@ -227,7 +238,7 @@ while True:
     prev_pm3_exp = pm3_exp_mem_read
     prev_pm4_exp = pm4_exp_mem_read
 
-    prev_ecf = quiz_ecf_mem_read
+ 
 
     # Read RAM values (converting to int from byte values)
     ene_mem_read = int.from_bytes(gm.read_bytes(
@@ -259,17 +270,9 @@ while True:
     pm4_exp_mem_read = int.from_bytes(gm.read_bytes(
         gameModule + PM4_CEXP_LOCA, PM4_CEXP_SIZE), "little")  
     
-    #qm.write_int(getPointerAddress(qm.base_address + 0x03F35120, offsets=[0x2b8, 0x388, 0x108, 0x1a0, 0x70, 0x28, 0x8]), 0x8000000)
-    quiz_ecf_mem_read = int.from_bytes(qm.read_bytes(getPointerAddress(qm.base_address \
-                        + 0x03F3D388, offsets=[0xB0, 0x150, 0x1C8, 0x2B8, 0x70, 0x28, 0x8]),QUIZ_ECF_SIZE), "little")
-    
-    quiz_flag29_currently_quizzing = (quiz_ecf_mem_read & 0b00100000000000000000000000000000) >> 29
-    quiz_flag30_correct_answer = (quiz_ecf_mem_read & 0b01000000000000000000000000000000) >> 30
-    
     if current_quizzing_state == "not currently quizzing" and (prev_ene != ene_mem_read or
                                                     prev_exp != exp_mem_read or
                                                     prev_gil != gil_mem_read or
-                                                    prev_ecf != quiz_ecf_mem_read or
                                                     prev_pm1_exp != pm1_exp_mem_read or
                                                     prev_pm2_exp != pm2_exp_mem_read or
                                                     prev_pm3_exp != pm3_exp_mem_read or
@@ -278,7 +281,6 @@ while True:
         print("Enemies: " + f"{ene_mem_read:03d}" + ", " +
                 "EXP: " + f"{exp_mem_read:05d}" + ", " +
                 "Gil: " + f"{gil_mem_read:05d}" + ", " +
-                "ECF: " + f"{quiz_ecf_mem_read:08x}" + ", " +
                 "Flag29: " + f"{quiz_flag29_currently_quizzing:1d}" + ", " +
                 "Flag30: " + f"{quiz_flag30_correct_answer:1d}" + ", " +
                 "PM1 EXP: " + f"{pm1_exp_mem_read:05d}" + ", " +
